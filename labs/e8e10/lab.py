@@ -80,6 +80,7 @@ def patch(p,report):
         if f['type']!='MISSING': continue
         t,d=f['target'],f['dependency']
         if not re.fullmatch(r'[\w./-]+',d) or '..' in Path(d).parts or Path(d).is_absolute(): raise ValueError('UNSAFE_PATH')
+        if not (p/d).resolve().is_relative_to(p.resolve()): raise ValueError('UNSAFE_PATH')
         if not (p/d).is_file(): raise ValueError('MISSING_INPUT')
         m=re.search(r'^'+re.escape(t)+r': (.*)$',changed,re.M)
         if not m: raise ValueError('UNSUPPORTED_TARGET')

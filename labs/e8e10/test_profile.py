@@ -39,4 +39,38 @@ class ProfileTests(unittest.TestCase):
         (self.p/'Makefile').write_text((self.p/'Makefile').read_text().replace('-O0','-include unknown.h'))
         with self.assertRaisesRegex(ValueError,'UNSUPPORTED_FLAGS'):scan(self.p)
 
+    def test_symlink_dependency_outside_project_rejected_without_source_changes(self):
+        outside=Path(self.tmp.name)/'outside.h'
+        outside.write_text('#define OUTSIDE 1\n')
+        (self.p/'linked.h').symlink_to(outside)
+        report={'commit':commit(self.p,'external header link'),'findings':[
+            {'type':'MISSING','target':'main.o','dependency':'config.h'},
+            {'type':'MISSING','target':'main.o','dependency':'linked.h'}]}
+        before=(self.p/'Makefile').read_bytes()
+        with self.assertRaisesRegex(ValueError,'^UNSAFE_PATH$'):
+            patch(self.p,report)
+        self.assertEqual((self.p/'Makefile').read_bytes(),before)
+        self.assertEqual(outside.read_bytes(),b'#define OUTSIDE 1\n')
+
+    def test_symlink_directory_outside_project_rejected(self):
+        outside=Path(self.tmp.name)/'external'
+        outside.mkdir();(outside/'header.h').write_text('/* external */\n')
+        (self.p/'headers').symlink_to(outside,target_is_directory=True)
+        report={'commit':commit(self.p,'external directory link'),'findings':[
+            {'type':'MISSING','target':'main.o','dependency':'headers/header.h'}]}
+        before=(self.p/'Makefile').read_bytes()
+        with self.assertRaisesRegex(ValueError,'^UNSAFE_PATH$'):
+            patch(self.p,report)
+        self.assertEqual((self.p/'Makefile').read_bytes(),before)
+
+    def test_symlink_dependency_within_project_keeps_declared_path(self):
+        (self.p/'linked.h').symlink_to('config.h')
+        report={'commit':commit(self.p,'local header link'),'findings':[
+            {'type':'MISSING','target':'main.o','dependency':'linked.h'}]}
+        before=(self.p/'Makefile').read_bytes()
+        diff,plan=patch(self.p,report)
+        self.assertIn('+main.o: main.c unused.h linked.h',diff)
+        self.assertEqual(plan,[{'target':'main.o','dependency':'linked.h','style':'direct'}])
+        self.assertEqual((self.p/'Makefile').read_bytes(),before)
+
 if __name__=='__main__':unittest.main()
