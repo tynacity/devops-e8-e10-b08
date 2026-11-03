@@ -1,4 +1,14 @@
-# B 组 DRAFT：E5–E7 集成版本
+# B08 E8–E10 MDFixer 实验
+
+本仓库承接 [原 E5–E7 仓库](https://github.com/ISSUE808/devops-e5-e7-b08) 的完整提交历史，以原最终提交 `3fdc90f` 为起点，新增教师 E8–E10 实验和成员 4（241880492）的贡献。原 E7 workflow 保留，新 `e8e10-quality-gate` 同时验证 A/B 两轨三个阶段。
+
+本次入口：[组内验收索引](docs/E8-E10/验收索引.md)、[成员 4 个人报告](docs/students/241880492/e8-e10/个人报告.md)、[决策记录](docs/students/241880492/e8-e10/ADR.md)、[AI 使用记录](docs/students/241880492/e8-e10/AI_USAGE.md)。成员 1–3 当前均待交接。
+
+当前 GitHub 地址由成员 4 新建，用于本阶段 CI 和 PR；[GitLab E8-E10-B](https://git.nju.edu.cn/noth1ng/devops_labs08/-/tree/E8-E10-B) 保留先前公共基线。教师手册要求沿用原 GitHub 仓库，最终验收前需说明本次地址变更并确认接受。旧 PR 和 Actions 记录留在原仓库，新仓库的提交历史不替代旧平台证据。
+
+## E5–E7 历史交付说明
+
+以下内容保留原交付文本，其中“当前”“本次”和原成员编号均指 E5–E7 阶段，不代表 E8–E10 已完成全组验收。
 
 本仓库以 `DevOps_1020_Student_Cloud.zip` 的 B-draft 教学参考实现为基线，整合本组固定候选及成员 3 的新增测试。真实 GitHub CI、main 分支保护、失败 PR 拒绝及同一 PR 修复合并已完成；2026-10-25 已补齐 E5 独立成功构建与禁网运行、新版 doctor 真实自检记录。当前材料核对的 11 项均为 PASS；具体交付版本和对应 CI 见证据索引及离线包清单。尚未向教学平台提交，不等于已获助教最终验收。
 
