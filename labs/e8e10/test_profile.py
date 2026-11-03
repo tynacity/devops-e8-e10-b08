@@ -103,4 +103,39 @@ class Student241880528E8Tests(unittest.TestCase):
             self.assertEqual(makefile.read_bytes(), before)
 
 
+class Student241880529E9Tests(unittest.TestCase):
+    def test_duplicate_missing_findings_produce_one_edit_per_style(self):
+        from lab import run
+        for style in ('direct', 'macro', 'mixed'):
+            with self.subTest(style=style), tempfile.TemporaryDirectory() as directory:
+                project = Path(directory) / 'project'
+                fixture(project, style)
+                report = scan(project)
+                missing = next(f for f in report['findings'] if f['type'] == 'MISSING')
+                report['findings'].extend([dict(missing), dict(missing)])
+                before = (project / 'Makefile').read_bytes()
+                diff, plan = patch(project, report)
+                self.assertEqual(plan, [{'target': 'main.o', 'dependency': 'config.h', 'style': style}])
+                self.assertEqual((project / 'Makefile').read_bytes(), before)
+                candidate = Path(directory) / 'candidate.patch'
+                candidate.write_text(diff)
+                run(['git', 'apply', '--check', str(candidate)], project)
+                run(['git', 'apply', str(candidate)], project)
+                after = (project / 'Makefile').read_bytes()
+                self.assertEqual(after.count(b'config.h'), 1)
+                self.assertEqual(
+                    [line for line in before.splitlines() if line.startswith(b'\t')],
+                    [line for line in after.splitlines() if line.startswith(b'\t')])
+                expected = {
+                    'direct': 'main.o: main.c unused.h config.h',
+                    'macro': 'DEPS = main.c unused.h config.h',
+                    'mixed': 'main.o: main.c $(HEADERS) config.h',
+                }[style]
+                self.assertIn(expected, after.decode())
+                if style == 'macro':
+                    self.assertIn('main.o: $(DEPS)', after.decode())
+                self.assertFalse(any(f['type'] == 'MISSING' for f in scan(project)['findings']))
+
+from test_implicit import ImplicitRepairTests
+
 if __name__=='__main__':unittest.main()
