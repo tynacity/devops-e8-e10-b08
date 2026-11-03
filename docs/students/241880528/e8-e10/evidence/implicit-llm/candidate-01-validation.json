@@ -1,0 +1,14 @@
+{
+  "patch_applies": true,
+  "default_target_builds_app": true,
+  "dependency_files_generated": true,
+  "main_object_declares_config_header": true,
+  "header_change_output": "2",
+  "affected_object_rebuilt": true,
+  "unaffected_object_preserved": true,
+  "clean_build_binary_equal": true,
+  "before_binary_sha256": "6a4a3450fc86affb969e7bc669337c4509452999cb2e49321a8fe40863e261e1",
+  "after_binary_sha256": "6a4a3450fc86affb969e7bc669337c4509452999cb2e49321a8fe40863e261e1",
+  "clean_removes_generated_files": true,
+  "source_makefile_unchanged": true
+}
