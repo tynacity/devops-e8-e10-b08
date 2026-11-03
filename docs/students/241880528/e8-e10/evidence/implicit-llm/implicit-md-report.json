@@ -1,0 +1,19 @@
+{
+  "commit": "87011bfd2c558b0695d0ea8ddd73823f6098a71e",
+  "source": "gcc -MM plus GNU Make database; classroom sample comparison",
+  "scope": "main.o project-local prerequisites",
+  "actual": [
+    "main.c",
+    "config.h"
+  ],
+  "declared": [
+    "main.c"
+  ],
+  "findings": [
+    {
+      "type": "MISSING",
+      "target": "main.o",
+      "dependency": "config.h"
+    }
+  ]
+}

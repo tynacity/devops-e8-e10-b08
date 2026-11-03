@@ -73,4 +73,34 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(plan,[{'target':'main.o','dependency':'linked.h','style':'direct'}])
         self.assertEqual((self.p/'Makefile').read_bytes(),before)
 
+
+class Student241880528E8Tests(unittest.TestCase):
+    def test_redundant_only_produces_no_patch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory) / 'sample'
+            fixture(project)
+
+            makefile = project / 'Makefile'
+            original = makefile.read_text()
+            self.assertIn('main.o: main.c unused.h\n', original)
+            makefile.write_text(original.replace(
+                'main.o: main.c unused.h\n',
+                'main.o: main.c unused.h config.h\n',
+            ))
+            commit(project, 'declare config.h for RD-only test')
+
+            report = scan(project)
+            self.assertEqual(report['findings'], [
+                {'type': 'REDUNDANT', 'target': 'main.o',
+                 'dependency': 'unused.h'},
+            ])
+
+            before = makefile.read_bytes()
+            diff, edits = patch(project, report)
+
+            self.assertEqual(diff, '')
+            self.assertEqual(edits, [])
+            self.assertEqual(makefile.read_bytes(), before)
+
+
 if __name__=='__main__':unittest.main()

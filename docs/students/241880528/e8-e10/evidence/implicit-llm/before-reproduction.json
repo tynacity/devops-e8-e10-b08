@@ -1,0 +1,7 @@
+{
+  "initial_output": "1",
+  "after_header_change_incremental_output": "1",
+  "same_source_clean_build_output": "2",
+  "object_not_rebuilt_on_header_change": true,
+  "missing_dependency_behavior_reproduced": true
+}

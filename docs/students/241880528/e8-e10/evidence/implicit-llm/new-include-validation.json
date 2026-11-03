@@ -1,0 +1,13 @@
+{
+  "new_header_automatically_tracked": true,
+  "output_after_include_added": "11",
+  "output_after_new_header_changed": "21",
+  "unaffected_object_preserved": true,
+  "candidate_makefile_unchanged": true,
+  "recheck_method": "gcc -MM versus GNU Make database",
+  "scope": [
+    "main.o",
+    "helper.o"
+  ],
+  "missing_dependencies": []
+}

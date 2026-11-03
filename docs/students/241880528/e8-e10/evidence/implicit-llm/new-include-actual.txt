@@ -1,0 +1,2 @@
+main.o: main.c new_value.h config.h
+helper.o: helper.c

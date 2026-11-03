@@ -1,0 +1,4 @@
+rm -f main.o helper.o main.d helper.d app
+gcc -O0 -MMD -MP -c main.c -o main.o
+gcc -O0 -MMD -MP -c helper.c -o helper.o
+gcc main.o helper.o -o app

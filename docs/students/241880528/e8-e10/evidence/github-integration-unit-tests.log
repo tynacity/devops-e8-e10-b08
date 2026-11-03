@@ -1,0 +1,16 @@
+test_include_added_invalidates_cache (test_profile.ProfileTests.test_include_added_invalidates_cache) ... ok
+test_independent_known_edges (test_profile.ProfileTests.test_independent_known_edges) ... ok
+test_old_report_rejected (test_profile.ProfileTests.test_old_report_rejected) ... ok
+test_patch_preserves_redundant_dependency (test_profile.ProfileTests.test_patch_preserves_redundant_dependency) ... ok
+test_symlink_dependency_outside_project_rejected_without_source_changes (test_profile.ProfileTests.test_symlink_dependency_outside_project_rejected_without_source_changes) ... ok
+test_symlink_dependency_within_project_keeps_declared_path (test_profile.ProfileTests.test_symlink_dependency_within_project_keeps_declared_path) ... ok
+test_symlink_directory_outside_project_rejected (test_profile.ProfileTests.test_symlink_directory_outside_project_rejected) ... ok
+test_unchanged_reuses_both_targets (test_profile.ProfileTests.test_unchanged_reuses_both_targets) ... ok
+test_unsafe_dependency_rejected (test_profile.ProfileTests.test_unsafe_dependency_rejected) ... ok
+test_unsupported_configuration_rejected (test_profile.ProfileTests.test_unsupported_configuration_rejected) ... ok
+test_redundant_only_produces_no_patch (test_profile.Student241880528E8Tests.test_redundant_only_produces_no_patch) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.214s
+
+OK

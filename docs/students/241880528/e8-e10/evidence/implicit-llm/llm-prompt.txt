@@ -1,0 +1,46 @@
+请修复下面Makefile中的缺失依赖，修改应简洁，尽量保留原来的变量和模式规则风格。
+对于隐式声明（例如 %.o: %.c），考虑使用.d文件进行动态依赖跟踪。不要将每个对象目标的头文件依赖逐一硬编码。
+保持默认构建目标为app，保留编译选项；只修改Makefile，不要修改C源码或头文件。clean应清理新增的生成文件。
+请返回完整修复后的Makefile，并解释修改原因。候选尚未验证，请勿声称已通过测试。
+
+原始Makefile：
+```makefile
+CC = gcc
+CFLAGS = -O0
+OBJS = main.o helper.o
+
+app: $(OBJS)
+	$(CC) $(OBJS) -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f $(OBJS) app
+```
+
+缺失依赖报告：
+```json
+{
+  "commit": "87011bfd2c558b0695d0ea8ddd73823f6098a71e",
+  "source": "gcc -MM plus GNU Make database; classroom sample comparison",
+  "scope": "main.o project-local prerequisites",
+  "actual": [
+    "main.c",
+    "config.h"
+  ],
+  "declared": [
+    "main.c"
+  ],
+  "findings": [
+    {
+      "type": "MISSING",
+      "target": "main.o",
+      "dependency": "config.h"
+    }
+  ]
+}
+```
+
+补充观察：首次构建输出1；仅把config.h中的VALUE改为2后，make app不重新编译，仍输出1；clean build后输出2。
