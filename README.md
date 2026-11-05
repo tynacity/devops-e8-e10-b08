@@ -2,7 +2,7 @@
 
 本仓库承接 [原 E5–E7 仓库](https://github.com/ISSUE808/devops-e5-e7-b08) 的完整提交历史，以原最终提交 `3fdc90f` 为起点，新增教师 E8–E10 实验和成员 4（241880492）的贡献。原 E7 workflow 保留，新 `e8e10-quality-gate` 同时验证 A/B 两轨三个阶段。
 
-本次入口：[组内验收索引](docs/E8-E10/验收索引.md)、[成员 4 个人报告](docs/students/241880492/e8-e10/个人报告.md)、[决策记录](docs/students/241880492/e8-e10/ADR.md)、[AI 使用记录](docs/students/241880492/e8-e10/AI_USAGE.md)。成员 1（241880528）的 E8 贡献已通过 [PR #2](https://github.com/tynacity/devops-e8-e10-b08/pull/2) 合并；成员 2、3 仍待交接，整组验收尚未完成。
+本次入口：[组内验收索引](docs/E8-E10/验收索引.md)、[成员 4 个人报告](docs/students/241880492/e8-e10/个人报告.md)、[决策记录](docs/students/241880492/e8-e10/ADR.md)、[AI 使用记录](docs/students/241880492/e8-e10/AI_USAGE.md)。成员 1（241880528）的 E8 贡献已通过 [PR #2](https://github.com/tynacity/devops-e8-e10-b08/pull/2) 合并；成员 2（241880529）的 E9 去重、隐式规则扩展及个人证据已通过 [PR #4](https://github.com/tynacity/devops-e8-e10-b08/pull/4) 验收合并。成员 3 仍待交接，整组验收尚未完成。
 
 当前 GitHub 地址由成员 4 新建，用于本阶段 CI 和 PR；[GitLab E8-E10-B](https://git.nju.edu.cn/noth1ng/devops_labs08/-/tree/E8-E10-B) 保留先前公共基线。教师手册要求沿用原 GitHub 仓库，最终验收前需说明本次地址变更并确认接受。旧 PR 和 Actions 记录留在原仓库，新仓库的提交历史不替代旧平台证据。
 
