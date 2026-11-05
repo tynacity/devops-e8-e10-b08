@@ -1,0 +1,32 @@
+{
+    "pr_url":  "https://github.com/tynacity/devops-e8-e10-b08/pull/6",
+    "pr_number":  6,
+    "source_sha":  "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+    "workflows":  [
+                      {
+                          "conclusion":  "success",
+                          "createdAt":  "2026-11-05T16:19:22Z",
+                          "databaseId":  42063199771,
+                          "event":  "pull_request",
+                          "headSha":  "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+                          "status":  "completed",
+                          "url":  "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/42063199771",
+                          "workflowName":  "E7 B quality gate"
+                      },
+                      {
+                          "conclusion":  "success",
+                          "createdAt":  "2026-11-05T16:19:22Z",
+                          "databaseId":  42063199503,
+                          "event":  "pull_request",
+                          "headSha":  "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+                          "status":  "completed",
+                          "url":  "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/42063199503",
+                          "workflowName":  "E8-E10 teaching validation"
+                      }
+                  ],
+    "pr_ci_passed":  true,
+    "artifacts_downloaded":  true,
+    "evidence_directory":  "C:\\Users\\ISSUE\\Desktop\\实验论文\\repo_e8_e10\\work\\ci-e8e10\\pr-6-bf8135cdf5b44bd8a4bed399d0cebbc8",
+    "merged":  false,
+    "report_updated":  false
+}

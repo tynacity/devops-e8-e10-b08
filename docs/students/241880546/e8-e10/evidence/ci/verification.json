@@ -1,0 +1,31 @@
+{
+  "verified_on": "2026-11-06",
+  "pr_number": 6,
+  "head_sha": "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+  "artifact_checkout_sha": "b6803cd27f583f3d8d1efb61e45dad9dd04e8d1b",
+  "checked_download_files": 368,
+  "backup_file_count": 369,
+  "unit_tests": 22,
+  "personal_test_passed": true,
+  "both_pr_workflows_passed": true,
+  "b_e10_rows": 3,
+  "a_e10_rows": 30,
+  "backup_sha256": "456fc17c64cb7c9e994bea88419a87671c0f9082e6ef02fe76b491b8960b3ac0",
+  "artifacts": [
+    {
+      "run_id": 42063199771,
+      "id": 13430619552,
+      "name": "e7-b-evidence-42063199771-1",
+      "github_reported_digest": "sha256:0dead431399ea478c5e08a96bc15bc4f0ad6a99c31bdb20977932d08853a217f",
+      "file_count": 143
+    },
+    {
+      "run_id": 42063199503,
+      "id": 13431769831,
+      "name": "e8e10-evidence-42063199503",
+      "github_reported_digest": "sha256:13af15a1fd864cc305ec11ba95aaa776375cdaf05b0e320d577174c8ad3721c3",
+      "file_count": 217
+    }
+  ],
+  "scope": "Local verification of the downloaded artifacts; GitHub digests are metadata, not a verification of the original ZIP bytes"
+}

@@ -1,8 +1,8 @@
 # 决策记录：E10 候选验收与失败源文件保护
 
-记录人：滕明杰，241880546；B08 成员 3。日期：2026-11-05。
+记录人：滕明杰，241880546；B08 成员 3。日期：2026-11-06。
 
-状态：方案已在本轮教学样例验证。
+状态：方案已在服务器教学样例及 PR #6 对应提交的 CI 中验证。
 
 ## 背景与约束
 
@@ -40,6 +40,7 @@
 - 新增候选 `patch_applies=true`；GCC 对 `-fmember3-reject-probe` 报错；`accepted=false, rollback=true, source_unchanged=true`。
 - 7 个输入文件的前后哈希一致；1 项定向测试及完整 22 项均通过。
 - E8 补跑 8 步通过，旧报告按预期拒绝；E9 补跑 6 步通过，三种风格及 macro 应用副本符合预期。补跑前后 315 个受保护文件（含 E10 内部 Git 文件和路径记录）哈希一致。
+- 个人提交 `677c2191563cb636f3f9ac4c44e45c774eafaa7c` 的 PR #6 两项检查均为 success；E8–E10 CI 的完整 22 项测试包含本人新增用例，B E10 gate 三场景及动态重检通过。运行 API 的 headSha 与 artifact 检出 SHA 分别记录，见个人报告第 9 节。
 
 证据：[三场景 gate](evidence/baseline/gate.json)、[新增验证报告](evidence/personal/validation.json)、[源文件对照](evidence/personal/source-comparison.json)、[完整测试日志](evidence/personal/full-suite.log)、[E8/E9 汇总](evidence/supplement/summary.json)、[原 E10 保持检查](evidence/supplement/protection-check.json)。
 
@@ -49,4 +50,4 @@
 
 E8/E9 补跑属于个人基础验证，没有将队友已有的相应自主扩展记作本人新增代码贡献。
 
-当前证据来自服务器功能测试，不是个人 GitHub CI 或课程最终验收。
+当前证据包括服务器功能测试与个人 PR 的 GitHub CI；[运行元数据](evidence/ci/e8e10-run.json)、[22 项日志](evidence/ci/unit-tests.log)和 [PR 快照](evidence/ci/pr.json)已保存。CI 通过不代替成员 4 的合并处理和课程最终验收；后补文档产生新提交时仍需检查最新 head 的结果。

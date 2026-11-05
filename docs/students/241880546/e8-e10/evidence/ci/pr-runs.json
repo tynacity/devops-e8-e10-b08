@@ -1,0 +1,22 @@
+[
+    {
+        "conclusion":  "success",
+        "createdAt":  "2026-11-05T16:19:22Z",
+        "databaseId":  42063199771,
+        "event":  "pull_request",
+        "headSha":  "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+        "status":  "completed",
+        "url":  "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/42063199771",
+        "workflowName":  "E7 B quality gate"
+    },
+    {
+        "conclusion":  "success",
+        "createdAt":  "2026-11-05T16:19:22Z",
+        "databaseId":  42063199503,
+        "event":  "pull_request",
+        "headSha":  "677c2191563cb636f3f9ac4c44e45c774eafaa7c",
+        "status":  "completed",
+        "url":  "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/42063199503",
+        "workflowName":  "E8-E10 teaching validation"
+    }
+]

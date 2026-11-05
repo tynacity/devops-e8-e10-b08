@@ -1,0 +1,7 @@
+{
+  "accepted": false,
+  "checks": {},
+  "error": "COMMAND_FAILED ['git', 'apply', '--check', '/course/work/B-e10/broken.patch']\nerror: No valid patches in input (allow with \"--allow-empty\")\n",
+  "source_unchanged": true,
+  "rollback": true
+}

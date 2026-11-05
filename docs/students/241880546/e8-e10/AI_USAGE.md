@@ -2,7 +2,7 @@
 
 记录人：滕明杰；校区：苏州校区；小组：B08；本轮主责：E10。
 
-辅助过程涉及 2026-11-03—05；整理日期：2026-11-05。
+辅助过程涉及 2026-11-03—06；整理日期：2026-11-06。
 
 ## 工具、模型与输入
 
@@ -18,12 +18,15 @@
 4. 辅助编写 `Student241880546E10Tests`。采用“候选可应用但非法编译参数导致失败”的独立输入，以及 Patch 应用、错误原因、拒绝标志和源文件字节对照断言。
 5. 辅助核对下载归档的 SHA-256、JSON、测试日志、7 个输入文件的字节对照及服务器/本地测试文件一致性，并整理交付文档。
 6. 对照个人报告模板补充 E8/E9 基础流程编排，分别新建 OUT，核对旧报告拒绝、三种声明风格及原 E10 证据保持；根据下载的真实结果恢复三阶段五列总表。
+7. 辅助编写 PR 创建与 CI 证据下载脚本，核对本人回传结果、两项 pull_request 运行元数据、artifact 和 CI 测试日志；分别记录 PR head、artifact 检出版本和本地备份校验值。
 
 采纳的建议包括：保留旧证据、用新目录运行个人用例、保留失败 sandbox、使用本人的局部认证，以及在未提交阶段以“基线 SHA + 补丁/文件哈希”记录源码身份。没有记录额外被否决的模型修复候选；未把关闭 TLS、强制重置或借用他人认证作为处理方式。
 
 ## 人工参与与修改
 
 本人确认职责和身份信息，在自己的终端执行启动命令、输入 SSH 密码、完成 GitHub 授权并回传实际结果。编排脚本自动执行内部步骤，因此不将这些内部命令描述为本人手工逐条输入。
+
+PR #6 由本人在电脑 PowerShell 运行 `COMPLETE_PR.ps1` 后创建。该脚本使用本人已登录的 GitHub CLI，等待两项检查并下载 artifact；未执行合并。
 
 新增测试和运行脚本由 AI 辅助编写；本轮没有单独记录本人对测试代码的额外手工改写。
 
@@ -38,6 +41,8 @@
 | 个人新增编译失败候选，`work/e10-B-member3.JsgLLh` | Patch 可应用，构建报错，候选拒绝；7 个源文件字节保持 | [实际验证](evidence/personal/validation.json)、[字节对照](evidence/personal/source-comparison.json) |
 | 定向与完整测试 | 1 项及 22 项均为 OK，退出码 0 | [定向日志](evidence/personal/targeted-tests.log)、[完整日志](evidence/personal/full-suite.log) |
 | 归档下载与核对 | E10 及 E8/E9 原始包 SHA-256 一致，服务器测试文件与本地一致 | [E10 归档](evidence/server-evidence.tar.gz)、[E8/E9 归档](evidence/e8-e9-server-evidence.tar.gz)、[校验值](evidence/SHA256SUMS)、[源码身份](evidence/personal/source-state.txt) |
+| PR #6 的两项 CI，head=`677c2191563cb636f3f9ac4c44e45c774eafaa7c` | E7、E8–E10 检查均 success；CI 完整 22 项测试含本人新增用例；B E10 三场景通过且动态重检无 MISSING | [E7 运行](evidence/ci/e7-run.json)、[E8–E10 运行](evidence/ci/e8e10-run.json)、[CI 日志](evidence/ci/unit-tests.log)、[B gate](evidence/ci/B-e10-gate.json) |
+| PR artifact 下载与核对 | 两项 artifact 已下载；核对 368 项文件，保存 369 文件的完整下载目录备份；PR head 与 artifact 检出版本分开记录 | [核对结果](evidence/ci/verification.json)、[CI 下载备份](evidence/pr6-ci-evidence.tar.gz)、[校验值](evidence/SHA256SUMS) |
 
 服务器容器中的主要测试命令为 `python3 -m unittest test_profile.Student241880546E10Tests -v` 和 `python3 -m unittest discover -s labs/e8e10 -p test_profile.py -v`；完整容器参数见 [个人报告](个人报告.md)。
 
