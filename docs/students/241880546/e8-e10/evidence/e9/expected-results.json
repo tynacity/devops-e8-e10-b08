@@ -1,0 +1,8 @@
+{
+  "direct": "add config.h to main.o prerequisite line",
+  "macro": "add config.h to DEPS definition; preserve target variable reference",
+  "mixed": "add config.h to main.o prerequisite line; preserve HEADERS reference",
+  "source_bytes_unchanged": true,
+  "apply_demo": "apply macro.patch only to an extra copy",
+  "scope": "E9 B reference steps 1-6; personal extension is not claimed here"
+}

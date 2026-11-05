@@ -1,0 +1,19 @@
+{
+  "stage": "E9",
+  "track": "B",
+  "passed": true,
+  "styles": [
+    "direct",
+    "macro",
+    "mixed"
+  ],
+  "commit_match_all": true,
+  "apply_check_all": true,
+  "source_projects_unchanged": true,
+  "apply_demo_passed": true,
+  "fixture_commits": {
+    "direct": "8ef11b64f0b8171bd43fec209dd23cbb230910ff",
+    "macro": "dae42156f92860084ed0f0d109b61f1856fceb5c",
+    "mixed": "2841df22e0b55f62278ff01d3741cd51eb997da2"
+  }
+}

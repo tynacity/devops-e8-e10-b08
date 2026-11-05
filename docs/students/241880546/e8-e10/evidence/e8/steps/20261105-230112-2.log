@@ -1,0 +1,28 @@
+OUT /course/work/e8-B-manual.IaiXfW
+INPUT Makefile 
+CFLAGS = -O0
+app: main.o helper.o
+	gcc main.o helper.o -o app
+main.o: main.c unused.h
+	gcc $(CFLAGS) -c main.c -o main.o
+helper.o: helper.c
+	gcc $(CFLAGS) -c helper.c -o helper.o
+.PHONY: clean
+clean:
+	rm -f main.o helper.o app
+
+INPUT main.c 
+#include <stdio.h>
+#include "config.h"
+int helper(void);
+int main(void){printf("%d\n",VALUE+helper());return 0;}
+
+INPUT config.h 
+#define VALUE 1
+
+INPUT helper.c 
+int helper(void){return 0;}
+
+FIXTURE_COMMIT 6b3ae0f3397e28787451c298978ec7f629c0b4f8
+EXPECTED MISSING main.o/config.h; REDUNDANT main.o/unused.h; program output 1
+STEP_EXIT_CODE=0

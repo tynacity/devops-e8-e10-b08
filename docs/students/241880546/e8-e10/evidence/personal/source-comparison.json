@@ -1,0 +1,37 @@
+{
+  ".gitignore": {
+    "before_sha256": "d7bfd39146ded6c9700eb81300e82345464db46cda1e775b8a114a811311bafe",
+    "after_sha256": "d7bfd39146ded6c9700eb81300e82345464db46cda1e775b8a114a811311bafe",
+    "identical": true
+  },
+  "Makefile": {
+    "before_sha256": "9206301c23ce4cb93c3fc1434037e475cf69f53e132dc541f6028d05e30258b2",
+    "after_sha256": "9206301c23ce4cb93c3fc1434037e475cf69f53e132dc541f6028d05e30258b2",
+    "identical": true
+  },
+  "config.h": {
+    "before_sha256": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+    "after_sha256": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+    "identical": true
+  },
+  "extra.h": {
+    "before_sha256": "5e20ae92639ee989af5638bd0308a6a86e71bdb4345f60b962ba9db7265e4f7c",
+    "after_sha256": "5e20ae92639ee989af5638bd0308a6a86e71bdb4345f60b962ba9db7265e4f7c",
+    "identical": true
+  },
+  "helper.c": {
+    "before_sha256": "90a60f959d215b0b91807c6dd2c94acf6684a9fe26629dc1591e9b2ea773d78c",
+    "after_sha256": "90a60f959d215b0b91807c6dd2c94acf6684a9fe26629dc1591e9b2ea773d78c",
+    "identical": true
+  },
+  "main.c": {
+    "before_sha256": "0da2f94ca7b27cfeae51e4842a4a39f527929b28a82f40b3796d308cc72c1379",
+    "after_sha256": "0da2f94ca7b27cfeae51e4842a4a39f527929b28a82f40b3796d308cc72c1379",
+    "identical": true
+  },
+  "unused.h": {
+    "before_sha256": "3f7fec0991b34d614462e29b450c76638f07171936a12df337c578c2d1481b37",
+    "after_sha256": "3f7fec0991b34d614462e29b450c76638f07171936a12df337c578c2d1481b37",
+    "identical": true
+  }
+}

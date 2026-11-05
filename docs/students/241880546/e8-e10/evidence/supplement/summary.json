@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": "E8/E9 B reference steps",
+  "source_sha": "fb968b7e0d2b406905003d3956b3e177bea8e416",
+  "e8_out": "work/e8-B-manual.IaiXfW",
+  "e9_out": "work/e9-B-manual.Lc0bWf",
+  "e8": {
+    "stage": "E8",
+    "track": "B",
+    "passed": true,
+    "commit_match": true,
+    "exact_md_rd": true,
+    "plan_style": "direct",
+    "apply_check": true,
+    "stale_report_rejected": true,
+    "source_files_unchanged": 7,
+    "fixture_commit": "6b3ae0f3397e28787451c298978ec7f629c0b4f8"
+  },
+  "e9": {
+    "stage": "E9",
+    "track": "B",
+    "passed": true,
+    "styles": [
+      "direct",
+      "macro",
+      "mixed"
+    ],
+    "commit_match_all": true,
+    "apply_check_all": true,
+    "source_projects_unchanged": true,
+    "apply_demo_passed": true,
+    "fixture_commits": {
+      "direct": "8ef11b64f0b8171bd43fec209dd23cbb230910ff",
+      "macro": "dae42156f92860084ed0f0d109b61f1856fceb5c",
+      "mixed": "2841df22e0b55f62278ff01d3741cd51eb997da2"
+    }
+  },
+  "e10_evidence_unchanged": true,
+  "protected_file_count": 315,
+  "personal_extension": "Existing E10 compile-failure test; no E8/E9 extension claimed by this run",
+  "commit_push_pr_performed": false
+}

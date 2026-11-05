@@ -136,6 +136,79 @@ class Student241880529E9Tests(unittest.TestCase):
                     self.assertIn('main.o: $(DEPS)', after.decode())
                 self.assertFalse(any(f['type'] == 'MISSING' for f in scan(project)['findings']))
 
+class Student241880546E10Tests(unittest.TestCase):
+    """Reject an applicable candidate that fails during compilation."""
+
+    def check_compile_failure(self, root):
+        """Use a fresh root; callers can retain it as experiment evidence."""
+        import difflib
+        from lab import validate
+
+        root = Path(root)
+        root.mkdir(parents=True, exist_ok=True)
+        self.assertFalse(any(root.iterdir()), "请使用新的空证据目录")
+
+        project = root / "project"
+        fixture(project)
+        before = {
+            p.name: p.read_bytes()
+            for p in project.iterdir() if p.is_file()
+        }
+        original = (project / "Makefile").read_text()
+
+        target = "main.o: main.c unused.h\n"
+        recipe = "\tgcc $(CFLAGS) -c main.c -o main.o\n"
+        flag = "-fmember3-reject-probe"
+        self.assertEqual(original.count(target), 1)
+        self.assertEqual(original.count(recipe), 1)
+
+        # The invalid flag belongs only to this negative-test candidate.
+        changed = original.replace(
+            target, "main.o: main.c unused.h config.h\n", 1
+        ).replace(
+            recipe,
+            f"\tgcc $(CFLAGS) {flag} -c main.c -o main.o\n",
+            1,
+        )
+        diff = "".join(difflib.unified_diff(
+            original.splitlines(keepends=True),
+            changed.splitlines(keepends=True),
+            fromfile="a/Makefile",
+            tofile="b/Makefile",
+        ))
+        candidate = root / "candidate.patch"
+        candidate.write_text(diff)
+        (root / "source-before.Makefile").write_bytes(before["Makefile"])
+
+        result = validate(project, candidate, root / "validation")
+        (root / "source-after.Makefile").write_bytes(
+            (project / "Makefile").read_bytes()
+        )
+
+        self.assertTrue(result["checks"]["patch_applies"])
+        self.assertFalse(result["checks"].get("build", False))
+        self.assertIn("COMMAND_FAILED", result["error"] or "")
+        self.assertIn(flag, result["error"] or "")
+        self.assertFalse(result["accepted"])
+        self.assertTrue(result["rollback"])
+        self.assertTrue(result["source_unchanged"])
+
+        after = {
+            p.name: p.read_bytes()
+            for p in project.iterdir() if p.is_file()
+        }
+        self.assertEqual(after, before)
+
+        sandbox = root / "validation/sandbox/Makefile"
+        self.assertIn(flag, sandbox.read_text())
+        self.assertIn("unused.h config.h", sandbox.read_text())
+        return result
+
+    def test_compile_failure_rejected_without_source_changes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.check_compile_failure(Path(directory))
+
+
 from test_implicit import ImplicitRepairTests
 
 if __name__=='__main__':unittest.main()

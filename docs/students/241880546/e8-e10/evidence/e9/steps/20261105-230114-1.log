@@ -1,0 +1,28 @@
+INPUT MAKEFILE
+CFLAGS = -O0
+app: main.o helper.o
+	gcc main.o helper.o -o app
+main.o: main.c unused.h
+	gcc $(CFLAGS) -c main.c -o main.o
+helper.o: helper.c
+	gcc $(CFLAGS) -c helper.c -o helper.o
+.PHONY: clean
+clean:
+	rm -f main.o helper.o app
+
+PATCH
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ CFLAGS = -O0
+ app: main.o helper.o
+ 	gcc main.o helper.o -o app
+-main.o: main.c unused.h
++main.o: main.c unused.h config.h
+ 	gcc $(CFLAGS) -c main.c -o main.o
+ helper.o: helper.c
+ 	gcc $(CFLAGS) -c helper.c -o helper.o
+
+PLAN [{'target': 'main.o', 'dependency': 'config.h', 'style': 'direct'}]
+STYLE_PASS direct
+STEP_EXIT_CODE=0
