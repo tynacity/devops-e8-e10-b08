@@ -1,0 +1,26 @@
+test_buildable_unfixed_candidate_is_rejected (test_implicit.ImplicitRepairTests) ... ok
+test_candidate_tracks_existing_and_new_transitive_headers (test_implicit.ImplicitRepairTests) ... ok
+test_crlf_response_bytes_preserved (test_implicit.ImplicitRepairTests) ... ok
+test_recipe_cannot_modify_source (test_implicit.ImplicitRepairTests) ... ok
+test_refuses_changed_project (test_implicit.ImplicitRepairTests) ... ok
+test_refuses_mismatched_response_provenance (test_implicit.ImplicitRepairTests) ... ok
+test_reproduces_stale_binary_and_binds_prompt (test_implicit.ImplicitRepairTests) ... ok
+test_undeclared_makefile_input_is_rejected (test_implicit.ImplicitRepairTests) ... ok
+test_unused_depfiles_do_not_qualify (test_implicit.ImplicitRepairTests) ... ok
+test_include_added_invalidates_cache (test_profile.ProfileTests) ... ok
+test_independent_known_edges (test_profile.ProfileTests) ... ok
+test_old_report_rejected (test_profile.ProfileTests) ... ok
+test_patch_preserves_redundant_dependency (test_profile.ProfileTests) ... ok
+test_symlink_dependency_outside_project_rejected_without_source_changes (test_profile.ProfileTests) ... ok
+test_symlink_dependency_within_project_keeps_declared_path (test_profile.ProfileTests) ... ok
+test_symlink_directory_outside_project_rejected (test_profile.ProfileTests) ... ok
+test_unchanged_reuses_both_targets (test_profile.ProfileTests) ... ok
+test_unsafe_dependency_rejected (test_profile.ProfileTests) ... ok
+test_unsupported_configuration_rejected (test_profile.ProfileTests) ... ok
+test_redundant_only_produces_no_patch (test_profile.Student241880528E8Tests) ... ok
+test_duplicate_missing_findings_produce_one_edit_per_style (test_profile.Student241880529E9Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 20.915s
+
+OK

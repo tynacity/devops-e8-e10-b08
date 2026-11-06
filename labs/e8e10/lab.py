@@ -75,10 +75,11 @@ def scan(p, old=None):
 
 def patch(p,report):
     if report['commit']!=run(['git','rev-parse','HEAD'],p).strip(): raise ValueError('STALE_REPORT')
-    original=(p/'Makefile').read_text(); changed=original; edits=[]
+    original=(p/'Makefile').read_text(); changed=original; edits=[]; seen=set()
     for f in report['findings']:
         if f['type']!='MISSING': continue
         t,d=f['target'],f['dependency']
+        if (t,d) in seen: continue
         if not re.fullmatch(r'[\w./-]+',d) or '..' in Path(d).parts or Path(d).is_absolute(): raise ValueError('UNSAFE_PATH')
         if not (p/d).resolve().is_relative_to(p.resolve()): raise ValueError('UNSAFE_PATH')
         if not (p/d).is_file(): raise ValueError('MISSING_INPUT')
@@ -92,6 +93,7 @@ def patch(p,report):
         else:
             changed=changed[:m.end()]+' '+d+changed[m.end():]; style='mixed' if macros else 'direct'
         edits.append({'target':t,'dependency':d,'style':style})
+        seen.add((t,d))
     diff=''.join(difflib.unified_diff(original.splitlines(True),changed.splitlines(True),fromfile='a/Makefile',tofile='b/Makefile'))
     return diff,edits
 

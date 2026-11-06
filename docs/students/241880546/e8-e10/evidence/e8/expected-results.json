@@ -1,0 +1,24 @@
+{
+  "findings": [
+    [
+      "MISSING",
+      "main.o",
+      "config.h"
+    ],
+    [
+      "REDUNDANT",
+      "main.o",
+      "unused.h"
+    ]
+  ],
+  "patch_plan": [
+    {
+      "target": "main.o",
+      "dependency": "config.h",
+      "style": "direct"
+    }
+  ],
+  "old_report_error": "STALE_REPORT",
+  "source_bytes_unchanged": true,
+  "scope": "E8 B reference steps 1-8; personal extension is not claimed here"
+}

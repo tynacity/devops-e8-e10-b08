@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "checks": {
+    "patch_applies": true
+  },
+  "error": "COMMAND_FAILED ['make', 'app']\ngcc -O0 -fmember3-reject-probe -c main.c -o main.o\ngcc: error: unrecognized command-line option ‘-fmember3-reject-probe’\nmake: *** [Makefile:5: main.o] Error 1\n",
+  "source_unchanged": true,
+  "rollback": true
+}

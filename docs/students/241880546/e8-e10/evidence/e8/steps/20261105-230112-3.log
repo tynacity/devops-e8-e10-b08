@@ -1,0 +1,3 @@
+REPORT_COMMIT 6b3ae0f3397e28787451c298978ec7f629c0b4f8
+FINDINGS [{'type': 'MISSING', 'target': 'main.o', 'dependency': 'config.h'}, {'type': 'REDUNDANT', 'target': 'main.o', 'dependency': 'unused.h'}]
+STEP_EXIT_CODE=0
