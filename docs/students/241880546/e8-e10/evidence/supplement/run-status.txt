@@ -1,0 +1,4 @@
+EXIT_CODE=0
+PHASE=complete
+E8_OUT=work/e8-B-manual.IaiXfW
+E9_OUT=work/e9-B-manual.Lc0bWf

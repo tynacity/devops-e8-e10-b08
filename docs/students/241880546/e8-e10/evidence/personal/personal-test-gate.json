@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "targeted_tests": 1,
+  "full_suite_tests": 22,
+  "scenario": "applicable-candidate-compilation-failure",
+  "source_base_commit": "fb968b7e0d2b406905003d3956b3e177bea8e416",
+  "test_file_sha256": "680b975276aaae9eff7700347f54e413036f01c54ce0b61e1944cbcded8875f5",
+  "test_patch_committed": false,
+  "fixture_commit": "7ce6cd0cc0d2d50724868ec46a797d65e5a478c9"
+}
