@@ -19,7 +19,9 @@ class Failure(ValueError):
 
 def save(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    temporary=path.with_name('.'+path.name+'.'+uuid.uuid4().hex+'.tmp')
+    temporary.write_text(json.dumps(obj, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    temporary.replace(path)
 
 def artifact(path, out, job_id):
     return {'uri': f'artifact://{job_id}/{path.relative_to(out).as_posix()}',
@@ -59,9 +61,12 @@ def snapshot(repo, revision, dest, logs):
         raise Failure('UNSUPPORTED_PROJECT', 'Expected main.c/helper.c/config.h and explicit Make rules')
     return sha
 
-def full(project, folder):
-    from buildchecker.fullcheck import full_check
-    report = full_check(project, folder)
+def full(project, folder, runtime=None):
+    if runtime:
+        report = runtime.run('full', project, evidence=folder)
+    else:
+        from buildchecker.fullcheck import full_check
+        report = full_check(project, folder)
     if report.get('status') != 'SUCCEEDED':
         raise Failure('FULL_CHECK_FAILED', str(report.get('error', report.get('error_code'))))
     return report
@@ -76,6 +81,7 @@ def execute(request, out, job_id=None):
         raise Failure('OUTPUT_EXISTS', 'Use a fresh output directory')
     out.mkdir(parents=True, exist_ok=True)
     result = {'schema_version':'e11e12-1','job_id':job_id,'trace_id':trace_id,'status':'RUNNING','stages':[]}
+    runtime = None
     save(out/'request.json',request)
     def stage(name, commit, payload, files=()):
         envelope = {'schema_version':'e11e12-1','job_id':job_id,'trace_id':trace_id,'kind':name,
@@ -102,9 +108,12 @@ def execute(request, out, job_id=None):
             if draft['status']!='SUCCEEDED':
                 raise Failure('DRAFT_FAILED',draft.get('error','Inspect draft-build logs'))
             stage('draft',target_sha,draft,[out/'draft-build/result.json'])
+            from draft_runtime import DraftRuntime
+            runtime = DraftRuntime(ROOT, out, draft['attempts'][-1]['image_id'])
+            result['execution_image_id'] = runtime.image_id
         if mode in ('e11-a','e12'):
-            base_full=full(base,out/'baseline-full')
-            old=scan(base)
+            base_full=full(base,out/'baseline-full',runtime)
+            old=runtime.run('scan',base) if runtime else scan(base)
             edges=json.loads((out/'baseline-full/actual-graph.json').read_text())
             projected={t:sorted({e['dependency'] for e in edges if e['target']==t}) for t in ('main.o','helper.o')}
             if projected != old['actual']:
@@ -113,9 +122,9 @@ def execute(request, out, job_id=None):
             save(out/'baseline-cache.json',old)
             baseline=stage('full-check',base_sha,base_full,[out/'baseline-full/actual-graph.json',out/'baseline-full/findings.json',out/'baseline-cache.json'])
             check_envelope(baseline,base_sha,'full-check')
-            current=scan(target,old)
+            current=runtime.run('scan',target,cache=out/'baseline-cache.json') if runtime else scan(target,old)
             save(out/'incremental-report.json',current)
-            reference=full(target,out/'target-full')
+            reference=full(target,out/'target-full',runtime)
             if normalized(reference['findings']) != normalized(current['findings']):
                 raise Failure('FINDINGS_MISMATCH','Incremental/full object-target findings differ')
             md_envelope=stage('incremental-check',target_sha,current,[out/'incremental-report.json',out/'target-full/findings.json'])
@@ -135,16 +144,17 @@ def execute(request, out, job_id=None):
             check_envelope(md_envelope,target_sha)
             current=md_envelope['data']
             before=(target/'Makefile').read_bytes()
-            diff,edits=patch(target,current)
+            generated=runtime.run('patch',target,report=out/(md_envelope['kind']+'.json'))
+            diff,edits=generated['diff'],generated['edits']
             if not diff:
                 raise Failure('NO_MISSING_DEPENDENCY','No MD to repair')
             patchfile=out/'candidate.patch';patchfile.write_text(diff,encoding='utf-8')
             save(out/'repair-plan.json',edits)
             stage('repair',target_sha,{'edits':edits,'input_report':artifact(out/(md_envelope['kind']+'.json'),out,job_id)},[patchfile,out/'repair-plan.json'])
-            verdict=validate(target,patchfile,out/'validation')
+            verdict=runtime.run('validate',target,patch=patchfile,evidence=out/'validation')
             if not verdict['accepted']:
                 raise Failure('REPAIR_REJECTED',str(verdict))
-            final=full(target,out/'final-full')
+            final=full(target,out/'final-full',runtime)
             if any(f['type']=='MISSING' for f in final['findings']):
                 (target/'Makefile').write_bytes(before)
                 raise Failure('RECHECK_FAILED','MD remains; working-copy declaration restored')
@@ -152,6 +162,8 @@ def execute(request, out, job_id=None):
         result['status']='SUCCEEDED'
     except (Failure,ValueError,OSError,KeyError,subprocess.TimeoutExpired) as exc:
         result.update(status='TIMED_OUT' if isinstance(exc,subprocess.TimeoutExpired) else 'FAILED',error={'code':getattr(exc,'code','EXECUTION_FAILED'),'message':str(exc)})
+    if runtime:
+        save(out/'execution-runtime.json',{'image_id':runtime.image_id,'operations':runtime.records})
     result['artifacts']=[artifact(p,out,job_id) for p in sorted(out.rglob('*')) if p.is_file() and '.git' not in p.parts and not p.is_symlink()]
     save(out/'result.json',result)
     return result
