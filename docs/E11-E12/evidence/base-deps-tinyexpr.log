@@ -1,0 +1,2 @@
+$ gcc -Wall -Wshadow -O2 -MM -MT tinyexpr.o tinyexpr.c
+tinyexpr.o: tinyexpr.c tinyexpr.h

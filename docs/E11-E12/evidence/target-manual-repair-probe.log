@@ -1,0 +1,7 @@
+$ make example
+gcc -c -Wall -Wshadow -O2 example.c -o example.o
+In file included from example.c:1:
+tinyexpr.h:1:2: error: #error COURSE_HEADER_PROBE
+    1 | #error COURSE_HEADER_PROBE
+      |  ^~~~~
+make: *** [Makefile:40: example.o] Error 1
