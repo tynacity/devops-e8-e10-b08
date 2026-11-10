@@ -1,0 +1,75 @@
+{
+  "description": "Derived navigation index of original HTTP request/response files",
+  "cases": [
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 202,
+      "metadata": "http/003.json",
+      "response": "http/003.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 202,
+      "metadata": "http/004.json",
+      "response": "http/004.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 409,
+      "metadata": "http/005.json",
+      "response": "http/005.body"
+    },
+    {
+      "method": "GET",
+      "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/artifacts",
+      "http_status": 409,
+      "metadata": "http/006.json",
+      "response": "http/006.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 400,
+      "metadata": "http/007.json",
+      "response": "http/007.body"
+    },
+    {
+      "method": "GET",
+      "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/files/%2e%2e/state.json",
+      "http_status": 404,
+      "metadata": "http/022.json",
+      "response": "http/022.body"
+    },
+    {
+      "method": "GET",
+      "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/files/.git/config",
+      "http_status": 404,
+      "metadata": "http/023.json",
+      "response": "http/023.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 202,
+      "metadata": "http/024.json",
+      "response": "http/024.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 202,
+      "metadata": "http/025.json",
+      "response": "http/025.body"
+    },
+    {
+      "method": "POST",
+      "route": "/v1/jobs",
+      "http_status": 202,
+      "metadata": "http/033.json",
+      "response": "http/033.body"
+    }
+  ]
+}

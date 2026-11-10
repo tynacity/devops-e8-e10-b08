@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "source_sha": "12c3c99c0027c189a8ff4d5ff307052469e40b8b",
+  "archive_sha256": "0b99e88264aeb381f4f0fe39bb366fd34ea195a5a94713f09e205193b034ddaf",
+  "verified_files": 542,
+  "cli": {
+    "job_id": "job-01ef50021cbe48cf86ad859ad7d6cd12",
+    "trace_id": "trace-db23f38b4a7d438d98c21f2343a8e8d5",
+    "execution_image_id": "sha256:cbfd2923359bc49604aa6661414c7df7771e1e8299d871a489b7b473f4ee295a"
+  },
+  "api": {
+    "passed": true,
+    "job_id": "job-8ac8f58436a94373b5ea9aed3d94198d",
+    "trace_id": "trace-73bc4064a6b641cbbfd54af38d34618b",
+    "image_id": "sha256:7f331e8929b60b7d8bf9ca100ca1a98578cbb6f95391a77f72a715b792e3f3f5",
+    "downloaded_files": [
+      "draft.json",
+      "full-check.json",
+      "incremental-check.json",
+      "repair.json",
+      "recheck.json",
+      "candidate.patch",
+      "validation/validation.json",
+      "execution-runtime.json",
+      "incremental-report.json"
+    ]
+  },
+  "checks": {
+    "cli_five_stages": true,
+    "http_idempotency_conflict_download_path": true,
+    "consumer_four_rejections": true,
+    "actual_restart_finished_and_unfinished": true
+  },
+  "ssh_tunnel": {
+    "passed": true,
+    "job_id": "job-8ac8f58436a94373b5ea9aed3d94198d",
+    "trace_id": "trace-73bc4064a6b641cbbfd54af38d34618b",
+    "image_id": "sha256:7f331e8929b60b7d8bf9ca100ca1a98578cbb6f95391a77f72a715b792e3f3f5",
+    "downloaded_files": [
+      "draft.json",
+      "full-check.json",
+      "incremental-check.json",
+      "repair.json",
+      "recheck.json",
+      "candidate.patch",
+      "validation/validation.json",
+      "execution-runtime.json",
+      "incremental-report.json"
+    ],
+    "transport": "SSH local 18080 to server loopback 18546",
+    "run_id": "ae092326febb"
+  },
+  "formal_A_TinyExpr_E12": "PENDING"
+}
