@@ -2,3 +2,4 @@
 docs/E11-E12/evidence/* -text
 labs/e11e12/** text eol=lf
 run_e11e12.py text eol=lf
+fixtures/e11e12/tinyexpr-candidate.Dockerfile -text
