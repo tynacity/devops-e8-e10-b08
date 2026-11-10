@@ -1,0 +1,41 @@
+{
+  "schema_version": "e11e12-1",
+  "kind": "fixed-md",
+  "status": "SUCCEEDED",
+  "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "data": {
+    "schema_version": "e8e10-1",
+    "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "example.o",
+        "dependency": "tinyexpr.h",
+        "evidence": [
+          {
+            "source": "system_call",
+            "trace_file": "t.430",
+            "line": 117,
+            "pid": 430,
+            "operation": "openat"
+          },
+          {
+            "source": "system_call",
+            "trace_file": "t.431",
+            "line": 31,
+            "pid": 431,
+            "operation": "openat"
+          }
+        ],
+        "declared_dependencies": [
+          "example.c"
+        ]
+      }
+    ]
+  },
+  "origin": {
+    "purpose": "intentionally incomplete local negative test",
+    "raw_trace_id": "e6-4e54d2ae9556406d82e134920704952e",
+    "raw_report_sha256": "08def2e1bd886f2ea4abeaa25c7be9ab911989c74b3e771d957d1912cd328671"
+  }
+}

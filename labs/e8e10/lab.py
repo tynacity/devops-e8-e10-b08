@@ -73,7 +73,7 @@ def scan(p, old=None):
             'resolved':[list(x) for x in sorted(previous-current)],'refreshed':refreshed,'reused':reused,
             'elapsed_s':time.perf_counter()-start}
 
-def patch(p,report):
+def patch(p,report,*,append_rules_for=()):
     if report['commit']!=run(['git','rev-parse','HEAD'],p).strip(): raise ValueError('STALE_REPORT')
     original=(p/'Makefile').read_text(); changed=original; edits=[]; seen=set()
     for f in report['findings']:
@@ -84,7 +84,13 @@ def patch(p,report):
         if not (p/d).resolve().is_relative_to(p.resolve()): raise ValueError('UNSAFE_PATH')
         if not (p/d).is_file(): raise ValueError('MISSING_INPUT')
         m=re.search(r'^'+re.escape(t)+r': (.*)$',changed,re.M)
-        if not m: raise ValueError('UNSUPPORTED_TARGET')
+        if not m:
+            if t not in append_rules_for: raise ValueError('UNSUPPORTED_TARGET')
+            # A prerequisite-only rule leaves the existing suffix recipe in charge.
+            changed+=('' if changed.endswith('\n') else '\n')+f'{t}: {d}\n'
+            edits.append({'target':t,'dependency':d,'style':'direct'})
+            seen.add((t,d))
+            continue
         raw=m[1]; macros=re.findall(r'\$\((\w+)\)',raw)
         if raw.strip()==('$(%s)'%macros[0] if macros else ''):
             name=macros[0]; vm=re.search(r'^'+name+r' = (.*)$',changed,re.M)
