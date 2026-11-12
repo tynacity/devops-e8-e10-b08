@@ -1,0 +1,130 @@
+{
+  "head": "8aa1dd210d1520e43129085d4cc21b0492bd5a26",
+  "file_manifests": {
+    "fixed-api-ae092326febb": 97,
+    "tinyexpr-ab-8d2fa1f23ff7": 56,
+    "tinyexpr-api-f588070fdc04": 28,
+    "tinyexpr-cli-0970c13ac7dc": 18,
+    "tinyexpr-e11-Q1Ct5Wwi": 24,
+    "tinyexpr-peer-A-047ccf5a": 36,
+    "tinyexpr-peer-B-bfaf459f": 28
+  },
+  "source_binding": {
+    "tinyexpr-cli-0970c13ac7dc": 5,
+    "tinyexpr-api-f588070fdc04": 5
+  },
+  "pipelines": {
+    "fixed-cli": {
+      "job_id": "job-01ef50021cbe48cf86ad859ad7d6cd12",
+      "trace_id": "trace-db23f38b4a7d438d98c21f2343a8e8d5",
+      "provided_stages_verified": [
+        "draft.json",
+        "full-check.json",
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": []
+    },
+    "fixed-api": {
+      "job_id": "job-8ac8f58436a94373b5ea9aed3d94198d",
+      "trace_id": "trace-73bc4064a6b641cbbfd54af38d34618b",
+      "provided_stages_verified": [
+        "draft.json",
+        "full-check.json",
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": []
+    },
+    "tinyexpr-cli": {
+      "job_id": "job-878c23f009b043f38585e43a79b64dab",
+      "trace_id": "trace-f3b860e87a0644cca63b1e1cb53c4c6c",
+      "provided_stages_verified": [
+        "draft.json",
+        "full-check.json",
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": []
+    },
+    "tinyexpr-api": {
+      "job_id": "job-eb2e8a6af00742969bdcbc5e8b1fa125",
+      "trace_id": "trace-e2cea815bb714db4bdddb2e253b3b136",
+      "provided_stages_verified": [
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": [
+        "draft.json",
+        "full-check.json"
+      ]
+    },
+    "peer-A": {
+      "job_id": "job-dd9b7f76b2cd4825bcee357edf83d745",
+      "trace_id": "trace-b048fbed944f48b3a977e8fcd9657781",
+      "provided_stages_verified": [
+        "draft.json",
+        "full-check.json",
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": []
+    },
+    "peer-B": {
+      "job_id": "job-dd9b7f76b2cd4825bcee357edf83d745",
+      "trace_id": "trace-b048fbed944f48b3a977e8fcd9657781",
+      "provided_stages_verified": [
+        "draft.json",
+        "full-check.json",
+        "incremental-check.json",
+        "repair.json",
+        "recheck.json"
+      ],
+      "stages_only_in_full_archive": []
+    }
+  },
+  "peer_comparison": {
+    "same_request_and_manifest": true,
+    "byte_identical_downloads": 6,
+    "hash_triples_verified": 12,
+    "distinct_client_hosts": "submitter evidence; original hostname records are not included in PR"
+  },
+  "independent_ab": {
+    "producer_report_sha256": "4164970e69273de8c41718bcc96dcbbc7e13f5a5a35f252b95ed4ed0724d7180",
+    "distinct_job_ids": true,
+    "negative_cases_verified": 5
+  },
+  "member4_cloud": {
+    "source_commit": "8aa1dd210d1520e43129085d4cc21b0492bd5a26",
+    "status": "SUCCEEDED",
+    "job_id": "job-d7aaa8e19da74ac198a7e1a11615a09d",
+    "trace_id": "trace-fdd49cd8aadf4aaa86b913aadc860570",
+    "execution_image_id": "sha256:dd1a5def13a4226a2721c4ac4d19b5240f3c5a120c75dad03aceea152b6ebd49",
+    "manifest_files_verified": 354,
+    "stages_verified": 5,
+    "runtime_operations_verified": 7,
+    "original_input_files_unchanged": 23,
+    "repair_consumed_current_report": true,
+    "final_missing_dependencies": 0,
+    "checks": {
+      "patch_applies": true,
+      "recipes_preserved": true,
+      "build": true,
+      "behavior": true,
+      "unchanged_input_no_rebuild": true,
+      "header_change_rebuilds_objects_and_link": true,
+      "clean_build_matches": true,
+      "no_missing": true
+    }
+  },
+  "member4_contracts": {
+    "tests": 24,
+    "result": "OK",
+    "runtime": "local WSL Ubuntu 24.04"
+  }
+}
