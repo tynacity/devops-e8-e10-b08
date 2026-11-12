@@ -67,3 +67,7 @@ python3 scripts/lab_cloud.py gate --image course1020-draft:241880546-e7 --candid
 - 四名成员姓名学号、云主机系统/资源/工具版本已补齐。课程统一分配主机为 Ubuntu 22.04.5、2 CPU、可见内存 3.5 GiB、Docker 29.1.3；新版 doctor 于北京时间 2026-10-25 00:59 退出 0、`problems: []`，环境项据此关闭。最新可用磁盘为 67.8 GiB；建议值警告和旧 4 GiB 阈值失败原样保留。真实记录在 `work/doctor-env-accepted-20261025/`；仅执行个人目录的新副本，没有覆盖共享仓库原脚本或修改 Git 身份。CI 环境与云主机分开记录。
 - 学生包 `docs/03_B轨道操作指南.md`、`docs/04_GitHub_CI与合并门禁.md`、`ci/` 和 `templates/` 是配套指南、演示配置及报告模板；本地位于仓库外的 `course-support/`，其相对路径不等同于原学生包的 `../../ci/`。
 - `work/` 默认忽略，但最终需另外备份并交付原始日志及下载的 CI artifact；禁止提交 `.env`、Token、SSH 私钥或登录文件。
+
+## E11–E12 前期交接
+
+新增入口、固定样例 CI 与 TinyExpr 真实项目输入见 [交接说明](docs/E11-E12/交接说明.md)。本阶段尚需完成组件适配、镜像环境交接、独立报告消费、API 与云主机验收。

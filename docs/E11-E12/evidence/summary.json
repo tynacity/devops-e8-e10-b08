@@ -1,0 +1,26 @@
+{
+  "scope": "make example; make smoke as separate behavior regression",
+  "versions": {
+    "base": {
+      "commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+      "example_build": "PASS",
+      "independent_output_oracle": "PASS",
+      "upstream_smoke": "PASS",
+      "smoke_locale_case_skipped": true
+    },
+    "target": {
+      "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+      "example_build": "PASS",
+      "independent_output_oracle": "PASS",
+      "upstream_smoke": "PASS",
+      "smoke_locale_case_skipped": true
+    }
+  },
+  "missing_dependency_probe": {
+    "both_objects_stale_before_repair": true,
+    "independent_compiler_rejects_changed_header": true,
+    "manual_dependency_addition_triggers_rebuild": true,
+    "not_an_automated_MDFixer_result": true
+  },
+  "docker_and_e12": "NOT_RUN: member component adaptation and image handoff required"
+}

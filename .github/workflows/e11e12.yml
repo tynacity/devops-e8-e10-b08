@@ -1,0 +1,45 @@
+name: E11-E12 integration
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  integration:
+    name: e11e12-integration
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Record source and runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          git rev-parse HEAD > work/source-commit.txt
+          git config --local user.name 999999999
+          git config --local user.email ci@example.invalid
+          docker version > work/docker-version.txt
+      - name: Build integration environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker build --build-arg BASE_IMAGE=python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 -f labs/e11e12/environment/services/buildchecker/Dockerfile -t course-e11e12:999999999 labs/e11e12/environment 2>&1 | tee work/environment-build.log
+          docker image inspect course-e11e12:999999999 --format '{{.Id}}' > work/environment-image-id.txt
+      - name: Contracts and fixed-sample CLI integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 run_e11e12.py test 2>&1 | tee work/contracts.log
+          python3 run_e11e12.py prepare 2>&1 | tee work/prepare.log
+          cp data/integration-sample/dataset.json work/dataset.json
+          for mode in e11-a e11-b e12; do
+            python3 run_e11e12.py run --request "data/integration-sample/$mode.json" --out "work/ci-$mode" 2>&1 | tee "work/$mode.log"
+          done
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e11e12-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/
+          include-hidden-files: true
+          retention-days: 14

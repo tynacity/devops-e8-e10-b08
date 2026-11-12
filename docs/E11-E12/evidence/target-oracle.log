@@ -1,0 +1,2 @@
+$ python3 course/verify_example.py
+PASS: example matches sqrt(231) rounded to six decimal places

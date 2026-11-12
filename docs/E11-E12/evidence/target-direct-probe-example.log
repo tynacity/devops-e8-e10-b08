@@ -1,0 +1,5 @@
+$ gcc -Wall -Wshadow -O2 -fsyntax-only example.c
+In file included from example.c:1:
+tinyexpr.h:1:2: error: #error COURSE_HEADER_PROBE
+    1 | #error COURSE_HEADER_PROBE
+      |  ^~~~~

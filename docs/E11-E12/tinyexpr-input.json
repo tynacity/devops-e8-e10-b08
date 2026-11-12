@@ -1,0 +1,49 @@
+{
+  "source_repository": "https://github.com/tynacity/tinyexpr",
+  "source_branch": "course/e11-e12",
+  "upstream_repository": "https://github.com/codeplea/tinyexpr",
+  "upstream_base": "c9049eb7495d4aad71e12af0be190407125e86ea",
+  "upstream_target": "ba2e32bbcc2d1e644a7e132d24c2f542821cabe0",
+  "base_commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "target_commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "scope": {
+    "build_command": "make example",
+    "clean_command": "make clean",
+    "object_targets": {
+      "example.o": "example.c",
+      "tinyexpr.o": "tinyexpr.c"
+    },
+    "link_target": "example",
+    "compiler_flags": "-Wall -Wshadow -O2",
+    "link_flags": "-lm"
+  },
+  "run_command": "./example",
+  "expected_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684",
+  "behavior_check": "python3 course/verify_example.py",
+  "additional_regression": "make smoke",
+  "known_missing_dependencies": [
+    {
+      "target": "example.o",
+      "dependency": "tinyexpr.h"
+    },
+    {
+      "target": "tinyexpr.o",
+      "dependency": "tinyexpr.h"
+    }
+  ],
+  "candidate": "fixtures/e11e12/tinyexpr-candidate.Dockerfile",
+  "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+  "image_id": "sha256:14e3598265735f55f3ee7dc38148c29c5313aed5994ddcdbaf63997302c9bb56",
+  "execution_ready": false,
+  "pending": [
+    "Target-platform rebuild and downstream image execution evidence",
+    "runner/scan/patch/validate adaptation",
+    "DRAFT environment reuse",
+    "A-to-B report consumption and E12 API",
+    "instructor confirmation of project eligibility"
+  ],
+  "image_platform": "linux/arm64",
+  "image_availability": "Recorded on member 1 Docker Desktop; rebuild on target host before use",
+  "candidate_source": "Member 1 manually derived from target Dockerfile.broken; no model/API call",
+  "draft_evidence_status": "Accepted archived local ARM64 build/run evidence; reviewer did not repeat Docker execution"
+}
