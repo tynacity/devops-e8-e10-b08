@@ -47,6 +47,12 @@ def consume(path, target, manifest_path=None, expected_sha256=None):
     else:
         envelope = load_artifact(path, expected_sha256) if expected_sha256 else json.loads(path.read_bytes())
         check_envelope(envelope, target, 'fixed-md')
+    check_tinyexpr_report(envelope, target)
+    return envelope
+
+
+def check_tinyexpr_report(envelope, target):
+    """Check the inner MDFixer input after validating the outer artifact reference."""
     require(isinstance(envelope.get('data'), dict) and envelope['data'].get('commit') == target,
             'STALE_REPORT', 'Inner report belongs to another commit')
     require(envelope['data'].get('schema_version') == 'e8e10-1', 'SCHEMA_MISMATCH', 'Inner MD report')
@@ -54,7 +60,7 @@ def consume(path, target, manifest_path=None, expected_sha256=None):
     require(isinstance(findings, list) and all(isinstance(f, dict) and f.get('type') in ('MISSING', 'REDUNDANT')
             and all(isinstance(f.get(k), str) and f[k] for k in ('target', 'dependency')) for f in findings),
             'INVALID_REPORT', 'Expected structured findings')
-    return envelope
+    return envelope['data']
 
 
 def patch_tinyexpr(project, report):
