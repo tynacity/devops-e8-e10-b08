@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-eb2e8a6af00742969bdcbc5e8b1fa125",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Thu, 12 Nov 2026 10:48:17 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "47369e773717f93aeb6fc011dc53ffb2fba825232afc950bfb907b1859f2314a"
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "role": "B",
+  "service_id": "e12-tinyexpr-241880546",
+  "job_id": "job-dd9b7f76b2cd4825bcee357edf83d745",
+  "trace_id": "trace-b048fbed944f48b3a977e8fcd9657781",
+  "execution_image_id": "sha256:280030d967642bd8c00f262e9e2bf74f3453f2c335adca67cccbe725fcf3b96b",
+  "idempotency_key": "tinyexpr-ab-f588070fdc04",
+  "download_sha256": {
+    "draft.json": "a49dae984e8b6bd2a27a669996a0c5baa8947ebd4f04f73d36cb02bad4d3a9f5",
+    "full-check.json": "2926fba443d25a937198569d938eed5d19a364b2a4f20478157edcae39ffbdfd",
+    "incremental-check.json": "421202f5d3adf514685eedb283ad69d73710f96399e3afb988924d6c5a814b16",
+    "repair.json": "856f6d4d0069e506e3ead9e1923571f501ecd67cc075b132a589915f4548b94a",
+    "recheck.json": "befbd09e27bd313c4421d6d7668236b611860c0ffd72a3bf04f874404b247354",
+    "candidate.patch": "e017fde9c9499d0d29d0592de55cc43a06ba20adb2aa5255475e00774fde4862"
+  }
+}

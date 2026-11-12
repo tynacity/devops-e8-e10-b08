@@ -13,7 +13,11 @@ def main():
     (project/'main.c').write_text('#include "extra.h"\n'+(project/'main.c').read_text(),encoding='utf-8')
     target=commit(project,'integration C1 add project include')
     pin='FROM python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f'
-    candidate=broken.replace('FROM python:3.13-slim',pin).replace('RUN make app','RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*\nRUN make app')
+    install=('RUN sed -i -e "s|http://deb.debian.org/debian-security|https://mirrors.tuna.tsinghua.edu.cn/debian-security|g" '
+             '-e "s|http://deb.debian.org/debian|https://mirrors.tuna.tsinghua.edu.cn/debian|g" /etc/apt/sources.list.d/debian.sources '
+             '&& apt-get -o Acquire::Retries=3 update && apt-get install -y --no-install-recommends build-essential strace git '
+             '&& rm -rf /var/lib/apt/lists/*\nRUN make app')
+    candidate=broken.replace('FROM python:3.13-slim',pin).replace('RUN make app',install)
     (root/'candidate.Dockerfile').write_text(candidate,encoding='utf-8')
     fixed=scan(project)
     save(root/'fixed-md.json',{'schema_version':'e11e12-1','kind':'fixed-md','status':'SUCCEEDED','commit':target,'data':fixed})

@@ -1,0 +1,24 @@
+{
+  "method": "POST",
+  "route": "/v1/jobs",
+  "request": {
+    "idempotency_key": "tinyexpr-ab-f588070fdc04",
+    "input": {
+      "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+      "build_timeout": 2400,
+      "candidate": "/course/data/tinyexpr/candidate.Dockerfile",
+      "expected_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684",
+      "mode": "e12",
+      "profile": "tinyexpr",
+      "repo": "/course/data/tinyexpr/repo",
+      "target": "fed53f8bd0f76ea069fb6333d8e65b5326694837"
+    }
+  },
+  "http_status": 409,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Thu, 12 Nov 2026 12:16:34 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "7da8acf1f3027c1457c61858754d746c36e180b837688c467e348a447bf2fbe8"
+}

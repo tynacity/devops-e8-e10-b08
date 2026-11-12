@@ -1,0 +1,306 @@
+{
+  "passed": true,
+  "scope": "Fixed sample and shared API; formal A/TinyExpr E12 pending",
+  "source_sha": "12c3c99c0027c189a8ff4d5ff307052469e40b8b",
+  "run_id": "ae092326febb",
+  "steps": [
+    {
+      "name": "source-fetch",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "/root/devops-students/241880546/fixed-api.8ClnyC1z/source.bundle",
+        "refs/heads/student/241880546/e11-e12:refs/remotes/member3-offline/e12-fixed"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/source-fetch.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.06
+    },
+    {
+      "name": "source-update",
+      "argv": [
+        "git",
+        "merge",
+        "--ff-only",
+        "refs/remotes/member3-offline/e12-fixed"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/source-update.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.01
+    },
+    {
+      "name": "contracts",
+      "argv": [
+        "python3",
+        "run_e11e12.py",
+        "test"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 1800,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/contracts.log",
+      "exit_code": 0,
+      "elapsed_seconds": 2.87
+    },
+    {
+      "name": "e8e10-regression",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cap-add",
+        "SYS_PTRACE",
+        "--user",
+        "0:0",
+        "-e",
+        "HOME=/tmp",
+        "-v",
+        "/root/devops-students/241880546/e11-e12:/course",
+        "-w",
+        "/course",
+        "course-e11e12:241880546",
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "labs/e8e10",
+        "-p",
+        "test_profile.py",
+        "-v"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 1800,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/e8e10-regression.log",
+      "exit_code": 0,
+      "elapsed_seconds": 18.29
+    },
+    {
+      "name": "sample-import",
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "clone",
+        "--no-hardlinks",
+        "--branch",
+        "main",
+        "/root/devops-students/241880546/fixed-api.8ClnyC1z/fixed-sample.bundle",
+        "/root/devops-students/241880546/e11-e12/data/member3-fixed-ae092326febb/repo"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/sample-import.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02
+    },
+    {
+      "name": "sample-checkout",
+      "argv": [
+        "git",
+        "-C",
+        "/root/devops-students/241880546/e11-e12/data/member3-fixed-ae092326febb/repo",
+        "checkout",
+        "--detach",
+        "0e2793578d7073bb1f65de585bb6767d28aed4f3"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/sample-checkout.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "name": "sample-ancestry",
+      "argv": [
+        "git",
+        "-C",
+        "/root/devops-students/241880546/e11-e12/data/member3-fixed-ae092326febb/repo",
+        "merge-base",
+        "--is-ancestor",
+        "26ff07e843a341a00c36052beb336a8fc1a2f16f",
+        "0e2793578d7073bb1f65de585bb6767d28aed4f3"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/sample-ancestry.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "name": "cli-e12",
+      "argv": [
+        "python3",
+        "run_e11e12.py",
+        "run",
+        "--request",
+        "/root/devops-students/241880546/e11-e12/data/member3-fixed-ae092326febb/e12.json",
+        "--out",
+        "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/cli"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 15000,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/cli-e12.log",
+      "exit_code": 0,
+      "elapsed_seconds": 59.02
+    },
+    {
+      "name": "api-start",
+      "argv": [
+        "python3",
+        "run_e11e12.py",
+        "serve",
+        "--port",
+        "18546",
+        "--store-root",
+        "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-store",
+        "--container-name",
+        "e12-241880546-ae092326febb",
+        "--detach"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-start.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.26
+    },
+    {
+      "name": "api-before-restart-log",
+      "argv": [
+        "docker",
+        "logs",
+        "e12-241880546-ae092326febb"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-before-restart-log.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02
+    },
+    {
+      "name": "api-stop-own-container",
+      "argv": [
+        "docker",
+        "stop",
+        "-t",
+        "0",
+        "e12-241880546-ae092326febb"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-stop-own-container.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.27
+    },
+    {
+      "name": "api-restart",
+      "argv": [
+        "python3",
+        "run_e11e12.py",
+        "serve",
+        "--port",
+        "18546",
+        "--store-root",
+        "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-store",
+        "--container-name",
+        "e12-241880546-ae092326febb",
+        "--detach"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-restart.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.21
+    },
+    {
+      "name": "api-final-log",
+      "argv": [
+        "docker",
+        "logs",
+        "e12-241880546-ae092326febb"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-e12-fixed-ae092326febb/api-final-log.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02
+    }
+  ],
+  "checks": {
+    "cli_five_stages": true,
+    "http_idempotency_conflict_download_path": true,
+    "consumer_four_rejections": true,
+    "actual_restart_finished_and_unfinished": true
+  },
+  "cli": {
+    "job_id": "job-01ef50021cbe48cf86ad859ad7d6cd12",
+    "trace_id": "trace-db23f38b4a7d438d98c21f2343a8e8d5",
+    "execution_image_id": "sha256:cbfd2923359bc49604aa6661414c7df7771e1e8299d871a489b7b473f4ee295a"
+  },
+  "api": {
+    "passed": true,
+    "job_id": "job-8ac8f58436a94373b5ea9aed3d94198d",
+    "trace_id": "trace-73bc4064a6b641cbbfd54af38d34618b",
+    "image_id": "sha256:7f331e8929b60b7d8bf9ca100ca1a98578cbb6f95391a77f72a715b792e3f3f5",
+    "downloaded_files": [
+      "draft.json",
+      "full-check.json",
+      "incremental-check.json",
+      "repair.json",
+      "recheck.json",
+      "candidate.patch",
+      "validation/validation.json",
+      "execution-runtime.json",
+      "incremental-report.json"
+    ]
+  },
+  "api_port": 18546,
+  "service_id": "e12-241880546-ae092326febb",
+  "api_left_running": true,
+  "original_input_unchanged": true
+}

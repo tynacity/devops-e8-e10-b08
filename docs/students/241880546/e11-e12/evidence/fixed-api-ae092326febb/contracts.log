@@ -1,0 +1,45 @@
+IMAGE=course-e11e12:241880546
+test_accept_current_report (test_contract.Contracts.test_accept_current_report) ... ok
+test_api_rejects_repo_outside_data (test_contract.Contracts.test_api_rejects_repo_outside_data) ... ok
+test_artifact_uses_relative_uri_and_content_hash (test_contract.Contracts.test_artifact_uses_relative_uri_and_content_hash) ... ok
+test_changed_artifact_is_rejected (test_contract.Contracts.test_changed_artifact_is_rejected) ... ok
+test_existing_evidence_not_overwritten (test_contract.Contracts.test_existing_evidence_not_overwritten) ... ok
+test_reject_failed_upstream (test_contract.Contracts.test_reject_failed_upstream) ... ok
+test_reject_old_commit (test_contract.Contracts.test_reject_old_commit) ... ok
+test_reject_schema (test_contract.Contracts.test_reject_schema) ... ok
+test_reject_wrong_artifact_kind (test_contract.Contracts.test_reject_wrong_artifact_kind) ... ok
+test_same_key_same_request_same_job (test_contract.Contracts.test_same_key_same_request_same_job) ... ok
+test_changing_program_to_echo_expected_output_is_rejected (test_draft_candidate.TinyExprCandidateContract.test_changing_program_to_echo_expected_output_is_rejected) ... ok
+test_dropping_header_from_build_context_is_rejected (test_draft_candidate.TinyExprCandidateContract.test_dropping_header_from_build_context_is_rejected) ... ok
+test_repair_preserves_original_project_build_and_runtime (test_draft_candidate.TinyExprCandidateContract.test_repair_preserves_original_project_build_and_runtime) ... ok
+test_download_hash_matches_manifest_and_traversal_is_rejected (test_member3_api.Member3ApiTests.test_download_hash_matches_manifest_and_traversal_is_rejected) ... 127.0.0.1 - - [10/Nov/2026 13:15:55] "POST /v1/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062/artifacts HTTP/1.1" 200 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062/files/candidate.patch HTTP/1.1" 200 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062/files/%2e%2e/%2e%2e/outside.txt HTTP/1.1" 404 -
+127.0.0.1 - - [10/Nov/2026 13:15:55] "GET /v1/jobs/job-4de0c063d2ec42469751691e1afa3062/files/.git/config HTTP/1.1" 404 -
+ok
+test_http_idempotency_and_conflict_do_not_repeat_execution (test_member3_api.Member3ApiTests.test_http_idempotency_and_conflict_do_not_repeat_execution) ... 127.0.0.1 - - [10/Nov/2026 13:15:56] "POST /v1/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [10/Nov/2026 13:15:56] "POST /v1/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [10/Nov/2026 13:15:56] "POST /v1/jobs HTTP/1.1" 409 -
+127.0.0.1 - - [10/Nov/2026 13:15:56] "GET /v1/jobs/job-3036a9856dd54b659408c6421026ec29 HTTP/1.1" 200 -
+ok
+test_restart_preserves_completed_job_and_marks_unfinished_job (test_member3_api.Member3ApiTests.test_restart_preserves_completed_job_and_marks_unfinished_job) ... 127.0.0.1 - - [10/Nov/2026 13:15:56] "POST /v1/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [10/Nov/2026 13:15:56] "GET /v1/jobs/job-4657243ff7a64156a0b330f2e2842d7b HTTP/1.1" 200 -
+ok
+test_running_job_has_no_artifact_manifest (test_member3_api.Member3ApiTests.test_running_job_has_no_artifact_manifest) ... 127.0.0.1 - - [10/Nov/2026 13:15:57] "POST /v1/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [10/Nov/2026 13:15:57] "GET /v1/jobs/job-d672e9e83ffd473b93d4979c5a815ec5/artifacts HTTP/1.1" 409 -
+ok
+test_actual_working_copy_is_mapped_to_the_host_mount (test_member3_api.Member3RuntimeTests.test_actual_working_copy_is_mapped_to_the_host_mount) ... ok
+test_docker_command_uses_draft_id_and_current_source_mount (test_member3_api.Member3RuntimeTests.test_docker_command_uses_draft_id_and_current_source_mount) ... ok
+test_adds_prerequisite_only_rules_and_deduplicates (test_tinyexpr_repair.TinyExprRepairTests.test_adds_prerequisite_only_rules_and_deduplicates) ... ok
+test_incremental_report_is_bound_to_producer_and_digest (test_tinyexpr_repair.TinyExprRepairTests.test_incremental_report_is_bound_to_producer_and_digest) ... ok
+test_rejects_external_symlink (test_tinyexpr_repair.TinyExprRepairTests.test_rejects_external_symlink) ... ok
+test_rejects_inner_commit_mismatch (test_tinyexpr_repair.TinyExprRepairTests.test_rejects_inner_commit_mismatch) ... ok
+test_rejects_object_outside_selected_graph (test_tinyexpr_repair.TinyExprRepairTests.test_rejects_object_outside_selected_graph) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.096s
+
+OK

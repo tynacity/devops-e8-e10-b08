@@ -1,0 +1,17 @@
+{
+  "job_id": "job-bb3ecf80b3dd47a5bd64ad2c0ce61ecc",
+  "schema_version": "e11e12-1",
+  "stages": [
+    {
+      "artifact": {
+        "bytes": 39618,
+        "sha256": "d837a9f8e16a5acf6f9198c3e383b6f2dd83d9ed5573537c9c760c4f568f2ff2",
+        "uri": "artifact://job-bb3ecf80b3dd47a5bd64ad2c0ce61ecc/incremental-check.json"
+      },
+      "name": "incremental-check"
+    }
+  ],
+  "status": "SUCCEEDED",
+  "target_commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "trace_id": "trace-8ce625a723ad4aabad580deedd9f6e07"
+}

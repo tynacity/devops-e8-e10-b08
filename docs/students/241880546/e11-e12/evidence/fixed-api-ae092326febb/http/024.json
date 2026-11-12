@@ -1,0 +1,24 @@
+{
+  "method": "POST",
+  "route": "/v1/jobs",
+  "request": {
+    "idempotency_key": "interrupt-active-ae092326febb",
+    "input": {
+      "mode": "e12",
+      "repo": "/course/data/member3-fixed-ae092326febb/repo",
+      "base": "26ff07e843a341a00c36052beb336a8fc1a2f16f",
+      "target": "0e2793578d7073bb1f65de585bb6767d28aed4f3",
+      "candidate": "/course/data/member3-fixed-ae092326febb/candidate.Dockerfile",
+      "fixed_report": "/course/data/member3-fixed-ae092326febb/fixed-md.json",
+      "expected_output": "1",
+      "build_timeout": 7200
+    }
+  },
+  "http_status": 202,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:17:22 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "15ed1ba629a371d9d63ce17bc237ac57dd00d58472ab4d1ed7db78c6b4d0b6b9"
+}

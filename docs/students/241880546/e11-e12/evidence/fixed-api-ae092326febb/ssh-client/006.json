@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/files/draft.json",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:50:22 GMT",
+    "Content-Type": "application/octet-stream",
+    "X-Content-SHA256": "da26fc23dd184ca19c081177405d76da62fe509ac3325f4b363f42c7fc53336a"
+  },
+  "body_sha256": "da26fc23dd184ca19c081177405d76da62fe509ac3325f4b363f42c7fc53336a"
+}

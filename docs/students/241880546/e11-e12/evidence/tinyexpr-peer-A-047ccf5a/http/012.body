@@ -1,0 +1,8 @@
+--- a/Makefile
++++ b/Makefile
+@@ -41,3 +41,5 @@
+ 
+ clean:
+ 	rm -f *.o *.exe example example2 example3 bench repl repl-readline smoke_pr smoke
++example.o: tinyexpr.h
++tinyexpr.o: tinyexpr.h

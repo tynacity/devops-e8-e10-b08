@@ -1,0 +1,24 @@
+{
+  "method": "POST",
+  "route": "/v1/jobs",
+  "request": {
+    "idempotency_key": "fixed-ae092326febb",
+    "input": {
+      "mode": "e12",
+      "repo": "/course/data/member3-fixed-ae092326febb/repo",
+      "base": "26ff07e843a341a00c36052beb336a8fc1a2f16f",
+      "target": "0e2793578d7073bb1f65de585bb6767d28aed4f3",
+      "candidate": "/course/data/member3-fixed-ae092326febb/candidate.Dockerfile",
+      "fixed_report": "/course/data/member3-fixed-ae092326febb/fixed-md.json",
+      "expected_output": "1",
+      "build_timeout": 7200
+    }
+  },
+  "http_status": 202,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:17:16 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "63c8d00d76d3971aea660af91382d89cb6f3f6ef81eb3d89a78dae39ea800151"
+}

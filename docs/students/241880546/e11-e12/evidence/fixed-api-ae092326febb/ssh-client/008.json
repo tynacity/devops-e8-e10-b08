@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/files/incremental-check.json",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:50:22 GMT",
+    "Content-Type": "application/octet-stream",
+    "X-Content-SHA256": "c58456e24e5cda685627eae6271516c56d0db0d3c39d3b3f933116e8d4f4d722"
+  },
+  "body_sha256": "c58456e24e5cda685627eae6271516c56d0db0d3c39d3b3f933116e8d4f4d722"
+}

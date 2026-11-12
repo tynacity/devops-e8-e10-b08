@@ -1,0 +1,28 @@
+{
+  "schema_version": "e11e12-1",
+  "kind": "repair",
+  "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "status": "SUCCEEDED",
+  "data": {
+    "edits": [
+      {
+        "target": "example.o",
+        "dependency": "tinyexpr.h",
+        "style": "direct"
+      },
+      {
+        "target": "tinyexpr.o",
+        "dependency": "tinyexpr.h",
+        "style": "direct"
+      }
+    ],
+    "input_report": {
+      "kind": "fixed-md",
+      "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+      "sha256": "3697f5df5b7075b95273d11f937e378f2e5917d8c189cd9044164ea0db5ebe99",
+      "job_id": null,
+      "trace_id": null
+    },
+    "candidate_sha256": "e017fde9c9499d0d29d0592de55cc43a06ba20adb2aa5255475e00774fde4862"
+  }
+}

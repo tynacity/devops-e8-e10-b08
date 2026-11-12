@@ -1,0 +1,13 @@
+{
+  "incremental_sha256": {
+    "example.o": "62340cd8cc14fdce01da0704a3c942942c9b983139c92beaf70608e0842b25df",
+    "tinyexpr.o": "8b23b1baec3f2a1959846c02c8ac31dc128aaa74aa4881b601777237e73f77eb",
+    "example": "53e33d242d8c85f63de9507e48cbf00593a53142c0a59e66024d567f971f3170"
+  },
+  "clean_sha256": {
+    "example.o": "62340cd8cc14fdce01da0704a3c942942c9b983139c92beaf70608e0842b25df",
+    "tinyexpr.o": "8b23b1baec3f2a1959846c02c8ac31dc128aaa74aa4881b601777237e73f77eb",
+    "example": "53e33d242d8c85f63de9507e48cbf00593a53142c0a59e66024d567f971f3170"
+  },
+  "output_equal": true
+}

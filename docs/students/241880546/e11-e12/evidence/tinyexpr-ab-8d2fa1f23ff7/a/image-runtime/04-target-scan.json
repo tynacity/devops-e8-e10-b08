@@ -1,0 +1,52 @@
+{
+  "stage": "target-scan",
+  "operation": "scan",
+  "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "cwd": "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/target-project",
+  "requested_image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+  "command": [
+    "docker",
+    "create",
+    "-e",
+    "E11E12_PROJECT_PROFILE=tinyexpr",
+    "--network",
+    "none",
+    "--cap-add",
+    "SYS_PTRACE",
+    "--user",
+    "0:0",
+    "-e",
+    "HOME=/tmp",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--mount",
+    "type=bind,source=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source,target=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source,readonly",
+    "--mount",
+    "type=bind,source=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work,target=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work",
+    "--workdir",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/target-project",
+    "--entrypoint",
+    "python3",
+    "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/labs/e11e12/image_worker.py",
+    "scan",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/target-project",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/baseline-cache.json"
+  ],
+  "tools": {
+    "python3": "Python 3.13.16",
+    "git": "git version 2.47.3",
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "make": "GNU Make 4.4.1",
+    "strace": "strace -- version 6.13"
+  },
+  "container_id": "402ad7e5828b4831ee150ea2058892c40faaa949523ee2f36e74564993eada3f",
+  "actual_image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+  "start_command": [
+    "docker",
+    "start",
+    "--attach",
+    "402ad7e5828b4831ee150ea2058892c40faaa949523ee2f36e74564993eada3f"
+  ],
+  "exit_code": 0
+}
