@@ -1,0 +1,107 @@
+{
+  "artifacts": [
+    {
+      "bytes": 4580,
+      "sha256": "785f1afc9ee0dc21ae772de885e47d24ea850f2d871775f1cc19425462b8640f",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/draft-build/result.json"
+    }
+  ],
+  "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "data": {
+    "attempts": [
+      {
+        "build_exit_code": 1,
+        "command": [
+          "docker",
+          "build",
+          "--progress=plain",
+          "-f",
+          "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/draft-build/iter-01/Dockerfile",
+          "-t",
+          "e6-draft-replay:2e0a7031c6104bb495b5d57e0b94ea2b-1",
+          "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/draft-build/project"
+        ],
+        "failure_class": "MISSING_MAKE",
+        "iteration": 1,
+        "tag": "e6-draft-replay:2e0a7031c6104bb495b5d57e0b94ea2b-1"
+      },
+      {
+        "build_exit_code": 0,
+        "command": [
+          "docker",
+          "build",
+          "--progress=plain",
+          "-f",
+          "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/draft-build/iter-02/Dockerfile",
+          "-t",
+          "e6-draft-replay:2e0a7031c6104bb495b5d57e0b94ea2b-2",
+          "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/draft-build/project"
+        ],
+        "image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+        "iteration": 2,
+        "tag": "e6-draft-replay:2e0a7031c6104bb495b5d57e0b94ea2b-2"
+      }
+    ],
+    "base_image": "python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f",
+    "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+    "candidate_source": "Manual model response replay; no model/API call in this command",
+    "detector": "DRAFT_TEACHING_REPLAY",
+    "elapsed_ms": 1092,
+    "input_sha256": {
+      ".github/workflows/ci.yml": "5bd7d91f861c3bb000cf8d8933827613b608a80d8e9f8e14473bd8c025926922",
+      ".gitignore": "c25fb397444f2a0b452548a401e4e6fd243234ae39fed7231ce87cc4a7fb81c2",
+      "CITATION.cff": "ac73f385a394c3e89e8b298d16b0cfde71706502a4c74ce407a1edab6a7f1b84",
+      "CONTRIBUTING": "4cf6ccd2da3b30ed8ef204982548c024be7716e0d6ec2dd2b5301e36aeebfa71",
+      "Dockerfile.broken": "98c341bd3cb9ac440b000bd97c115308539fc425edda0ad26304f0eac0704458",
+      "LICENSE": "aceec33bbb71b99e691681f24fb92f61de7ac6240ca81075863c58ad76d882c9",
+      "Makefile": "9b203a9d5be954a7bf2f5c65addb6bcc691c7c523db2183953eba35d2dea2792",
+      "README.md": "9e834cf30ab74b0402fe5fc3cf2bfa2187a2e588d633388d4c48f1317a4ea184",
+      "benchmark.c": "0893bbd5013f3f2671da652ffa882c55bc5e04d130377214c382e87563ce587a",
+      "course/README.md": "6f1901f8f9c7c07f14c1f2bf298ad3a15113bc583ac4aa2fac0daa3f32cea9d2",
+      "course/verify_example.py": "f14070f2b989e4139a33bd1bd2ed0fc50a39f15a2b8b8eda3ad5f839dab36c05",
+      "doc/e1.dot": "f36550dead880e917893857374ad6f8876efe4fedb57b01ef8164101729428cf",
+      "doc/e1.png": "312654be6c83b05d195f884ef2c54cdfdd6768ce8e62b3b02b1608ae21c1153f",
+      "doc/e2.dot": "cf96eb217809e2f1b4c0dd28be1b88d91fbbada1e03a4b49993057513d727070",
+      "doc/e2.png": "ab3ee45c96291759f38fddcfb03527ffccefb44f6298dd02ae121efdd68ffd16",
+      "example.c": "bc9637e2dc47d87c6ec8d98ccdd7c146b4cea89f64eefb2437cc414c4b7cdc8d",
+      "example2.c": "a584f7479dba3ae9b8c3ffd4cc0d1046e73a80793c48c25eb0ba3871fd9d4e41",
+      "example3.c": "675fe9a9dd06b99fb0564a3aed85130f1fd50f7508a3a875ef3b39e809a8b62c",
+      "minctest.h": "1d7611d31c0b1ed1318ea5ff53d5b59950f0cae405e7fac5b92770956f8d7e1f",
+      "repl.c": "6944c8a3b00a09761fa216cf4b9c6d310a762d38b1dd57dd62e707ece68dd0d2",
+      "smoke.c": "40839398f7033a7359e37e3be8066e16126a4a00a2f312cfb0af267d8230fabd",
+      "tinyexpr.c": "d98452135db9fbd7c233b23e66103450d785df5251067799ddf3cc6bbd96611a",
+      "tinyexpr.h": "6644032507c078167a7ec6e134b6f5bd2147f4d96d955923285dac8c6feb16d8"
+    },
+    "replayed_candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+    "status": "SUCCEEDED",
+    "trace_id": "e6-b-2e0a7031c6104bb495b5d57e0b94ea2b",
+    "verification": {
+      "actual_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684\n",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "1",
+        "--memory",
+        "128m",
+        "--pids-limit",
+        "64",
+        "--cidfile",
+        "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/draft-build/verify-container-id.txt",
+        "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20"
+      ],
+      "exit_code": 0,
+      "expected_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684",
+      "image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+      "output_matches": true
+    }
+  },
+  "job_id": "job-1c7b529d087849978cdd00fb31288727",
+  "kind": "draft",
+  "schema_version": "e11e12-1",
+  "status": "SUCCEEDED",
+  "trace_id": "trace-fc1992b44f314edea8934bb0af08cad3"
+}

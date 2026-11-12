@@ -2,7 +2,7 @@
 
 学号：241880546；B08；日期：2026-11-10。源码提交：`12c3c99c0027c189a8ff4d5ff307052469e40b8b`。
 
-本阶段不依赖A组的固定样例集成、共享API和SSH转发验收通过。检测使用现有教学适配器；正式A组报告与TinyExpr完整E12继续待联调。
+本阶段完成固定样例的集成、共享API和SSH转发验收，检测使用现有教学适配器。后续的A组报告消费见[TinyExpr交接验收](TinyExpr交接验收.md)。
 
 ## 本人工作
 
@@ -44,6 +44,6 @@ CLI与API为两次独立构建。同次编排五阶段共享外层job_id/trace_i
 
 本目录摘录原始记录，逐文件哈希见[SHA256SUMS](evidence/fixed-api-ae092326febb/SHA256SUMS)，综合核对见[VERIFIED_ACCEPTANCE.json](evidence/fixed-api-ae092326febb/VERIFIED_ACCEPTANCE.json)。HTTP请求索引根据原始日志生成，所引用的请求元数据和响应原始字节均保留。
 
-## 待继续
+## 后续验收
 
-接收A组检测侧源码、准确版本及同一TinyExpr base/target的本轮报告、生产者清单和产物哈希，完成真实A→B消费与TinyExpr五阶段/API联调。当前结果不计作正式A组输入或TinyExpr完整E12。代码与验收资料尚未推送。
+TinyExpr的A侧检测与B侧独立消费、五阶段命令行、共享API服务器自测和A/B分机验收均已通过。详见[TinyExpr交接验收](TinyExpr交接验收.md)。

@@ -1,0 +1,18 @@
+{
+  "schema_version": "e11e12-1",
+  "profile": "tinyexpr-example",
+  "target_commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "status": "FAILED",
+  "runtime": "linux-process",
+  "input": {
+    "kind": "fixed-md",
+    "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+    "sha256": "74f162948eadc90bd5c60ce536057834474a8e3763c498deba4b086032656e9d",
+    "job_id": null,
+    "trace_id": null
+  },
+  "error": {
+    "code": "REPAIR_REJECTED",
+    "message": "{'accepted': False, 'checks': {'patch_applies': True, 'recipes_preserved': True, 'build': True, 'behavior': True, 'unchanged_input_no_rebuild': True, 'header_change_rebuilds_objects_and_link': False, 'clean_build_matches': True, 'no_missing': False}, 'error': None, 'source_unchanged': True, 'rollback': True}"
+  }
+}

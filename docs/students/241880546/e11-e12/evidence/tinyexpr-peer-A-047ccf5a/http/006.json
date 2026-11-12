@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-dd9b7f76b2cd4825bcee357edf83d745/artifacts",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Thu, 12 Nov 2026 12:52:12 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "f8449bb7ee3e4d40b9247b646bb4238cf947f712dc67e813cb9cd024b7e0b0b3"
+}

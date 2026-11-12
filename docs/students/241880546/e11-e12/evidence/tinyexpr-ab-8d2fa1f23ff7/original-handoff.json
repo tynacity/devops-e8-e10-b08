@@ -1,0 +1,26 @@
+{
+  "schema_version": "e11e12-handoff-1",
+  "source": "Local Docker Desktop Linux/amd64",
+  "orchestrator_commit": "8355af8e45623855c3397442598bd07e27f1ec1a",
+  "source_job_id": "job-bcc28fb0e4214056b7481c6c4db96288",
+  "source_trace_id": "trace-dacda2533b724c6f9b69894d24067c3d",
+  "base_commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "target_commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "verified_image_id": "sha256:a6592f67b196ba08e5aa2cfad0a66c7ac7ae69cd4cccdba804b1699561e232bd",
+  "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+  "replayed_candidate_sha256": "caa5cbdbffc7ce5ddaae40a6deb6cefa9e911918187bf3e3ee34e7af4f23fc6a",
+  "profile": "tinyexpr",
+  "source_branch": "e11e12/a-handoff-recovery-20261112",
+  "report": {
+    "uri": "artifact://job-bcc28fb0e4214056b7481c6c4db96288/incremental-check.json",
+    "path": "incremental-check.json",
+    "bytes": 40608,
+    "sha256": "7346a07e5552cf457d4a342cd2e62d2d30bdb8c379935783c8c1b31bca62d47b"
+  },
+  "full_report": {
+    "uri": "artifact://job-bcc28fb0e4214056b7481c6c4db96288/full-check.json",
+    "path": "full-check.json",
+    "bytes": 5864,
+    "sha256": "62b3d566bc4d94754506f09cd9515b9196a09179e445f7748d3c51476e13f6ed"
+  }
+}
