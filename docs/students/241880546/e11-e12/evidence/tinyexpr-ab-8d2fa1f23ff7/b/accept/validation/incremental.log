@@ -1,0 +1,3 @@
+gcc -c -Wall -Wshadow -O2 example.c -o example.o
+gcc -c -Wall -Wshadow -O2 tinyexpr.c -o tinyexpr.o
+gcc -Wall -Wshadow -O2 -o example example.o tinyexpr.o -lm

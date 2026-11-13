@@ -1,0 +1,89 @@
+{
+  "schema_version": "e11e12-1",
+  "job_id": "job-8ac8f58436a94373b5ea9aed3d94198d",
+  "trace_id": "trace-73bc4064a6b641cbbfd54af38d34618b",
+  "kind": "draft",
+  "commit": "0e2793578d7073bb1f65de585bb6767d28aed4f3",
+  "status": "SUCCEEDED",
+  "data": {
+    "status": "SUCCEEDED",
+    "detector": "DRAFT_TEACHING_REPLAY",
+    "trace_id": "e6-b-be9b80ab3fb34a49b9f4e9e433af2e21",
+    "candidate_source": "Manual model response replay; no model/API call in this command",
+    "candidate_sha256": "9c4dfca1658e2775bbe8750d70a0d3b20892ae0d77ce2bd9cd4f518425db0721",
+    "attempts": [
+      {
+        "iteration": 1,
+        "tag": "e6-draft-replay:be9b80ab3fb34a49b9f4e9e433af2e21-1",
+        "command": [
+          "docker",
+          "build",
+          "--progress=plain",
+          "-f",
+          "/course/work/241880546-e12-fixed-ae092326febb/api-store/job-8ac8f58436a94373b5ea9aed3d94198d/evidence/draft-build/iter-01/Dockerfile",
+          "-t",
+          "e6-draft-replay:be9b80ab3fb34a49b9f4e9e433af2e21-1",
+          "/course/work/241880546-e12-fixed-ae092326febb/api-store/job-8ac8f58436a94373b5ea9aed3d94198d/evidence/draft-build/project"
+        ],
+        "build_exit_code": 1,
+        "failure_class": "MISSING_MAKE"
+      },
+      {
+        "iteration": 2,
+        "tag": "e6-draft-replay:be9b80ab3fb34a49b9f4e9e433af2e21-2",
+        "command": [
+          "docker",
+          "build",
+          "--progress=plain",
+          "-f",
+          "/course/work/241880546-e12-fixed-ae092326febb/api-store/job-8ac8f58436a94373b5ea9aed3d94198d/evidence/draft-build/iter-02/Dockerfile",
+          "-t",
+          "e6-draft-replay:be9b80ab3fb34a49b9f4e9e433af2e21-2",
+          "/course/work/241880546-e12-fixed-ae092326febb/api-store/job-8ac8f58436a94373b5ea9aed3d94198d/evidence/draft-build/project"
+        ],
+        "build_exit_code": 0,
+        "image_id": "sha256:7f331e8929b60b7d8bf9ca100ca1a98578cbb6f95391a77f72a715b792e3f3f5"
+      }
+    ],
+    "input_sha256": {
+      ".gitignore": "d7bfd39146ded6c9700eb81300e82345464db46cda1e775b8a114a811311bafe",
+      "Dockerfile.broken": "493f94f95181dd9f4cfb8f47beeed4bfd86e3395ab354742d1d201c409a3e745",
+      "Makefile": "9206301c23ce4cb93c3fc1434037e475cf69f53e132dc541f6028d05e30258b2",
+      "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+      "extra.h": "5e20ae92639ee989af5638bd0308a6a86e71bdb4345f60b962ba9db7265e4f7c",
+      "helper.c": "90a60f959d215b0b91807c6dd2c94acf6684a9fe26629dc1591e9b2ea773d78c",
+      "main.c": "1e2e75d84a5a28f44438792dbb33ce888a09fad6597094d998ebaf34fa784312",
+      "unused.h": "3f7fec0991b34d614462e29b450c76638f07171936a12df337c578c2d1481b37"
+    },
+    "verification": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "1",
+        "--memory",
+        "128m",
+        "--pids-limit",
+        "64",
+        "--cidfile",
+        "/course/work/241880546-e12-fixed-ae092326febb/api-store/job-8ac8f58436a94373b5ea9aed3d94198d/evidence/draft-build/verify-container-id.txt",
+        "sha256:7f331e8929b60b7d8bf9ca100ca1a98578cbb6f95391a77f72a715b792e3f3f5"
+      ],
+      "exit_code": 0,
+      "expected_output": "1",
+      "actual_output": "1\n",
+      "output_matches": true
+    },
+    "elapsed_ms": 837
+  },
+  "artifacts": [
+    {
+      "uri": "artifact://job-8ac8f58436a94373b5ea9aed3d94198d/draft-build/result.json",
+      "sha256": "e992dc05a5cec2f89f9edd78ddd99b3e23aaabb0a527afd082e1cb4126a38dc3",
+      "bytes": 2917
+    }
+  ]
+}

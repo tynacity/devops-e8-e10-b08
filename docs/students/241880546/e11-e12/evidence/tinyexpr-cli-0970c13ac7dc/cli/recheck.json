@@ -1,0 +1,40 @@
+{
+  "schema_version": "e11e12-1",
+  "job_id": "job-878c23f009b043f38585e43a79b64dab",
+  "trace_id": "trace-f3b860e87a0644cca63b1e1cb53c4c6c",
+  "kind": "recheck",
+  "commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "status": "SUCCEEDED",
+  "data": {
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "patch_applies": true,
+        "recipes_preserved": true,
+        "build": true,
+        "behavior": true,
+        "unchanged_input_no_rebuild": true,
+        "header_change_rebuilds_objects_and_link": true,
+        "clean_build_matches": true,
+        "no_missing": true
+      },
+      "error": null,
+      "source_unchanged": false,
+      "rollback": false
+    },
+    "findings": [],
+    "patched_makefile_sha256": "a05eda6f3af12893ab3d1668c5f6d79144d6cea9d100e872e6b28535f897daad"
+  },
+  "artifacts": [
+    {
+      "uri": "artifact://job-878c23f009b043f38585e43a79b64dab/validation/validation.json",
+      "sha256": "0b8dec17f999acca8794f3f3c612bdfe2b810e1bc58b35f7a139fc20bfd44d29",
+      "bytes": 357
+    },
+    {
+      "uri": "artifact://job-878c23f009b043f38585e43a79b64dab/final-full/findings.json",
+      "sha256": "72a6a64a559df17123480daad7d8aab401a137781252bbdc93da3da6c77a0c45",
+      "bytes": 2973
+    }
+  ]
+}

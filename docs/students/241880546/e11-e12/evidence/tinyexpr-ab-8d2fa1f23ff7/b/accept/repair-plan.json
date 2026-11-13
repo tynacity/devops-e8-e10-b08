@@ -1,0 +1,12 @@
+[
+  {
+    "target": "example.o",
+    "dependency": "tinyexpr.h",
+    "style": "direct"
+  },
+  {
+    "target": "tinyexpr.o",
+    "dependency": "tinyexpr.h",
+    "style": "direct"
+  }
+]

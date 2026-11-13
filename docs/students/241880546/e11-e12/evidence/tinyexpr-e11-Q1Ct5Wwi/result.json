@@ -1,0 +1,284 @@
+{
+  "passed": true,
+  "purpose": "Cloud component replay using fixed MD; formal A-to-B/API pending",
+  "student_id": "241880546",
+  "steps": [
+    {
+      "name": "docker-version",
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/docker-version.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02
+    },
+    {
+      "name": "project-import",
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "clone",
+        "--no-hardlinks",
+        "--branch",
+        "course/e11-e12",
+        "/root/devops-students/241880546/tinyexpr-verify.7ya6cqla/tinyexpr-course.bundle",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/project-import.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.03
+    },
+    {
+      "name": "project-checkout",
+      "argv": [
+        "git",
+        "-C",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo",
+        "checkout",
+        "--detach",
+        "db16775c83f90ead79255cc124d2a5f62f58a3b3"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/project-checkout.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "name": "project-ancestry",
+      "argv": [
+        "git",
+        "-C",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo",
+        "merge-base",
+        "--is-ancestor",
+        "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+        "db16775c83f90ead79255cc124d2a5f62f58a3b3"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/project-ancestry.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "name": "draft-replay",
+      "argv": [
+        "python3",
+        "-u",
+        "/root/devops-students/241880546/tinyexpr-verify.7ya6cqla/replay_draft.py",
+        "--repo",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo",
+        "--out",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/draft"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 14700,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/draft-replay.log",
+      "exit_code": 0,
+      "elapsed_seconds": 36.42
+    },
+    {
+      "name": "draft-image-inspect",
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/draft-image-inspect.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02
+    },
+    {
+      "name": "draft-toolchain",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--entrypoint",
+        "sh",
+        "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+        "-c",
+        "python3 --version && gcc --version && make --version && git --version && strace --version"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/draft-toolchain.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.21
+    },
+    {
+      "name": "draft-independent-behavior",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--entrypoint",
+        "python3",
+        "-v",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo/course:/work/course:ro",
+        "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+        "/work/course/verify_example.py"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 300,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/draft-independent-behavior.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.26
+    },
+    {
+      "name": "mdfixer-accept",
+      "argv": [
+        "python3",
+        "labs/e11e12/tinyexpr_repair.py",
+        "--repo",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo",
+        "--target",
+        "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+        "--report",
+        "/root/devops-students/241880546/e11-e12/fixtures/e11e12/tinyexpr-md/accept.json",
+        "--report-sha256",
+        "3697f5df5b7075b95273d11f937e378f2e5917d8c189cd9044164ea0db5ebe99",
+        "--image-id",
+        "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+        "--out",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/accept"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 1800,
+      "expected_exit_codes": [
+        0
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/mdfixer-accept.log",
+      "exit_code": 0,
+      "elapsed_seconds": 2.52
+    },
+    {
+      "name": "mdfixer-reject",
+      "argv": [
+        "python3",
+        "labs/e11e12/tinyexpr_repair.py",
+        "--repo",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/input-repo",
+        "--target",
+        "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+        "--report",
+        "/root/devops-students/241880546/e11-e12/fixtures/e11e12/tinyexpr-md/reject-incomplete.json",
+        "--report-sha256",
+        "74f162948eadc90bd5c60ce536057834474a8e3763c498deba4b086032656e9d",
+        "--image-id",
+        "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+        "--out",
+        "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/reject"
+      ],
+      "cwd": "/root/devops-students/241880546/e11-e12",
+      "timeout_seconds": 1800,
+      "expected_exit_codes": [
+        1
+      ],
+      "log": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi/mdfixer-reject.log",
+      "exit_code": 1,
+      "elapsed_seconds": 2.27
+    }
+  ],
+  "out": "/root/devops-students/241880546/e11-e12/work/241880546-tinyexpr-components-Q1Ct5Wwi",
+  "started_utc": "2026-11-10T11:56:38Z",
+  "source_sha": "9f0276568d4944f1c4f0923343af7d78d1838579",
+  "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+  "input_bundle_sha256": "39ac7d4c1c93c19922b8371e3106203c8ef5103815b88b1246fae62be7c08183",
+  "draft_image_id": "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+  "draft": {
+    "status": "SUCCEEDED",
+    "trace_id": "e6-b-a832333e9e53459ca99fc301a15e1b11",
+    "image_id": "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+    "platform": "linux/amd64"
+  },
+  "accept": {
+    "status": "SUCCEEDED",
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "patch_applies": true,
+        "recipes_preserved": true,
+        "build": true,
+        "behavior": true,
+        "unchanged_input_no_rebuild": true,
+        "header_change_rebuilds_objects_and_link": true,
+        "clean_build_matches": true,
+        "no_missing": true
+      },
+      "error": null,
+      "source_unchanged": false,
+      "rollback": false
+    },
+    "image_id": "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+    "exit_code": 0,
+    "target_changed_files": [
+      "Makefile"
+    ]
+  },
+  "reject": {
+    "status": "FAILED",
+    "validation": {
+      "accepted": false,
+      "checks": {
+        "patch_applies": true,
+        "recipes_preserved": true,
+        "build": true,
+        "behavior": true,
+        "unchanged_input_no_rebuild": true,
+        "header_change_rebuilds_objects_and_link": false,
+        "clean_build_matches": true,
+        "no_missing": false
+      },
+      "error": null,
+      "source_unchanged": true,
+      "rollback": true
+    },
+    "image_id": "sha256:d281a504203aeb6c6049b6c13a5f2752373aa7c45fa47c07a118bb40b7930c33",
+    "exit_code": 1,
+    "target_changed_files": []
+  },
+  "original_input_unchanged": true,
+  "tool_source_unchanged": true,
+  "finished_utc": "2026-11-10T11:57:20Z"
+}

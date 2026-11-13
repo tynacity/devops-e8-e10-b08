@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "route": "/health",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:50:21 GMT",
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body_sha256": "bc690ac00903f55b453335f642352c73ad7dda81b328c2f9ff628d1deb1682bc"
+}

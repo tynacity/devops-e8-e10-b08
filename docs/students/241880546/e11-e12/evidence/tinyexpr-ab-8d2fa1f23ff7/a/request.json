@@ -1,0 +1,11 @@
+{
+  "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "build_timeout": 1800,
+  "candidate": "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/payload/candidate.Dockerfile",
+  "expected_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684",
+  "mode": "e12",
+  "profile": "tinyexpr",
+  "purpose": "A detector replay; repair executed separately by B",
+  "repo": "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/b-source/work/consumer/project",
+  "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3"
+}

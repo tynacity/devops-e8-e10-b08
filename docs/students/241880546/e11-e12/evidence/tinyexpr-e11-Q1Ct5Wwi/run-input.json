@@ -1,0 +1,22 @@
+{
+  "source_sha": "9f0276568d4944f1c4f0923343af7d78d1838579",
+  "branch": "student/241880546/e11-e12",
+  "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+  "bundle_sha256": "39ac7d4c1c93c19922b8371e3106203c8ef5103815b88b1246fae62be7c08183",
+  "required_files": {
+    "fixtures/e11e12/tinyexpr-candidate.Dockerfile": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+    "fixtures/e11e12/tinyexpr-md/accept.json": "3697f5df5b7075b95273d11f937e378f2e5917d8c189cd9044164ea0db5ebe99",
+    "fixtures/e11e12/tinyexpr-md/reject-incomplete.json": "74f162948eadc90bd5c60ce536057834474a8e3763c498deba4b086032656e9d",
+    "labs/e11e12/tinyexpr_repair.py": "943a1fe05bf6939d71ee00f9883a81c970267734f5f25579e0bf6aaddbd67273",
+    "labs/e11e12/pipeline.py": "277ff226dce192ac5389a44e60c126f55ad2bba9d30f324be90018cb25350d3b",
+    "labs/e11e12/vendor/draft/autobuild.py": "46afe8c9016f78f217372e6cdfef70ed495f9577677806ee87712e49160ff6fd",
+    "labs/e11e12/environment/services/buildchecker/buildchecker/fullcheck.py": "21a66422856be2d46a28db3569a9645864a83622d552841873e3c6a82fdea0e9",
+    "labs/e8e10/lab.py": "79d383003de7b60538d970c5eccaf1e6eba227fe0c3ae632bd902eb847c4ca90"
+  },
+  "expected_output": "The expression:\n\tsqrt(5^2+7^2+11^2+(8-2)^2)\nevaluates to:\n\t15.198684",
+  "preparation_record": "/root/devops-students/241880546/work/e11-setup-H5QQkPqe/result.json",
+  "project_repository": "https://github.com/tynacity/tinyexpr",
+  "candidate_source": "Member 1 handoff; manual candidate replay; no new model/API call"
+}

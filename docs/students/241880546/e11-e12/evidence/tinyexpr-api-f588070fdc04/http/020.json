@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-eb2e8a6af00742969bdcbc5e8b1fa125/files/candidate.patch",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Thu, 12 Nov 2026 10:48:17 GMT",
+    "Content-Type": "application/octet-stream",
+    "X-Content-SHA256": "e017fde9c9499d0d29d0592de55cc43a06ba20adb2aa5255475e00774fde4862"
+  },
+  "body_sha256": "e017fde9c9499d0d29d0592de55cc43a06ba20adb2aa5255475e00774fde4862"
+}

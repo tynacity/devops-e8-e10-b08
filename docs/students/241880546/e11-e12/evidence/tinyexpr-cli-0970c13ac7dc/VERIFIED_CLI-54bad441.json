@@ -1,0 +1,15 @@
+{
+  "a_detector_commit": "8355af8e45623855c3397442598bd07e27f1ec1a",
+  "archive_sha256": "b50f8529a40fa52a62d09626abb99d91121f1e34a741571d067bcc847de76036",
+  "b_base_commit": "12c3c99c0027c189a8ff4d5ff307052469e40b8b",
+  "cli": {
+    "execution_image_id": "sha256:234bd6928d330ac7a94aae466b56c4d53bb85808022daf1066f3cfa1093fdc90",
+    "job_id": "job-878c23f009b043f38585e43a79b64dab",
+    "patch_sha256": "e017fde9c9499d0d29d0592de55cc43a06ba20adb2aa5255475e00774fde4862",
+    "report_sha256": "ace764cb434b78ccbb887d0dad11c0dbc993ac2070431eac8beb48a442f27275",
+    "trace_id": "trace-f3b860e87a0644cca63b1e1cb53c4c6c"
+  },
+  "passed": true,
+  "run_id": "0970c13ac7dc",
+  "verified_files": 360
+}

@@ -1,0 +1,23 @@
+{
+  "source_commit": "8aa1dd210d1520e43129085d4cc21b0492bd5a26",
+  "status": "SUCCEEDED",
+  "job_id": "job-d7aaa8e19da74ac198a7e1a11615a09d",
+  "trace_id": "trace-fdd49cd8aadf4aaa86b913aadc860570",
+  "execution_image_id": "sha256:dd1a5def13a4226a2721c4ac4d19b5240f3c5a120c75dad03aceea152b6ebd49",
+  "manifest_files_verified": 354,
+  "stages_verified": 5,
+  "runtime_operations_verified": 7,
+  "original_input_files_unchanged": 23,
+  "repair_consumed_current_report": true,
+  "final_missing_dependencies": 0,
+  "checks": {
+    "patch_applies": true,
+    "recipes_preserved": true,
+    "build": true,
+    "behavior": true,
+    "unchanged_input_no_rebuild": true,
+    "header_change_rebuilds_objects_and_link": true,
+    "clean_build_matches": true,
+    "no_missing": true
+  }
+}

@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 import json
+import os
 from pathlib import Path
 import threading
 import uuid
@@ -50,8 +51,7 @@ class Store:
         with self.lock:
             state.update({k:r[k] for k in ('status','trace_id','error') if k in r});save(self.root/jid/'state.json',state)
 
-def serve(host='127.0.0.1',port=8080):
-    store=Store(ROOT/'work/api-jobs')
+def create_server(store,host='127.0.0.1',port=8080):
     class Handler(BaseHTTPRequestHandler):
         def reply(self,code,obj):
             data=json.dumps(obj,ensure_ascii=False).encode();self.send_response(code);self.send_header('Content-Type','application/json; charset=utf-8');self.end_headers();self.wfile.write(data)
@@ -63,7 +63,7 @@ def serve(host='127.0.0.1',port=8080):
                 body=json.loads(self.rfile.read(size));state=store.submit(body['input'],body['idempotency_key']);self.reply(202,state)
             except (ValueError,KeyError,TypeError) as ex:self.reply(409 if str(ex)=='IDEMPOTENCY_CONFLICT' else 400,{'error':str(ex)})
         def do_GET(self):
-            if self.path=='/health':return self.reply(200,{'status':'ok','schema_version':'e11e12-1'})
+            if self.path=='/health':return self.reply(200,{'status':'ok','schema_version':'e11e12-1','service_id':os.environ.get('E11_SERVICE_ID','course-e11e12')})
             parts=self.path.split('?')[0].strip('/').split('/')
             if len(parts)<3 or parts[:2]!=['v1','jobs'] or parts[2] not in store.jobs:return self.reply(404,{'error':'NOT_FOUND'})
             jid=parts[2];out=store.root/jid/'evidence'
@@ -76,7 +76,15 @@ def serve(host='127.0.0.1',port=8080):
                 if not path.is_relative_to(out.resolve()) or '.git' in path.parts or not path.is_file():return self.reply(404,{'error':'NOT_FOUND'})
                 data=path.read_bytes();self.send_response(200);self.send_header('Content-Type','application/octet-stream');self.send_header('X-Content-SHA256',hashlib.sha256(data).hexdigest());self.end_headers();self.wfile.write(data);return
             self.reply(404,{'error':'NOT_FOUND'})
-    ThreadingHTTPServer((host,port),Handler).serve_forever()
+    return ThreadingHTTPServer((host,port),Handler)
+
+def serve(host='127.0.0.1',port=8080,root=None):
+    store=Store(root or ROOT/'work/api-jobs')
+    httpd=create_server(store,host,port)
+    try:httpd.serve_forever()
+    finally:httpd.server_close();store.pool.shutdown()
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--host',default='127.0.0.1');p.add_argument('--port',type=int,default=8080);a=p.parse_args();serve(a.host,a.port)
+    p=argparse.ArgumentParser();p.add_argument('--host',default='127.0.0.1');p.add_argument('--port',type=int,default=8080);p.add_argument('--root',type=Path);a=p.parse_args()
+    if a.root and (not a.root.resolve().is_relative_to(ROOT/'work') or a.root.resolve()==ROOT/'work'):p.error('--root must be below work/')
+    serve(a.host,a.port,a.root)

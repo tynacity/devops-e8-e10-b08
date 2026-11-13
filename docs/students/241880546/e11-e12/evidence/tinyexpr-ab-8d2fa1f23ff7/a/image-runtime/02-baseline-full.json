@@ -1,0 +1,52 @@
+{
+  "stage": "baseline-full",
+  "operation": "full",
+  "commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "cwd": "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/base-project",
+  "requested_image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+  "command": [
+    "docker",
+    "create",
+    "-e",
+    "E11E12_PROJECT_PROFILE=tinyexpr",
+    "--network",
+    "none",
+    "--cap-add",
+    "SYS_PTRACE",
+    "--user",
+    "0:0",
+    "-e",
+    "HOME=/tmp",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--mount",
+    "type=bind,source=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source,target=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source,readonly",
+    "--mount",
+    "type=bind,source=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work,target=/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work",
+    "--workdir",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/base-project",
+    "--entrypoint",
+    "python3",
+    "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/labs/e11e12/image_worker.py",
+    "full",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/base-project",
+    "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/baseline-full"
+  ],
+  "tools": {
+    "python3": "Python 3.13.16",
+    "git": "git version 2.47.3",
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "make": "GNU Make 4.4.1",
+    "strace": "strace -- version 6.13"
+  },
+  "container_id": "a98a31c62c866d38fa36c810f0ca5183118a601d9f31ece31bae84707a2ebdc3",
+  "actual_image_id": "sha256:2edc8cc5e780f1f9c2693b9d742c943884259282c7d0f99d0d4a8134cd130f20",
+  "start_command": [
+    "docker",
+    "start",
+    "--attach",
+    "a98a31c62c866d38fa36c810f0ca5183118a601d9f31ece31bae84707a2ebdc3"
+  ],
+  "exit_code": 0
+}

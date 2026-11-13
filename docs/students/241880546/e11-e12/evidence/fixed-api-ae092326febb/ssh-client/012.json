@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "route": "/v1/jobs/job-8ac8f58436a94373b5ea9aed3d94198d/files/validation/validation.json",
+  "request": null,
+  "http_status": 200,
+  "headers": {
+    "Server": "BaseHTTP/0.6 Python/3.13.14",
+    "Date": "Tue, 10 Nov 2026 13:50:22 GMT",
+    "Content-Type": "application/octet-stream",
+    "X-Content-SHA256": "0aedd844e45d87669ff3c7ad42fcb15414453a14882df2fa6335997367390c37"
+  },
+  "body_sha256": "0aedd844e45d87669ff3c7ad42fcb15414453a14882df2fa6335997367390c37"
+}

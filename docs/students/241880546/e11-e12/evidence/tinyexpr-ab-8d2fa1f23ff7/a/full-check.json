@@ -1,0 +1,153 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1475,
+      "sha256": "1580e556e2b8d136870563fa42de965c6768c11f7c2fad8d2d572d46a1ace9c4",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/baseline-full/actual-graph.json"
+    },
+    {
+      "bytes": 39835,
+      "sha256": "c918776fa6a69eb3c075fd0f2fe73de3f7e1251d0f3c5399617f34fdc1f4bff1",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/baseline-cache.json"
+    },
+    {
+      "bytes": 1925,
+      "sha256": "4c370bf92fb6e2176935bf4be50c83dcbdb55246b7530eae1625cc5fbf0b71c6",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/image-runtime/01-probe.json"
+    },
+    {
+      "bytes": 2026,
+      "sha256": "7bc4a370d535819e88ff2855db08e23e4409d024dff9e12f959c6e7f415fd53a",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/image-runtime/02-baseline-full.json"
+    },
+    {
+      "bytes": 1925,
+      "sha256": "ad406e82fa92283a40d2e938e05e7d5c88928b72d3a3a3d57fb6b92bfec915a6",
+      "uri": "artifact://job-1c7b529d087849978cdd00fb31288727/image-runtime/03-baseline-scan.json"
+    }
+  ],
+  "commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "data": {
+    "artifacts": {
+      "actual_graph": "actual-graph.json",
+      "declared_graph": "declared-graph.json",
+      "make_database": "make-db.txt",
+      "processes": "processes.json",
+      "trace_directory": "trace"
+    },
+    "build_command": [
+      "make",
+      "example"
+    ],
+    "build_exit_code": 0,
+    "clean_command": [
+      "make",
+      "clean"
+    ],
+    "clean_exit_code": 0,
+    "detector": "BUILDCHECKER_TEACHING",
+    "detector_version": "0.2.0-teaching",
+    "elapsed_ms": 339,
+    "findings": [
+      {
+        "declared_dependencies": [
+          "example.c"
+        ],
+        "dependency": "tinyexpr.h",
+        "evidence": [
+          {
+            "line": 98,
+            "operation": "openat",
+            "pid": 15,
+            "source": "system_call",
+            "trace_file": "t.15"
+          },
+          {
+            "line": 20,
+            "operation": "openat",
+            "pid": 16,
+            "source": "system_call",
+            "trace_file": "t.16"
+          }
+        ],
+        "target": "example.o",
+        "type": "MISSING"
+      },
+      {
+        "declared_dependencies": [
+          "tinyexpr.c"
+        ],
+        "dependency": "tinyexpr.h",
+        "evidence": [
+          {
+            "line": 98,
+            "operation": "openat",
+            "pid": 18,
+            "source": "system_call",
+            "trace_file": "t.18"
+          },
+          {
+            "line": 20,
+            "operation": "openat",
+            "pid": 19,
+            "source": "system_call",
+            "trace_file": "t.19"
+          }
+        ],
+        "target": "tinyexpr.o",
+        "type": "MISSING"
+      }
+    ],
+    "input_sha256": {
+      ".github/workflows/ci.yml": "5bd7d91f861c3bb000cf8d8933827613b608a80d8e9f8e14473bd8c025926922",
+      ".gitignore": "c25fb397444f2a0b452548a401e4e6fd243234ae39fed7231ce87cc4a7fb81c2",
+      "CITATION.cff": "ac73f385a394c3e89e8b298d16b0cfde71706502a4c74ce407a1edab6a7f1b84",
+      "CONTRIBUTING": "4cf6ccd2da3b30ed8ef204982548c024be7716e0d6ec2dd2b5301e36aeebfa71",
+      "Dockerfile.broken": "98c341bd3cb9ac440b000bd97c115308539fc425edda0ad26304f0eac0704458",
+      "LICENSE": "aceec33bbb71b99e691681f24fb92f61de7ac6240ca81075863c58ad76d882c9",
+      "Makefile": "9b203a9d5be954a7bf2f5c65addb6bcc691c7c523db2183953eba35d2dea2792",
+      "README.md": "9e834cf30ab74b0402fe5fc3cf2bfa2187a2e588d633388d4c48f1317a4ea184",
+      "benchmark.c": "0893bbd5013f3f2671da652ffa882c55bc5e04d130377214c382e87563ce587a",
+      "course/README.md": "6f1901f8f9c7c07f14c1f2bf298ad3a15113bc583ac4aa2fac0daa3f32cea9d2",
+      "course/verify_example.py": "f14070f2b989e4139a33bd1bd2ed0fc50a39f15a2b8b8eda3ad5f839dab36c05",
+      "doc/e1.dot": "f36550dead880e917893857374ad6f8876efe4fedb57b01ef8164101729428cf",
+      "doc/e1.png": "312654be6c83b05d195f884ef2c54cdfdd6768ce8e62b3b02b1608ae21c1153f",
+      "doc/e2.dot": "cf96eb217809e2f1b4c0dd28be1b88d91fbbada1e03a4b49993057513d727070",
+      "doc/e2.png": "ab3ee45c96291759f38fddcfb03527ffccefb44f6298dd02ae121efdd68ffd16",
+      "example.c": "bc9637e2dc47d87c6ec8d98ccdd7c146b4cea89f64eefb2437cc414c4b7cdc8d",
+      "example2.c": "a584f7479dba3ae9b8c3ffd4cc0d1046e73a80793c48c25eb0ba3871fd9d4e41",
+      "example3.c": "675fe9a9dd06b99fb0564a3aed85130f1fd50f7508a3a875ef3b39e809a8b62c",
+      "minctest.h": "1d7611d31c0b1ed1318ea5ff53d5b59950f0cae405e7fac5b92770956f8d7e1f",
+      "repl.c": "6944c8a3b00a09761fa216cf4b9c6d310a762d38b1dd57dd62e707ece68dd0d2",
+      "smoke.c": "e6d4499500cb3624b08653581fed3a92dcf69c74988d9e9ad189c8e12a497ab1",
+      "tinyexpr.c": "981bc5ef498323c1edeac9985157c3c33ab72a85abc8b5772a83231be78b9b58",
+      "tinyexpr.h": "6644032507c078167a7ec6e134b6f5bd2147f4d96d955923285dac8c6feb16d8"
+    },
+    "observed_targets": [
+      "example",
+      "example.o",
+      "tinyexpr.o"
+    ],
+    "scope": "Single Make process; one final output per recipe job; successful read-open observations",
+    "status": "SUCCEEDED",
+    "trace_command": [
+      "strace",
+      "-ff",
+      "-s",
+      "4096",
+      "-o",
+      "/root/devops-students/241880546/ab-tinyexpr-8d2fa1f23ff7/a-source/work/producer/baseline-full/trace/t",
+      "-e",
+      "trace=%file,%process",
+      "make",
+      "-p",
+      "example"
+    ],
+    "trace_id": "e6-068c0360367a48ceb4e47d9b4ed7fb8f"
+  },
+  "job_id": "job-1c7b529d087849978cdd00fb31288727",
+  "kind": "full-check",
+  "schema_version": "e11e12-1",
+  "status": "SUCCEEDED",
+  "trace_id": "trace-fc1992b44f314edea8934bb0af08cad3"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "target": "example",
+    "dependency": "example.o",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.22",
+      "line": 83,
+      "pid": 22,
+      "operation": "openat"
+    }
+  },
+  {
+    "target": "example",
+    "dependency": "tinyexpr.o",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.22",
+      "line": 86,
+      "pid": 22,
+      "operation": "openat"
+    }
+  },
+  {
+    "target": "example.o",
+    "dependency": "example.c",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.15",
+      "line": 64,
+      "pid": 15,
+      "operation": "openat"
+    }
+  },
+  {
+    "target": "example.o",
+    "dependency": "tinyexpr.h",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.15",
+      "line": 98,
+      "pid": 15,
+      "operation": "openat"
+    }
+  },
+  {
+    "target": "tinyexpr.o",
+    "dependency": "tinyexpr.c",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.18",
+      "line": 64,
+      "pid": 18,
+      "operation": "openat"
+    }
+  },
+  {
+    "target": "tinyexpr.o",
+    "dependency": "tinyexpr.h",
+    "kind": "ACTUAL_READ_OPEN",
+    "evidence": {
+      "source": "system_call",
+      "trace_file": "t.18",
+      "line": 98,
+      "pid": 18,
+      "operation": "openat"
+    }
+  }
+]

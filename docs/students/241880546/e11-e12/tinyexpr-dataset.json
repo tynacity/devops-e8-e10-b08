@@ -1,0 +1,43 @@
+{
+  "project": "TinyExpr",
+  "source_repository": "https://github.com/tynacity/tinyexpr",
+  "source_branch": "course/e11-e12",
+  "upstream_repository": "https://github.com/codeplea/tinyexpr",
+  "base_commit": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+  "target_commit": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "base_upstream_commit": "c9049eb7495d4aad71e12af0be190407125e86ea",
+  "target_merged_upstream_commit": "ba2e32bbcc2d1e644a7e132d24c2f542821cabe0",
+  "source_bundle_sha256": "39ac7d4c1c93c19922b8371e3106203c8ef5103815b88b1246fae62be7c08183",
+  "source_changes": {
+    "base": "Course Dockerfile.broken, behavior oracle and onboarding notes added to the upstream project.",
+    "target": "Merge upstream TinyExpr parser cleanup, invalid-type error handling and smoke regression coverage."
+  },
+  "broken_dockerfile": "Dockerfile.broken",
+  "draft_candidate": "fixtures/e11e12/tinyexpr-candidate.Dockerfile",
+  "draft_candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+  "draft_base_image": "python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f",
+  "commands": {
+    "clean": "make clean",
+    "build": "make example",
+    "behavior": "python3 course/verify_example.py"
+  },
+  "targets": ["example.o", "tinyexpr.o", "example"],
+  "missing_dependencies": [
+    {"target": "example.o", "dependency": "tinyexpr.h"},
+    {"target": "tinyexpr.o", "dependency": "tinyexpr.h"}
+  ],
+  "course_container_paths": {
+    "project": "/course/data/tinyexpr/repo",
+    "a_detector_checkout": "/course/data/tinyexpr-a-detector",
+    "api_candidate": "/course/data/tinyexpr/candidate.Dockerfile"
+  },
+  "a_detector_commit": "8355af8e45623855c3397442598bd07e27f1ec1a",
+  "b_integration_source_commit": "f5907cdbef05fb5f44966385f56cbb444602f49f",
+  "cli_request": "fixtures/e11e12/tinyexpr-request.json",
+  "evidence": {
+    "e11_b_fixed_md": "evidence/tinyexpr-e11-Q1Ct5Wwi/result.json",
+    "e12_cli": "evidence/tinyexpr-cli-0970c13ac7dc/VERIFIED_CLI-54bad441.json",
+    "e12_api": "evidence/tinyexpr-api-f588070fdc04/VERIFIED_API-628d1a06.json",
+    "e12_ab_peer": "evidence/tinyexpr-peer-A-047ccf5a/A-B-comparison.json"
+  }
+}

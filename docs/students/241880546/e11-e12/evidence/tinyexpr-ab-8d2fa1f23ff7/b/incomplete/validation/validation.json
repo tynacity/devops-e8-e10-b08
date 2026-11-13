@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "checks": {
+    "patch_applies": true,
+    "recipes_preserved": true,
+    "build": true,
+    "behavior": true,
+    "unchanged_input_no_rebuild": true,
+    "header_change_rebuilds_objects_and_link": false,
+    "clean_build_matches": true,
+    "no_missing": false
+  },
+  "error": null,
+  "source_unchanged": true,
+  "rollback": true
+}

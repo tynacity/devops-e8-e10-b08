@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "labs/e11e12/server.py",
+    "--host",
+    "0.0.0.0",
+    "--root",
+    "/course/work/api-tinyexpr"
+  ],
+  "id": "bfc89acdbfff7d0d2be7e08d5263a942610c004752d0afc6b73a7993aad263e1",
+  "mount": "/root/devops-students/241880546/tinyexpr-cli-0970c13ac7dc/repo",
+  "name": "e12-tinyexpr-241880546",
+  "port": 18547,
+  "published_ports": [
+    {
+      "HostIp": "127.0.0.1",
+      "HostPort": "18547"
+    }
+  ]
+}
