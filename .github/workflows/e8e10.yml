@@ -22,7 +22,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          docker build --build-arg BASE_IMAGE=python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 -f labs/e8e10/environment/services/buildchecker/Dockerfile -t course-e8e10:ci labs/e8e10/environment 2>&1 | tee work/environment-build.log
+          docker build \
+            --build-arg BASE_IMAGE=python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 \
+            --build-arg DEBIAN_MIRROR=https://deb.debian.org/debian \
+            --build-arg DEBIAN_SECURITY_MIRROR=https://deb.debian.org/debian-security \
+            --build-arg PYPI_INDEX_URL=https://pypi.org/simple \
+            -f labs/e8e10/environment/services/buildchecker/Dockerfile -t course-e8e10:ci labs/e8e10/environment 2>&1 | tee work/environment-build.log
           docker image inspect course-e8e10:ci --format '{{.Id}}' > work/environment-image-id.txt
       - name: Validate both tracks
         shell: bash

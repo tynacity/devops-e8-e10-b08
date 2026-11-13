@@ -3,6 +3,10 @@
 ARG BASE_IMAGE=m.daocloud.io/docker.io/library/python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
 FROM ${BASE_IMAGE}
 
+ARG DEBIAN_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/debian
+ARG DEBIAN_SECURITY_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/debian-security
+ARG PYPI_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+
 ENV LC_ALL=C.UTF-8 \
     TZ=UTC \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -10,9 +14,9 @@ ENV LC_ALL=C.UTF-8 \
 
 # 固定基础镜像采用 Debian DEB822 源配置；保留发行版及签名校验。
 RUN sed -i \
-      -e 's|https\?://deb.debian.org/debian-security|https://mirrors.tuna.tsinghua.edu.cn/debian-security|g' \
-      -e 's|https\?://security.debian.org/debian-security|https://mirrors.tuna.tsinghua.edu.cn/debian-security|g' \
-      -e 's|https\?://deb.debian.org/debian|https://mirrors.tuna.tsinghua.edu.cn/debian|g' \
+      -e "s|https\?://deb.debian.org/debian-security|${DEBIAN_SECURITY_MIRROR}|g" \
+      -e "s|https\?://security.debian.org/debian-security|${DEBIAN_SECURITY_MIRROR}|g" \
+      -e "s|https\?://deb.debian.org/debian|${DEBIAN_MIRROR}|g" \
       /etc/apt/sources.list.d/debian.sources \
  && apt-get -o Acquire::ForceIPv4=true -o Acquire::Retries=3 update \
  && apt-get -o Acquire::ForceIPv4=true -o Acquire::Retries=3 install -y --no-install-recommends gcc make libc6-dev strace git \
@@ -23,7 +27,7 @@ RUN sed -i \
 
 COPY requirements-dev.lock /tmp/requirements-dev.lock
 RUN python3 -m pip install \
-      --index-url https://pypi.tuna.tsinghua.edu.cn/simple \
+      --index-url "${PYPI_INDEX_URL}" \
       --timeout 60 --retries 3 \
       --no-cache-dir --require-hashes -r /tmp/requirements-dev.lock \
  && python3 -m pip freeze | sed 's/^/pip:/' >> /opt/toolchain.lock
