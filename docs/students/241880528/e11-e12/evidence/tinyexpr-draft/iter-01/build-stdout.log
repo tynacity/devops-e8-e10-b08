@@ -1,0 +1,13 @@
+Sending build context to Docker daemon  126.5kB
+Step 1/5 : FROM python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+ ---> 70729b46c69b
+Step 2/5 : WORKDIR /work
+ ---> Using cache
+ ---> 6dea975b5065
+Step 3/5 : COPY Makefile example.c tinyexpr.c tinyexpr.h ./
+ ---> Using cache
+ ---> e890ced56e8a
+Step 4/5 : RUN make example
+ ---> Running in 05d7c67c63c2
+[91m/bin/sh: 1: make: not found
+[0m

@@ -1,0 +1,29 @@
+gcc (Debian 14.2.0-19) 14.2.0
+GNU Make 4.4.1
+strace -- version 6.13
+git version 2.47.3
+Python 3.13.16
+rm -f *.o *.exe example example2 example3 bench repl repl-readline smoke_pr smoke
+gcc -c -Wall -Wshadow -O2 example.c -o example.o
+gcc -c -Wall -Wshadow -O2 tinyexpr.c -o tinyexpr.o
+gcc -Wall -Wshadow -O2 -o example example.o tinyexpr.o -lm
+PASS: example matches sqrt(231) rounded to six decimal places
+gcc -Wall -Wshadow -O2 -o smoke smoke.c tinyexpr.c -lm
+./smoke
+	Results       pass:158   fail: 0      0ms
+	Syntax        pass:65   fail: 0      0ms
+	NaNs          pass:55   fail: 0      0ms
+	INFs          pass:55   fail: 0      0ms
+	Variables     pass:40   fail: 0      0ms
+	Functions     pass:4406   fail: 0      0ms
+	Dynamic       pass:44   fail: 0      0ms
+	Closure       pass:17   fail: 0      0ms
+	Optimize      pass:12   fail: 0      0ms
+	Pow           pass:51   fail: 0      0ms
+	Combinatorics pass:52   fail: 0      0ms
+	Logic         pass:130   fail: 0      0ms
+	Depth         pass: 8   fail: 0      0ms
+	Number        pass:5025   fail: 0      1ms
+	Locale        no comma-decimal locale installed, skipping
+pass: 0   fail: 0      0ms
+ALL TESTS PASSED (10118/10118)
