@@ -1,0 +1,49 @@
+[
+    {
+        "Architecture": "arm64",
+        "Config": {
+            "Cmd": [
+                "./example"
+            ],
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.16",
+                "PYTHON_SHA256=f4b1bfb3c79b5bb11b8d228a12504163b4c0dab4d679828d8f5f26b6cb6ab35d"
+            ],
+            "WorkingDir": "/work"
+        },
+        "Created": "2026-11-10T02:42:21.578842086Z",
+        "Descriptor": {
+            "digest": "sha256:14e3598265735f55f3ee7dc38148c29c5313aed5994ddcdbaf63997302c9bb56",
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "size": 2053
+        },
+        "Id": "sha256:14e3598265735f55f3ee7dc38148c29c5313aed5994ddcdbaf63997302c9bb56",
+        "Metadata": {
+            "LastTagTime": "2026-11-10T02:42:21.605343794Z"
+        },
+        "Os": "linux",
+        "Parent": "sha256:3ff445075ea5aedeab6e8c47f3002838e0f77062bf972cc42c9daec2904c6777",
+        "RepoDigests": [
+            "e6-draft-replay@sha256:14e3598265735f55f3ee7dc38148c29c5313aed5994ddcdbaf63997302c9bb56"
+        ],
+        "RepoTags": [
+            "e6-draft-replay:424800f2d55f46968f99e4c001e623b5-2"
+        ],
+        "RootFS": {
+            "Layers": [
+                "sha256:258ba1f62b513e7bb7492d3cc8ce445e4ef176a14980f193f789b6d7270ae61c",
+                "sha256:23d7a75a2d0c2d4e7d19d49098b6e0fb21715f5d63a36eb579bb45325856e1ca",
+                "sha256:a69d76acf458356809d4f43cc9bb5b8eeff45d047e478e08e3137a9ca12eb17e",
+                "sha256:cd97ea47e2b0fb46a5ae64ddae3e31ed883da90d33635bcfec6432111e891558",
+                "sha256:f7cb8752c8d81fe95bf7ead29b36e16c037849d3144291e6376f904ea33d94cb",
+                "sha256:374ce7f011ff550422a607370ff193803a3bd7799d79ca8e5e1fae31c3647369",
+                "sha256:5026de0f0b1052afff93b3f3d1ab25b2157c6ed7983c619acdccf0a5f3cb532d",
+                "sha256:a1796497db128baf01652740ee816aacc6b4fa9decf363541592a28a3ae279ee"
+            ],
+            "Type": "layers"
+        },
+        "Size": 165480255
+    }
+]

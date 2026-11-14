@@ -1,5 +1,6 @@
 # Preserve E11/E12 evidence bytes for SHA256 verification on Windows and Linux.
 docs/E11-E12/evidence/* -text
+docs/students/241880528/e11-e12/evidence/** -text
 labs/e11e12/** text eol=lf
 run_e11e12.py text eol=lf
 fixtures/e11e12/tinyexpr-candidate.Dockerfile -text

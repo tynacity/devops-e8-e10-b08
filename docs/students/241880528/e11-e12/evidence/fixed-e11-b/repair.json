@@ -1,0 +1,39 @@
+{
+  "schema_version": "e11e12-1",
+  "job_id": "job-0af501bd2ade4f39b040876a8443be94",
+  "trace_id": "trace-6bd5e097218e4b16a67e3baad2623401",
+  "kind": "repair",
+  "commit": "0e2793578d7073bb1f65de585bb6767d28aed4f3",
+  "status": "SUCCEEDED",
+  "data": {
+    "edits": [
+      {
+        "target": "main.o",
+        "dependency": "config.h",
+        "style": "direct"
+      },
+      {
+        "target": "main.o",
+        "dependency": "extra.h",
+        "style": "direct"
+      }
+    ],
+    "input_report": {
+      "uri": "artifact://job-0af501bd2ade4f39b040876a8443be94/fixed-md.json",
+      "sha256": "9a4d34c193e2e1e3190c6f4cd6087dabdfd0a36efa27bb1c47dd5c43b154ebab",
+      "bytes": 2257
+    }
+  },
+  "artifacts": [
+    {
+      "uri": "artifact://job-0af501bd2ade4f39b040876a8443be94/candidate.patch",
+      "sha256": "88074f66c291dcad1344c48f6a2b9ddd42d235d9d0415c85fb33310c5b7cb2af",
+      "bytes": 274
+    },
+    {
+      "uri": "artifact://job-0af501bd2ade4f39b040876a8443be94/repair-plan.json",
+      "sha256": "76dc27c26c1c0935713f95fa702465478fcb116b054ad3ab77f873140f85a199",
+      "bytes": 172
+    }
+  ]
+}

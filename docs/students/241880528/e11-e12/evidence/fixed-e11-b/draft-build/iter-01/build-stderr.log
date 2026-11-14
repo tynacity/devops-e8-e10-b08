@@ -1,0 +1,43 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 233B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#2 DONE 3.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 653B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#5 resolve docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f done
+#5 DONE 0.0s
+
+#6 [2/4] WORKDIR /work
+#6 DONE 0.0s
+
+#7 [3/4] COPY main.c helper.c config.h extra.h unused.h Makefile ./
+#7 DONE 0.0s
+
+#8 [4/4] RUN make app
+#8 0.099 /bin/sh: 1: make: not found
+#8 ERROR: process "/bin/sh -c make app" did not complete successfully: exit code: 127
+------
+ > [4/4] RUN make app:
+0.099 /bin/sh: 1: make: not found
+------
+Dockerfile:4
+--------------------
+   2 |     WORKDIR /work
+   3 |     COPY main.c helper.c config.h extra.h unused.h Makefile ./
+   4 | >>> RUN make app
+   5 |     CMD ["./app"]
+   6 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c make app" did not complete successfully: exit code: 127

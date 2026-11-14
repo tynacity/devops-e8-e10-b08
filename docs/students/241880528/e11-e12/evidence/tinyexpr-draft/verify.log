@@ -1,0 +1,4 @@
+The expression:
+	sqrt(5^2+7^2+11^2+(8-2)^2)
+evaluates to:
+	15.198684
