@@ -19,7 +19,6 @@
 2827b54f44939bd858be10506e8b92ca94f8c2ac24e64da04667295eaada4a49  evidence/fixed-e11-b/final-full/trace/t.189
 295559b2288c05eb182001b4f4ae1252ea03b7bb8c059aa2015e5091d5d2de07  evidence/fixed-e11-b/logs/base-project-resolve.log
 2d9bc08fb3f6437aacdf6e1722fc3834cc61795c9e721cf96431a2a7a94a1415  evidence/fixed-e11-b/logs/target-project-resolve.log
-39ed531fa4de7d448b0d7b40b8db5ba57bad22f6734cc4251282918acada78c8  evidence/fixed-e11-b/validation/sandbox/helper.o
 3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d  evidence/real-candidate.Dockerfile
 3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d  evidence/tinyexpr-draft/iter-02/Dockerfile
 3f7fec0991b34d614462e29b450c76638f07171936a12df337c578c2d1481b37  evidence/fixed-e11-b/validation/sandbox/unused.h
@@ -35,8 +34,6 @@
 69973c572daaea0005b15535dffa2f73cfac069a6f179fbca2ed88737355cd9b  evidence/fixed-e11-b/validation/sandbox/config.h
 6d26327340f843ddef7ec9c0a525faf9bf293e7959326a78aadace4f9bcbc7bf  evidence/fixed-e11-b/draft-build/iter-01/build-stderr.log
 76dc27c26c1c0935713f95fa702465478fcb116b054ad3ab77f873140f85a199  evidence/fixed-e11-b/repair-plan.json
-772a3d4ea8cb15b75ca39d28e4ad8a202525a71c1c3b5ad42a9d94867f8044c2  evidence/fixed-e11-b/validation/sandbox/main.o
-798635b32b92522276c9ef331b07e953f10c373944f762912505392c6496a444  evidence/fixed-e11-b/validation/sandbox/app
 7998f571e8943ea97bb34b8f7b6e992e0062cb21806c82f5abcf42dbb4cf8df3  evidence/fixed-e11-b/request.json
 850a4342e867ba88f172a900824b6a88f5b70c13b10c2d2fd0483aad3b69709f  evidence/tinyexpr-draft/verify-container-id.txt
 858257a57a928dae2deea47364a239e6a2fbaeb8587c06454352cbe23e88e299  evidence/fixed-e11-b/draft-build/verify-container-id.txt
