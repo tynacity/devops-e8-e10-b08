@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "e11_fixed_report_verified": true,
+  "e12_local_producer_verified": true,
+  "e12_external_a_group_report": "PENDING",
+  "target_commit": "0e2793578d7073bb1f65de585bb6767d28aed4f3",
+  "candidate_sha256": "88074f66c291dcad1344c48f6a2b9ddd42d235d9d0415c85fb33310c5b7cb2af",
+  "cases": [
+    {
+      "case": "old-envelope",
+      "expected": "STALE_REPORT",
+      "actual": "STALE_REPORT",
+      "passed": true
+    },
+    {
+      "case": "old-inner-report",
+      "expected": "STALE_REPORT",
+      "actual": "STALE_REPORT",
+      "passed": true
+    },
+    {
+      "case": "wrong-kind",
+      "expected": "ARTIFACT_TYPE_MISMATCH",
+      "actual": "ARTIFACT_TYPE_MISMATCH",
+      "passed": true
+    },
+    {
+      "case": "tampered-artifact",
+      "expected": "ARTIFACT_HASH_MISMATCH",
+      "actual": "ARTIFACT_HASH_MISMATCH",
+      "passed": true
+    },
+    {
+      "case": "macro",
+      "expected": "variable definition only",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "verified_date": "2026-11-13",
+  "archives": [
+    {
+      "name": "E11-B_MDFixer_交接_20261110.zip",
+      "bytes": 330165,
+      "sha256": "b246c562dbb4b41c77123bc4715c9ea59c9f1673a3fd4c05a9f9f865bb9de2dd",
+      "purpose": "固定样例 E11-B、macro、自主拒绝及本地 E12 预演",
+      "location": "2026-11-10 原交付附件"
+    },
+    {
+      "name": "TinyExpr_241880529_MDFixer_20261110.zip",
+      "bytes": 132738,
+      "sha256": "873c232a01ed97e8a9ec81ed4def14017b47024715d12660ab5d003b59c93719",
+      "purpose": "TinyExpr 初始源码、WSL 正反验证及修复前动态检测",
+      "location": "2026-11-10 原交付附件"
+    },
+    {
+      "name": "TinyExpr_DRAFT_MDFixer_复跑_20261110.zip",
+      "bytes": 106447,
+      "sha256": "a70fe8dde9fdb95d06c353e0983e4415cccac4aa11ccfa7d4d375919c87a2ae9",
+      "purpose": "同候选 AMD64 DRAFT 重建及实际镜像内正反复跑",
+      "location": "2026-11-10 原交付附件"
+    },
+    {
+      "name": "tinyexpr-member2-supplement.zip",
+      "bytes": 65485,
+      "sha256": "5c56f0462eb5b750d315e4ef6656637e1fc0da1d31d34695944d5d11f6c512a9",
+      "purpose": "源码身份绑定、18/22 项完整日志、原始 trace、23 文件前后保护审计",
+      "location": "evidence/tinyexpr-member2-supplement.zip"
+    }
+  ]
+}

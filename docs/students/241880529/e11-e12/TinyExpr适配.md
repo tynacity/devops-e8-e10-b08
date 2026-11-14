@@ -1,5 +1,7 @@
 # B 组 2 号 TinyExpr MDFixer 交接
 
+2026-11-13 状态更新。正式个人材料见[个人报告](个人报告.md)、[设计决策](ADR.md)和[统一交付索引](交付索引.md)。实现与测试已随 [PR #10](https://github.com/tynacity/devops-e8-e10-b08/pull/10) 合入。成员 3 已在课程服务器完成正式 A→B、CLI/API 和 A/B 双端验收，详细记录见[联调验收](../../241880546/e11-e12/TinyExpr交接验收.md)。下文保留个人交付时的复现入口与本机证据。
+
 | 项目 | 本次验证输入 |
 | --- | --- |
 | 学号 | `241880529` |
@@ -76,7 +78,7 @@ python3 labs/e11e12/tinyexpr_repair.py \
   --image-id "$draft_image_id" --out "work/tinyexpr-e12-$(date +%s)"
 ```
 
-独立 MDFixer 入口核对上下游 schema、kind、状态、commit、阶段 URI、`job_id`、`trace_id` 和 SHA-256。镜像模式把当前输入源码挂载进容器，在指定镜像内执行修复、构建和动态重检，并保存 `docker-execution.json`。真实 A 报告与共享 API 编排仍待联调。
+独立 MDFixer 入口核对上下游 schema、kind、状态、commit、阶段 URI、`job_id`、`trace_id` 和 SHA-256。镜像模式把当前输入源码挂载进容器，在指定镜像内执行修复、构建和动态重检，并保存 `docker-execution.json`。真实 A 报告消费和共享 API 编排已由成员 3 在课程服务器通过验证，报告 SHA、双方任务和执行镜像见[正式消费回执](../../241880546/e11-e12/evidence/tinyexpr-ab-8d2fa1f23ff7/B-receipt-75b86703.json)。
 
 ## DRAFT 镜像复跑记录
 
