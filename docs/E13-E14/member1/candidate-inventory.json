@@ -20,8 +20,18 @@
     "source": "existing/teacher replay"
   },
   {
+    "path": "data/e14-mid-candidate.Dockerfile",
+    "sha256": "f0b92aa1aaaf2c1bad67115f8afb3b3ceb763dbd3739b394040763d8b7ed4263",
+    "source": "fault injection only"
+  },
+  {
     "path": "data/integration-sample/candidate.Dockerfile",
     "sha256": "82a199a0af987045aff2e244708e571b5d6449746104960f8e6173116db0c20f",
     "source": "existing/teacher replay"
+  },
+  {
+    "path": "fixtures/e11e12/tinyexpr-candidate.Dockerfile",
+    "sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+    "source": "archived member1 manual replay, revalidated this round"
   }
 ]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+    "tags": [
+      "course-e11e12:241880528"
+    ],
+    "digests": [
+      "course-e11e12@sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+    "tags": [
+      "e6-draft-replay:df530645e97d43c0b7508e3065d591bf-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0",
+    "tags": [
+      "e6-draft-replay:be83fdd3b19c430f944b5a240a22065b-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c",
+    "tags": [
+      "e6-draft-replay:d85b84f77d264c86b7a1a19354ece897-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7",
+    "tags": [
+      "e6-draft-replay:ef5865f7eea34ed0a78ac6ddecd98558-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf",
+    "tags": [
+      "e6-draft-replay:f804b38f52164b088f650de5361e1693-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab",
+    "tags": [
+      "e6-draft-replay:45517a8f6eca427d89359d098c0bd135-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a",
+    "tags": [
+      "e6-draft-replay:a755fd3521aa45df9bc3e8136a748642-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  },
+  {
+    "id": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+    "tags": [
+      "e6-draft-replay:888827ec722448be93de484cc910cf9d-2"
+    ],
+    "digests": [
+      "e6-draft-replay@sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671"
+    ],
+    "platform": "linux/arm64",
+    "scan_scope": "service and successful project execution images; C6 scan pending member4"
+  }
+]
