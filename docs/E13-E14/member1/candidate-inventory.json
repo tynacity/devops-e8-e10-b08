@@ -1,0 +1,27 @@
+[
+  {
+    "path": "data/e13-upstream-student/H1-jsmn/candidate.Dockerfile",
+    "sha256": "2ac5ae7cd7e296cb30e78e6f740642b76d8c4286356a2a5ad1dba5d4ebc7a6e7",
+    "source": "existing/teacher replay"
+  },
+  {
+    "path": "data/e13-upstream-student/H1-jsmn/candidate.member1.Dockerfile",
+    "sha256": "e55bb15d3fb464ca0f037131d9d4bee03e78af47aaed19899ac9278b036892ab",
+    "source": "teacher replay; member1 suffix adds runtime tools"
+  },
+  {
+    "path": "data/e13-upstream-student/H2-inih/candidate.Dockerfile",
+    "sha256": "7bf4b0b9861137354132a2a7676b567ec2de1f0ee71161034a27e8a7b06f4e90",
+    "source": "existing/teacher replay"
+  },
+  {
+    "path": "data/e13-upstream-student/H3-tiny-aes/candidate.Dockerfile",
+    "sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+    "source": "existing/teacher replay"
+  },
+  {
+    "path": "data/integration-sample/candidate.Dockerfile",
+    "sha256": "82a199a0af987045aff2e244708e571b5d6449746104960f8e6173116db0c20f",
+    "source": "existing/teacher replay"
+  }
+]

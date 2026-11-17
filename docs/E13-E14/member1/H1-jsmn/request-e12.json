@@ -1,0 +1,9 @@
+{
+  "mode": "e12",
+  "repo": "/course/data/e13-upstream-student/H1-jsmn/repo",
+  "base": "66a6dafcc20cea76bf017923d3db725d78407845",
+  "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+  "candidate": "/course/data/e13-upstream-student/H1-jsmn/candidate.Dockerfile",
+  "expected_output": "1",
+  "build_timeout": 600
+}
