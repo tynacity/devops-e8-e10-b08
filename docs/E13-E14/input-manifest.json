@@ -104,7 +104,21 @@
     "repository": "https://github.com/tynacity/tinyexpr",
     "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
     "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
-    "status": "E11/E12 historical input; E13 pairing and current candidate await confirmation"
+    "status": "E11/E12 historical input; E13 pairing and current candidate await confirmation",
+    "verification_20261117": {
+      "repository_role": "actual project under test; separate from tool repository",
+      "remote_branch": "course/e11-e12",
+      "remote_head": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+      "base_and_target_available_on_github": true,
+      "base_is_ancestor_of_target": true,
+      "local_head_matches_remote": true,
+      "local_worktree_clean": true,
+      "server_head_matches_remote": true,
+      "server_tracked_files_clean": true,
+      "github_open_prs": 0,
+      "github_actions_runs_observed": 0,
+      "independent_gitlab_mirror": "NOT_CONFIRMED"
+    }
   },
   "A_project": {
     "status": "AWAITING_MEMBER3_AND_A",
