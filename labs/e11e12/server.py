@@ -26,7 +26,10 @@ class Store:
     def submit(self, request, key):
         if not isinstance(request,dict):raise ValueError('input must be a JSON object')
         if not isinstance(key,str) or not key or len(key)>128:raise ValueError('idempotency_key required, max 128 characters')
-        if request.get('mode') not in ('e11-a','e11-b','e12'):raise ValueError('Unknown mode')
+        if request.get('mode') not in ('e11-a','e11-b','e12','e13-b'):raise ValueError('Unknown mode')
+        if request['mode'] == 'e13-b':
+            from live_handoff import validate_request
+            validate_request(request)
         for field in ('repo','candidate','fixed_report'):
             if field in request:
                 path=Path(request[field]).resolve()
