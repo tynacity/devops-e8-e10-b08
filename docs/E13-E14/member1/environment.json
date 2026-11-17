@@ -1,0 +1,14 @@
+{
+  "host": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tool_baseline": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+  "service_image": "course-e11e12:241880528",
+  "ports": {
+    "buildchecker": 18081,
+    "echecker": 18082,
+    "draft": 18083,
+    "mdfixer": 18084
+  },
+  "a_project": "awaiting member3",
+  "tinyexpr_candidate": "verified base/target, candidate SHA and fresh DRAFT build/output; see work/tinyexpr-draft-current"
+}
