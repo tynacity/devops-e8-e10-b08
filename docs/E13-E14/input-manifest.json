@@ -19,7 +19,7 @@
       "upstream_commit": "25647e692c7906b96ffd2b05ca54c097948e879c",
       "base": "66a6dafcc20cea76bf017923d3db725d78407845",
       "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
-      "candidate_sha256": "2ac5ae7cd7e296cb30e78e6f740642b76d8c4286356a2a5ad1dba5d4ebc7a6e7",
+      "candidate_sha256": "e55bb15d3fb464ca0f037131d9d4bee03e78af47aaed19899ac9278b036892ab",
       "upstream_declared_hashes": {
         "jsmn.h": "c04533e9181e1e33baceb0f55ac449b05145bb936e8c68cc77dfe0d8277514fb"
       },
@@ -33,8 +33,10 @@
       ],
       "declared_upstream_hashes_checked": true,
       "request": "requests/H1-jsmn.json",
-      "execution_status": "NOT_RUN",
-      "note": "Source and request preparation only; no build, detector, repair or E12 execution performed."
+      "execution_status": "SUCCEEDED_MEMBER1_ARM64_AND_MEMBER4_AMD64",
+      "note": "H1 five-stage evidence verified; member4 independently rebuilt and ran on amd64 at validated_program_commit. This is a teacher project, not the A paired project.",
+      "original_teacher_candidate_sha256": "2ac5ae7cd7e296cb30e78e6f740642b76d8c4286356a2a5ad1dba5d4ebc7a6e7",
+      "candidate_source": "docs/E13-E14/member1/H1-jsmn/candidate.member1.Dockerfile"
     },
     {
       "case": "H2-inih",
@@ -65,7 +67,7 @@
       "declared_upstream_hashes_checked": true,
       "request": "requests/H2-inih.json",
       "execution_status": "NOT_RUN",
-      "note": "Source and request preparation only; no build, detector, repair or E12 execution performed."
+      "note": "Member2 5.1 independent component evidence received; formal H2 five-stage run still pending."
     },
     {
       "case": "H3-tiny-aes",
@@ -130,9 +132,15 @@
     "status": "Use existing prepare and record generated commits; not generated in this preparation"
   },
   "runtime": {
-    "status": "AWAITING_MEMBER1",
-    "platform": null,
-    "service_image": null,
-    "execution_images": []
-  }
+    "status": "INDEPENDENT_AMD64_H1_ACCEPTED; FORMAL_FOUR_SERVICE_RUNTIME_PENDING",
+    "platform": "linux/amd64",
+    "service_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "execution_images": [
+      "sha256:fe7d6776c1fc5c9ccc4c868c1dc0b1ca3c8a4c76cf6040a8f24676107f143100"
+    ],
+    "evidence": "evidence/intake-20261117/cloud-acceptance.json",
+    "member1_arm64_scope": "docs/E13-E14/member1/C6-image-scope.json; incremental 7299123 image missing; scans not accepted without images/evidence"
+  },
+  "intake_branch": "student/241880492/e13-e14-intake",
+  "validated_program_commit": "7ebbc7dd2bb6580d554740d6d94eacd692166be0"
 }

@@ -1,0 +1,85 @@
+{
+  "date_utc": "2026-11-17T09:33:58.415967+00:00",
+  "tool_commit": "7ebbc7dd2bb6580d554740d6d94eacd692166be0",
+  "tests": 15,
+  "H1": {
+    "status": "SUCCEEDED",
+    "base": "66a6dafcc20cea76bf017923d3db725d78407845",
+    "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+    "execution_image": "sha256:fe7d6776c1fc5c9ccc4c868c1dc0b1ca3c8a4c76cf6040a8f24676107f143100",
+    "report_sha256": "6cef8a6acf33390f77671e5b6d4944630c8c90c65ada24a9147751591b219fe4"
+  },
+  "component_cases": [
+    {
+      "case": "positive",
+      "exit_code": 0,
+      "error": null,
+      "original_source_unchanged": true,
+      "result": "work/intake/positive/result.json"
+    },
+    {
+      "case": "C2-wrong-target",
+      "exit_code": 1,
+      "error": {
+        "code": "STALE_REPORT",
+        "message": "Producer target differs"
+      },
+      "original_source_unchanged": true,
+      "result": "work/intake/C2-wrong-target/result.json"
+    },
+    {
+      "case": "C3-tampered",
+      "exit_code": 1,
+      "error": {
+        "code": "ARTIFACT_HASH_MISMATCH",
+        "message": "Artifact content changed during transfer"
+      },
+      "original_source_unchanged": true,
+      "result": "work/intake/C3-tampered/result.json"
+    }
+  ],
+  "C6_scans": [
+    {
+      "scope": "source-history-environment",
+      "exit_code": 0,
+      "log": "work/intake/source-history-environment-scan.log"
+    },
+    {
+      "scope": "H1-image",
+      "exit_code": 0,
+      "log": "work/intake/H1-image-scan.log"
+    },
+    {
+      "scope": "runtime",
+      "exit_code": 0,
+      "log": "work/intake/runtime-scan.log"
+    }
+  ],
+  "image_scope": "Docker history commands and configured environment; not exhaustive layer-filesystem scanning",
+  "images": [
+    {
+      "Id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "RepoTags": [
+        "course-e11e12:241880492",
+        "course-e11e12:241880546"
+      ],
+      "RepoDigests": [
+        "course-e11e12@sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:fe7d6776c1fc5c9ccc4c868c1dc0b1ca3c8a4c76cf6040a8f24676107f143100",
+      "RepoTags": [
+        "e6-draft-replay:e62eb645ee6b4908a5cef2f688e79909-2"
+      ],
+      "RepoDigests": [
+        "e6-draft-replay@sha256:fe7d6776c1fc5c9ccc4c868c1dc0b1ca3c8a4c76cf6040a8f24676107f143100"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    }
+  ],
+  "scope": "H1 teacher project and new MDFixer component on amd64; not A-paired project or four-service HTTP acceptance"
+}
