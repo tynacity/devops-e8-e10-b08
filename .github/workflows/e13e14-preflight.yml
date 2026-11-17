@@ -11,6 +11,8 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
+      - name: Install component test dependencies
+        run: sudo apt-get update && sudo apt-get install -y gcc make git strace
       - name: Record source and run preparation checks
         shell: bash
         run: |
@@ -18,7 +20,7 @@ jobs:
           mkdir -p work/e13-member4-preflight
           git rev-parse HEAD > work/e13-member4-preflight/source-commit.txt
           python3 --version > work/e13-member4-preflight/python-version.txt
-          python3 -m unittest discover -s labs/e13e14/tests -p 'test_member4_preflight.py' -v 2>&1 | tee work/e13-member4-preflight/tests.log
+          python3 -m unittest discover -s labs/e13e14/tests -p 'test_member*.py' -v 2>&1 | tee work/e13-member4-preflight/tests.log
           python3 labs/e13e14/scan_runtime_logs.py work/e13-member4-preflight 2>&1 | tee work/e13-member4-runtime-scan.log
       - uses: actions/upload-artifact@v7.0.2
         if: always()
