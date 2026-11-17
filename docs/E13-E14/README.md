@@ -2,6 +2,27 @@
 
 日期：2026-11-17。用户已选择成员4（241880492）；成员1–3仍使用岗位代称，不推定已选岗或已签收。
 
+## 最新执行进展（覆盖下方前期快照）
+
+- GitLab的`E11-E12-B-member4-acceptance-20261113`已快进至GitHub main `e7d83cb…`，补齐9个提交；本轮准备另备份到`E13-E14-B-member4-241880492`。
+- GitHub成员4准备分支已推送。程序版本`0c6116a4a4d58e1aa0a987ef9091a0c8be594662`上的E7、E8–E10、E11/E12及新增预检四条CI全部通过。
+- 服务器独立目录：`/root/241880492/e13-e14-member4-20261117/repo`。复用已验证环境镜像，新增本人标签`course-e11e12:241880492`；原E12服务保持健康。
+- 云端6项成员4预检、24项既有契约测试通过；固定样例输入已生成，三个教师项目源码/请求和TinyExpr/A检测器已准备。
+- 在实际DRAFT镜像内完成归档A报告的正向修复消费、C2错误目标拒绝、C3字节篡改拒绝。23份原项目文件不变。C6假值命中/清理、源码/历史、环境镜像、DRAFT镜像和运行日志扫描均符合预期。
+- [云端环境](evidence/cloud-0c6116a/environment.json)、[独立检查及范围](evidence/cloud-0c6116a/independent-checks.json)、[24项契约日志](evidence/cloud-0c6116a/environment-contracts.log)。原始云端归档和CI产物已下载留存。
+- 以上C2/C3使用历史E12报告，不算本轮A/B正式交叉验收；H1–H3项目尚未运行，四角色HTTP部署仍待对应成员交付。本人环境已就绪，成员1仍需交最终组内镜像方案；成员3/A组仍需交本轮项目、报告和稳定接口。
+
+### 已通过的程序版本CI
+
+| 工作流 | 运行 |
+| --- | --- |
+| 成员4预检 | [44003833957](https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44003833957) |
+| E7 | [44003833801](https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44003833801) |
+| E8–E10 | [44003833958](https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44003833958) |
+| E11/E12 | [44003833863](https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44003833863) |
+
+下方为部署前的准备快照，保留以区分历史状态；“未推送/待环境”等当前状态以上述执行进展为准。
+
 后续只读核对：[服务器、GitHub与GitLab当前状态](远端状态核对-20261117.md)。已有服务器登录及GitHub认证均可用，先前保护设置查询401已解决；GitLab阶段备份落后GitHub main 9个提交。
 
 仓库分两类：`tynacity/devops-e8-e10-b08`是工具/集成/CI仓库；`tynacity/tinyexpr`是实际被测项目。TinyExpr课程分支、本地与服务器项目均核对为`db16775…`；GitLab落后9个提交的结论只指工具仓库备份。
