@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-11-17T02:36:11.471891+00:00",
+  "repository": "/root/241880492/e13-e14-member4-20261117/repo",
+  "tool_commit": "0c6116a4a4d58e1aa0a987ef9091a0c8be594662",
+  "branch": "student/241880492/e13-e14-prep",
+  "environment_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+  "environment_tag": "course-e11e12:241880492",
+  "environment_source": "Reused verified E11/E12 image; no rebuild or shared tag overwrite",
+  "host_preflight": "passed",
+  "environment_contracts": "passed",
+  "fixed_fixture": {
+    "source": "course-generated controlled C/Make project",
+    "base_commit": "fa31ace90acf0198f60171489b7aebf62015b270",
+    "target_commit": "17bc127d7b3dc083e49d13278b070ee0b217a8dc",
+    "candidate_source": "recorded dependency-install pattern adapted to the two-source-file project",
+    "expected_output": "1",
+    "purpose": "classroom baseline; replace request paths with your own project for real-data integration"
+  },
+  "teacher_projects": "Inputs and requests prepared; H1/H2/H3 not executed",
+  "tinyexpr_target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+  "tracked_worktree_clean": true,
+  "existing_services_changed": false
+}
