@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-17",
+  "scope": "5.1 component handoff",
+  "source_commit": "82296b27bbadddc413246433383f2e3e6f6fca32",
+  "repository": "https://github.com/tynacity/devops-e8-e10-b08",
+  "branch": "student/241880529/e13-e14",
+  "baseline": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+  "source_sha256": {
+    "labs/e13e14/mdfixer.py": "088393f75734d427c2db701d337ec45699d6dccf2e7d6d092ad37d13ff842443",
+    "labs/e13e14/tests/test_member2_mdfixer.py": "3103bda408c0a633484c42bb3a5a91668fbf0e1068fde93aec5024ef9463f6c0"
+  },
+  "tests": {
+    "new": 9,
+    "existing_contracts": 24,
+    "regression": 22
+  },
+  "independent_runs": {
+    "H2-inih": "SUCCEEDED",
+    "TinyExpr": "SUCCEEDED"
+  },
+  "runtime": "WSL Ubuntu 22.04, Python 3.10.12, native process; no DRAFT image in this run",
+  "evidence_zip_sha256": "5911f73b94a893ae4412fa75c526878fadf9baa1aa1b4e8d0576b39af344a1c5",
+  "pending": [
+    "member 3 HTTP role integration",
+    "member 1 project execution image",
+    "5.2 formal C5/H2",
+    "5.3 four-service verification"
+  ]
+}
