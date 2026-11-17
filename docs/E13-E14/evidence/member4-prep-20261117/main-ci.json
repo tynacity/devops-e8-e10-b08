@@ -1,0 +1,38 @@
+{
+  "checked_date": "2026-11-17",
+  "command": [
+    "gh",
+    "run",
+    "list",
+    "--repo",
+    "tynacity/devops-e8-e10-b08",
+    "--branch",
+    "main",
+    "--limit",
+    "3",
+    "--json",
+    "headSha,name,conclusion,url"
+  ],
+  "exit_code": 0,
+  "response": [
+    {
+      "conclusion": "success",
+      "headSha": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+      "name": "E11-E12 integration",
+      "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/43567479983"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+      "name": "E7 B quality gate",
+      "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/43567479972"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+      "name": "E8-E10 teaching validation",
+      "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/43567479978"
+    }
+  ],
+  "stderr": ""
+}

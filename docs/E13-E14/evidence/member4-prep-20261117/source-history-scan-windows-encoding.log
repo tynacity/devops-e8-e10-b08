@@ -1,0 +1,23 @@
+Exception in thread Thread-3 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1081, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1023, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1613, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xaf in position 3697: illegal multibyte sequence
+Traceback (most recent call last):
+  File "F:\codes\devops_labs\e13-e14-member4-20261117\scripts\secret_scan.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "F:\codes\devops_labs\e13-e14-member4-20261117\scripts\secret_scan.py", line 87, in main
+    hits += scan_text(log, "git-history")
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "F:\codes\devops_labs\e13-e14-member4-20261117\scripts\secret_scan.py", line 33, in scan_text
+    for n, line in enumerate(text.splitlines(), 1):
+                             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'splitlines'

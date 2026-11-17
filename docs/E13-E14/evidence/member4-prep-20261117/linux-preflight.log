@@ -1,0 +1,11 @@
+test_archived_valid_report_is_accepted (test_member4_preflight.ArchivedReportPreflight.test_archived_valid_report_is_accepted) ... ok
+test_c2_report_for_another_target_is_rejected (test_member4_preflight.ArchivedReportPreflight.test_c2_report_for_another_target_is_rejected) ... ok
+test_c3_changed_bytes_with_original_digest_are_rejected (test_member4_preflight.ArchivedReportPreflight.test_c3_changed_bytes_with_original_digest_are_rejected) ... ok
+test_c6_work_log_hit_is_redacted_and_cleaning_passes (test_member4_preflight.RuntimeScannerPreflight.test_c6_work_log_hit_is_redacted_and_cleaning_passes) ... ok
+test_empty_directory_does_not_pass (test_member4_preflight.RuntimeScannerPreflight.test_empty_directory_does_not_pass) ... ok
+test_missing_path_does_not_pass (test_member4_preflight.RuntimeScannerPreflight.test_missing_path_does_not_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.594s
+
+OK

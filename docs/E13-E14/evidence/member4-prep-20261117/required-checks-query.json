@@ -1,0 +1,15 @@
+{
+  "checked_date": "2026-11-17",
+  "command": [
+    "gh",
+    "api",
+    "repos/tynacity/devops-e8-e10-b08/branches/main/protection/required_status_checks"
+  ],
+  "exit_code": 1,
+  "response": {
+    "message": "Requires authentication",
+    "documentation_url": "https://docs.github.com/rest",
+    "status": "401"
+  },
+  "stderr": "gh: Requires authentication (HTTP 401)\n"
+}
