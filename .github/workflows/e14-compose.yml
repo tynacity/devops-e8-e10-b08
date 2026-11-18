@@ -31,9 +31,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          docker compose -f labs/e13e14/compose.yaml config > work/e14-ci/compose.yaml
-          docker compose -f labs/e13e14/compose.yaml up -d --wait --wait-timeout 120
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          # Host snapshots and service Git operations must have the same owner.
+          roles = {role: {'user': f'{os.getuid()}:{os.getgid()}'}
+                   for role in ('buildchecker', 'echecker', 'draft', 'mdfixer')}
+          roles['draft']['group_add'] = [str(Path('/var/run/docker.sock').stat().st_gid)]
+          Path('work/e14-ci/compose-user.json').write_text(json.dumps({'services': roles}, indent=2) + '\n')
+          PY
+          docker compose -f labs/e13e14/compose.yaml -f work/e14-ci/compose-user.json config > work/e14-ci/compose.yaml
+          docker compose -f labs/e13e14/compose.yaml -f work/e14-ci/compose-user.json up -d --wait --wait-timeout 120
           docker compose -f labs/e13e14/compose.yaml ps --format json > work/e14-ci/services.json
+          docker compose -f labs/e13e14/compose.yaml exec -T echecker id > work/e14-ci/service-user.txt
       - name: Verify success, timeout and recovery
         shell: bash
         run: |
