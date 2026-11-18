@@ -1,0 +1,48 @@
+{
+  "checked_utc": "2026-11-18T07:56:27.253356+00:00",
+  "tool_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+  "entry": "POST /v1/jobs, mode=e13-b",
+  "project": "A-HeaderFlow",
+  "cases": [
+    {
+      "case": "C2-wrong-target",
+      "job_id": "job-4d11ec8fe6bd41779a8b8d06662a15b5",
+      "trace_id": "trace-e29d9c4ef82f4ec1a10d6a54111fe9a0",
+      "status": "FAILED",
+      "error_code": "STALE_REPORT",
+      "artifacts_downloaded_and_verified": 4,
+      "draft_started": false
+    },
+    {
+      "case": "C3-tampered",
+      "job_id": "job-013f086f64d849a39fdd76b8650f86f0",
+      "trace_id": "trace-5c6dd7591d6640618acfc3221fa4a5b9",
+      "status": "FAILED",
+      "error_code": "ARTIFACT_HASH_MISMATCH",
+      "artifacts_downloaded_and_verified": 4,
+      "draft_started": false
+    },
+    {
+      "case": "C1-positive-control",
+      "job_id": "job-61048f08e6e24fc09bb626e62ade5305",
+      "trace_id": "trace-bdf28f8200014e84846f6e37e713618d",
+      "status": "SUCCEEDED",
+      "error_code": null,
+      "artifacts_downloaded_and_verified": 131,
+      "draft_started": true
+    }
+  ],
+  "C2_C3": "PASS; rejected before DRAFT and MDFixer",
+  "C7_support": "Distinct task directories and identities; failed tasks remain terminal after succeeding subsequent task",
+  "C8_support": {
+    "same_input_same_job": true,
+    "different_input_http": 409,
+    "jobs_created": 3
+  },
+  "source_unchanged": true,
+  "source_report_unchanged": true,
+  "execution_image_id": "sha256:bc8364992123a94617f091d909cf3abb57b5af38688fcb224e3f0c7549d244df",
+  "environment_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+  "download_hashes_verified": 139,
+  "scope": "Member4 independent paired-project API verification; not E14 four-role HTTP deployment or A-side sign-off"
+}

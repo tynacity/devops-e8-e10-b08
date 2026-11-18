@@ -1,0 +1,30 @@
+test_compile_error_keeps_all_dependency_repairs (test_member2_c5.C5InjectionTests.test_compile_error_keeps_all_dependency_repairs) ... ok
+test_h2_dependency_order_is_supported (test_member2_c5.C5InjectionTests.test_h2_dependency_order_is_supported) ... ok
+test_headerflow_missing_config_keeps_other_repairs (test_member2_c5.C5InjectionTests.test_headerflow_missing_config_keeps_other_repairs) ... ok
+test_missing_compile_recipe_is_rejected (test_member2_c5.C5InjectionTests.test_missing_compile_recipe_is_rejected) ... ok
+test_missing_probe_dependency_is_rejected (test_member2_c5.C5InjectionTests.test_missing_probe_dependency_is_rejected) ... ok
+test_unknown_injection_is_rejected (test_member2_c5.C5InjectionTests.test_unknown_injection_is_rejected) ... ok
+test_actual_report_generates_verified_patch (test_member2_mdfixer.Member2MDFixerTests.test_actual_report_generates_verified_patch) ... ok
+test_changed_report_is_rejected (test_member2_mdfixer.Member2MDFixerTests.test_changed_report_is_rejected) ... ok
+test_existing_output_is_preserved (test_member2_mdfixer.Member2MDFixerTests.test_existing_output_is_preserved) ... ok
+test_failed_upstream_is_rejected (test_member2_mdfixer.Member2MDFixerTests.test_failed_upstream_is_rejected) ... ok
+test_incomplete_repair_rolls_back_target (test_member2_mdfixer.Member2MDFixerTests.test_incomplete_repair_rolls_back_target) ... ok
+test_invalid_profile_is_rejected (test_member2_mdfixer.Member2MDFixerTests.test_invalid_profile_is_rejected) ... ok
+test_report_hash_is_required (test_member2_mdfixer.Member2MDFixerTests.test_report_hash_is_required) ... ok
+test_stale_inner_commit_is_rejected (test_member2_mdfixer.Member2MDFixerTests.test_stale_inner_commit_is_rejected) ... ok
+test_wrong_kind_is_rejected (test_member2_mdfixer.Member2MDFixerTests.test_wrong_kind_is_rejected) ... ok
+test_archived_valid_report_is_accepted (test_member4_preflight.ArchivedReportPreflight.test_archived_valid_report_is_accepted) ... ok
+test_c2_report_for_another_target_is_rejected (test_member4_preflight.ArchivedReportPreflight.test_c2_report_for_another_target_is_rejected) ... ok
+test_c3_changed_bytes_with_original_digest_are_rejected (test_member4_preflight.ArchivedReportPreflight.test_c3_changed_bytes_with_original_digest_are_rejected) ... ok
+test_public_changed_report_rejected_before_build (test_member4_preflight.PublicReportBoundaryPreflight.test_public_changed_report_rejected_before_build) ... ok
+test_public_producer_size_mismatch_rejected_before_build (test_member4_preflight.PublicReportBoundaryPreflight.test_public_producer_size_mismatch_rejected_before_build) ... ok
+test_public_wrong_baseline_rejected_before_build (test_member4_preflight.PublicReportBoundaryPreflight.test_public_wrong_baseline_rejected_before_build) ... ok
+test_public_wrong_target_rejected_before_build (test_member4_preflight.PublicReportBoundaryPreflight.test_public_wrong_target_rejected_before_build) ... ok
+test_c6_work_log_hit_is_redacted_and_cleaning_passes (test_member4_preflight.RuntimeScannerPreflight.test_c6_work_log_hit_is_redacted_and_cleaning_passes) ... ok
+test_empty_directory_does_not_pass (test_member4_preflight.RuntimeScannerPreflight.test_empty_directory_does_not_pass) ... ok
+test_missing_path_does_not_pass (test_member4_preflight.RuntimeScannerPreflight.test_missing_path_does_not_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 3.257s
+
+OK

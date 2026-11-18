@@ -45,7 +45,7 @@
       "upstream_commit": "611ab51f8dd7ec583543815b0de693495045fbf8",
       "base": "aafc740a2cac05a74541abede93b7d59ed23b87f",
       "target": "3aadb81763c79651e4dfa99b725ba921ee2b8a39",
-      "candidate_sha256": "7bf4b0b9861137354132a2a7676b567ec2de1f0ee71161034a27e8a7b06f4e90",
+      "candidate_sha256": "f1e25df27f06b421ba29f62e346c0493d410c72e4410bca2b85e045398c45a7b",
       "upstream_declared_hashes": {
         "helper.c": "49635826cc1ae71209ba88cdad0640d7d1a079779ee24c521efd1e06f4a60633",
         "ini.h": "db3995229183d50d42cb675bf048f04525aed857fe3e4e39a54a1d7dd2f0f2e9"
@@ -66,8 +66,10 @@
       ],
       "declared_upstream_hashes_checked": true,
       "request": "requests/H2-inih.json",
-      "execution_status": "NOT_RUN",
-      "note": "Member2 5.1 independent component evidence received; formal H2 five-stage run still pending."
+      "execution_status": "SUCCEEDED_MEMBER2_AMD64_EVIDENCE_ACCEPTED",
+      "note": "Full H2 five stages, C5 and same-run report consumption verified from member2 archive; not rerun by member4. Runtime source 06cfb71dffc23d73c46b2b77561fad2e8b2ed677.",
+      "original_teacher_candidate_sha256": "7bf4b0b9861137354132a2a7676b567ec2de1f0ee71161034a27e8a7b06f4e90",
+      "candidate_source": "fixtures/e13e14/H2-inih-tools.Dockerfile"
     },
     {
       "case": "H3-tiny-aes",
@@ -106,7 +108,7 @@
     "repository": "https://github.com/tynacity/tinyexpr",
     "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
     "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
-    "status": "E11/E12 historical input; E13 pairing and current candidate await confirmation",
+    "status": "Member1 supplemental TinyExpr five-stage rerun verified; current A-side consumption/sign-off not received",
     "verification_20261117": {
       "repository_role": "actual project under test; separate from tool repository",
       "remote_branch": "course/e11-e12",
@@ -123,24 +125,38 @@
     }
   },
   "A_project": {
-    "status": "AWAITING_MEMBER3_AND_A",
+    "name": "A-HeaderFlow",
+    "status": "B_CLI_EVIDENCE_ACCEPTED_AND_MEMBER4_PUBLIC_API_VERIFIED; A_SIGNOFF_PENDING",
     "repository": null,
-    "base": null,
-    "target": null
+    "repository_source": "Offline Git repository from member2 inputs.zip, cross-checked against member1 A package",
+    "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+    "report_sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c",
+    "producer_manifest_sha256": "875d5b6e3c9636acde7910944488750ba55b832273c387bf38750dcab4711b95",
+    "A_freeze_id": "G0-A-20261117-f984f64-v1",
+    "A_tool_commit_declared_by_handoff": "f984f64543da103b1fc28fcc8bdaf7ea9d08d6cc",
+    "source_job_id": "job-6e7f20bbfc9c49adb76d8432ce08f542",
+    "source_trace_id": "trace-027e97ba3b724c3bb84a2026e4dc6ac8",
+    "request": "requests/A-HeaderFlow-e13-b.json",
+    "evidence": "evidence/paired-20261118/api-acceptance.json"
   },
   "fixed_fixture": {
     "status": "Use existing prepare and record generated commits; not generated in this preparation"
   },
   "runtime": {
-    "status": "INDEPENDENT_AMD64_H1_ACCEPTED; FORMAL_FOUR_SERVICE_RUNTIME_PENDING",
+    "status": "PAIRED_A_PROJECT_PUBLIC_API_AMD64_VERIFIED; E14_FOUR_ROLE_RUNTIME_PENDING",
     "platform": "linux/amd64",
     "service_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
     "execution_images": [
-      "sha256:fe7d6776c1fc5c9ccc4c868c1dc0b1ca3c8a4c76cf6040a8f24676107f143100"
+      "sha256:bc8364992123a94617f091d909cf3abb57b5af38688fcb224e3f0c7549d244df",
+      "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+      "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb"
     ],
-    "evidence": "evidence/intake-20261117/cloud-acceptance.json",
-    "member1_arm64_scope": "docs/E13-E14/member1/C6-image-scope.json; incremental 7299123 image missing; scans not accepted without images/evidence"
+    "evidence": "evidence/paired-20261118/c6-acceptance.json",
+    "member1_arm64_scope": "11 image summaries received; 10 of 22 raw history/env checks cannot be independently matched; not in current amd64 acceptance scope"
   },
-  "intake_branch": "student/241880492/e13-e14-intake",
-  "validated_program_commit": "7ebbc7dd2bb6580d554740d6d94eacd692166be0"
+  "intake_branch": "student/241880492/e13-e14-paired-acceptance",
+  "validated_program_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+  "latest_acceptance_date": "2026-11-18"
 }

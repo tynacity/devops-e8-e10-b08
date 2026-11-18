@@ -1,0 +1,38 @@
+[
+  {
+    "name": "A项目C5交接.md",
+    "bytes": 5715,
+    "sha256": "03e14a9b1da73a7f4262d4fd28d63f050c3b7aa3b04a470396544dfc7fae9dcf"
+  },
+  {
+    "name": "member2-A-HeaderFlow-C5-20261118.zip",
+    "bytes": 286651,
+    "sha256": "e18b8611e9b1b9a4873d4db80dbe993d030605cc453758292b04002ff9c309c3"
+  },
+  {
+    "name": "B-to-A-E13-20261117-v2-C1.zip",
+    "bytes": 1898524,
+    "sha256": "e4687e8bd635695da9a56c60fce320e60f6956e1e4fa65a56b53baea0a04a2de"
+  },
+  {
+    "name": "成员1-A项目推进交付-20261117.zip",
+    "bytes": 933460,
+    "sha256": "d12c18ee639e8f98d43e3928f973736873cd8b5fd659bbc67f24b88be98b7bf2"
+  },
+  {
+    "name": "成员1-回执后补齐交付-20261117.zip",
+    "bytes": 2096507,
+    "sha256": "5ab32dc63977ffb0c5fb6cd0d80f4ca29c4684f001c11dcba2e54b4ee0a30875"
+  },
+  {
+    "name": "5.2云端验收.md",
+    "bytes": 4967,
+    "sha256": "265df40df3804333d3f1e04e4c151f1dda3bf070ba0dd28d01ee3c4a4e57b818"
+  },
+  {
+    "name": "member2-H2-C5-cloud-final-20261117.zip",
+    "bytes": 961189,
+    "sha256": "17f73b3d430b33fa56a5bdc00ea0792d9b31ca39690772fc3ef40411f43f798e",
+    "source": "member2 Git commit efa63135f51bfed6d7047ae2de916ef80885ac07 docs/students/241880529/e13-e14/evidence"
+  }
+]
