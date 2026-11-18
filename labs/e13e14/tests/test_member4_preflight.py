@@ -14,6 +14,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / 'labs/e11e12'))
 from tinyexpr_repair import Failure, consume
+from pipeline import execute
 
 ARCHIVE = ROOT / 'docs/students/241880546/e11-e12/evidence/tinyexpr-ab-8d2fa1f23ff7/a'
 SCANNER = ROOT / 'labs/e13e14/scan_runtime_logs.py'
@@ -52,6 +53,60 @@ class ArchivedReportPreflight(unittest.TestCase):
             consume(self.report, self.target, self.manifest, self.digest)
         self.assertEqual(caught.exception.code, 'ARTIFACT_HASH_MISMATCH')
         self.assertEqual((ARCHIVE / 'incremental-check.json').read_bytes(), self.original)
+
+
+class PublicReportBoundaryPreflight(unittest.TestCase):
+    """Exercise the new public mode's rejection contract before any build."""
+
+    def setUp(self):
+        for name in ('data', 'work'):
+            (ROOT / name).mkdir(exist_ok=True)
+        inputs = tempfile.TemporaryDirectory(prefix='member4-boundary-', dir=ROOT / 'data')
+        outputs = tempfile.TemporaryDirectory(prefix='member4-boundary-', dir=ROOT / 'work')
+        self.addCleanup(inputs.cleanup)
+        self.addCleanup(outputs.cleanup)
+        self.inputs = Path(inputs.name)
+        self.out = Path(outputs.name) / 'task'
+        self.report = self.inputs / 'incremental-check.json'
+        self.manifest = self.inputs / 'producer-result.json'
+        self.report.write_bytes((ARCHIVE / 'incremental-check.json').read_bytes())
+        self.manifest.write_bytes((ARCHIVE / 'result.json').read_bytes())
+        producer = json.loads(self.manifest.read_bytes())
+        project = self.inputs / 'repo'
+        project.mkdir()
+        candidate = self.inputs / 'candidate.Dockerfile'
+        candidate.write_text('FROM scratch\n', encoding='utf-8')
+        self.request = dict(mode='e13-b', profile='tinyexpr', repo=str(project),
+                            candidate=str(candidate), expected_output='1',
+                            base=producer['base_commit'], target=producer['target_commit'],
+                            report=str(self.report), producer_manifest=str(self.manifest),
+                            report_sha256=hashlib.sha256(self.report.read_bytes()).hexdigest())
+
+    def rejected(self, code):
+        result = execute(self.request, self.out)
+        self.assertEqual(result['status'], 'FAILED')
+        self.assertEqual(result['error']['code'], code)
+        self.assertEqual(result['stages'], [])
+        self.assertFalse((self.out / 'draft-build').exists())
+
+    def test_public_wrong_target_rejected_before_build(self):
+        self.request['target'] = self.request['base']
+        self.rejected('STALE_REPORT')
+
+    def test_public_changed_report_rejected_before_build(self):
+        self.report.write_bytes(self.report.read_bytes() + b'\n')
+        self.rejected('ARTIFACT_HASH_MISMATCH')
+
+    def test_public_wrong_baseline_rejected_before_build(self):
+        self.request['base'] = '0' * 40
+        self.rejected('STALE_REPORT')
+
+    def test_public_producer_size_mismatch_rejected_before_build(self):
+        producer = json.loads(self.manifest.read_bytes())
+        entry, = [s['artifact'] for s in producer['stages'] if s['name'] == 'incremental-check']
+        entry['bytes'] = self.report.stat().st_size + 1
+        self.manifest.write_text(json.dumps(producer), encoding='utf-8')
+        self.rejected('ARTIFACT_HASH_MISMATCH')
 
 
 class RuntimeScannerPreflight(unittest.TestCase):
