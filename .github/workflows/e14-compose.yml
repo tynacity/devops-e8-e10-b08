@@ -35,7 +35,7 @@ jobs:
           import json, os
           from pathlib import Path
           # Host snapshots and service Git operations must have the same owner.
-          roles = {role: {'user': f'{os.getuid()}:{os.getgid()}'}
+          roles = {role: {'user': f'{os.getuid()}:{os.getgid()}', 'environment': {'HOME': '/tmp'}}
                    for role in ('buildchecker', 'echecker', 'draft', 'mdfixer')}
           roles['draft']['group_add'] = [str(Path('/var/run/docker.sock').stat().st_gid)]
           Path('work/e14-ci/compose-user.json').write_text(json.dumps({'services': roles}, indent=2) + '\n')
