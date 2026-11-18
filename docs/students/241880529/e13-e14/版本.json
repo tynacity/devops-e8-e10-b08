@@ -22,8 +22,8 @@
   "evidence_zip_sha256": "5911f73b94a893ae4412fa75c526878fadf9baa1aa1b4e8d0576b39af344a1c5",
   "pending": [
     "member 3 HTTP role integration",
-    "member 1 review of H2 environment candidate",
-    "paired A-project C5 and C2/C3 once input is handed over",
+    "member 4 acceptance of H2 and paired C5 evidence",
+    "C2/C3 formal matrix confirmation with member 4",
     "5.3 four-service verification"
   ],
   "5.2_cloud": {
@@ -34,5 +34,13 @@
     "job_id": "job-cfa2dc6672b841d2a8e0c85ad492756c",
     "issue": "https://github.com/tynacity/devops-e8-e10-b08/issues/15",
     "evidence": "evidence/member2-H2-C5-cloud-final-20261117.zip"
+  },
+  "5.2_paired_C5": {
+    "date": "2026-11-18",
+    "tool_commit": "5aad22a5cc5a2516ecbcf505aaf73b1c1d68aafd",
+    "project_target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "status": "SUCCEEDED",
+    "evidence": "evidence/member2-A-HeaderFlow-C5-20261118.zip",
+    "review": "awaiting member 4"
   }
 }
