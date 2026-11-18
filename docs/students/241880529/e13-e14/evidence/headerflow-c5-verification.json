@@ -1,0 +1,58 @@
+{
+  "tool_commit": "5aad22a5cc5a2516ecbcf505aaf73b1c1d68aafd",
+  "image_id": "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+  "source_project_base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+  "source_project_target": "961f40cb8fbb71de304b782ff754522d59d51305",
+  "A_job_id": "job-6e7f20bbfc9c49adb76d8432ce08f542",
+  "A_trace_id": "trace-027e97ba3b724c3bb84a2026e4dc6ac8",
+  "A_report_sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c",
+  "image_inputs_match_original": {
+    "main.c": "1e2e75d84a5a28f44438792dbb33ce888a09fad6597094d998ebaf34fa784312",
+    "helper.c": "c2766173318ef0520323f0ed70a1baa36f7025459e20abe9297813957c3df0a1",
+    "Makefile": "a371c0e2bae3e70bd2552d0bba5e5fdf9ecae331a3875bf021b389ca7fc06ac3",
+    "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+    "extra.h": "5e20ae92639ee989af5638bd0308a6a86e71bdb4345f60b962ba9db7265e4f7c",
+    "unused.h": "3f7fec0991b34d614462e29b450c76638f07171936a12df337c578c2d1481b37"
+  },
+  "member2_tests": 15,
+  "existing_contracts": 24,
+  "result": {
+    "status": "SUCCEEDED",
+    "scope": "Explicit Make C5 verification",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "original_source_unchanged": true,
+    "cases": [
+      {
+        "case": "positive",
+        "accepted": true,
+        "rollback": false,
+        "candidate_sha256": "4d9e61596043231b12564b623b74a1b974519202ee491492fccb9c1654b89ee6",
+        "target_files_unchanged": false
+      },
+      {
+        "case": "missing-config",
+        "accepted": false,
+        "rollback": true,
+        "candidate_sha256": "a339b452269b0232ac051425682e32bbc742c33992aea757a5525cd1a048bc10",
+        "target_files_unchanged": true
+      },
+      {
+        "case": "compile-error",
+        "accepted": false,
+        "rollback": true,
+        "candidate_sha256": "142906758e3afa5e8919b3bf41445fb2be28e8ce875c488f4eafa55782259830",
+        "target_files_unchanged": true
+      }
+    ],
+    "input_report": {
+      "sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c",
+      "job_id": "job-6e7f20bbfc9c49adb76d8432ce08f542",
+      "trace_id": "trace-027e97ba3b724c3bb84a2026e4dc6ac8",
+      "kind": "incremental-check"
+    }
+  },
+  "source_sha256": {
+    "labs/e13e14/run_member2_c5.py": "dbb39cc604e431e8b834c49ab520fcbf1710b808cfc393733ef1323a46b83f31",
+    "labs/e13e14/tests/test_member2_c5.py": "d73889470b8226fd00240b80f4f91f438dbe035c38e96d03e27b28405bf9029d"
+  }
+}

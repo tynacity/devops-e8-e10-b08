@@ -1,0 +1,32 @@
+{
+  "tool_commit": "06cfb71dffc23d73c46b2b77561fad2e8b2ed677",
+  "tool_status": "",
+  "host": "Linux 5.15.0-191-generic x86_64",
+  "candidate_sha256": "f1e25df27f06b421ba29f62e346c0493d410c72e4410bca2b85e045398c45a7b",
+  "failed_job": "job-bb84b9934e1d4c2d8ed4a4b4e0c23c1c",
+  "job_id": "job-cfa2dc6672b841d2a8e0c85ad492756c",
+  "trace_id": "trace-23b7870e297747c09da11e0a87dfcd43",
+  "execution_image_id": "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb",
+  "artifacts_verified": 206,
+  "runtime_operations_verified": 7,
+  "source_files": {
+    "labs/e11e12/pipeline.py": "2c8a1fdfce2a14ca6f189d03379fecf1d7e07dce3cfc30c6d001bfd507b56fdb",
+    "labs/e11e12/runtime_worker.py": "447a81b8ede85ad7209945fa825784add03f4074fa324f3e8a7d206120f967ed",
+    "labs/e11e12/draft_runtime.py": "8486670ff43fb17d7101400f4c773f619d2cce0ecf4c69db3a3f681914b81d77",
+    "labs/e8e10/lab.py": "79d383003de7b60538d970c5eccaf1e6eba227fe0c3ae632bd902eb847c4ca90",
+    "labs/e13e14/mdfixer.py": "088393f75734d427c2db701d337ec45699d6dccf2e7d6d092ad37d13ff842443",
+    "labs/e13e14/run_member2_c5.py": "557fe182268d5163331585864f6c3901baf7d7dfa4a7cc4310f86657df1b6fdf",
+    "labs/e11e12/vendor/draft/autobuild.py": "46afe8c9016f78f217372e6cdfef70ed495f9577677806ee87712e49160ff6fd"
+  },
+  "project": {
+    "base": "aafc740a2cac05a74541abede93b7d59ed23b87f",
+    "target": "3aadb81763c79651e4dfa99b725ba921ee2b8a39"
+  },
+  "service_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+  "component_consumed_current_report": true,
+  "input_report_sha256": "81d26fe62ace02404500919c712674a72d78029976f05d339d9c4618f3344f71",
+  "services_after": [
+    "e12-tinyexpr-241880546 course-e11e12:241880546 127.0.0.1:18547->8080/tcp",
+    "e12-241880546-ae092326febb course-e11e12:241880546 127.0.0.1:18546->8080/tcp"
+  ]
+}
