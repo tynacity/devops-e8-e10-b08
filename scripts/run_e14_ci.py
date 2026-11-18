@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import traceback
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'work/e14-ci'
@@ -21,6 +22,8 @@ def read(path):
 def run(args, log, expected=0):
     p = subprocess.run(args, cwd=ROOT, capture_output=True, text=True, timeout=900)
     log.write_text(p.stdout + p.stderr, encoding='utf-8')
+    if p.returncode != expected:
+        print((p.stdout + p.stderr)[-2000:], flush=True)
     assert p.returncode == expected, (args, p.returncode, expected, str(log))
     return p.stdout
 
@@ -113,4 +116,16 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except Exception as exc:
+        frame = traceback.extract_tb(exc.__traceback__)[-1]
+        message = f'{type(exc).__name__} at {Path(frame.filename).name}:{frame.lineno}: {exc}'
+        for name in ('normal', 'timeout', 'recovery'):
+            path = OUT / name / 'result.json'
+            if path.exists():
+                result = read(path)
+                message += f'; {name}={result.get("status")}, error={str(result.get("error"))[:400]}'
+        message = message.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+        print('::error::' + message, flush=True)
+        raise
