@@ -78,7 +78,7 @@
       "upstream_commit": "23856752fbd139da0b8ca6e471a13d5bcc99a08d",
       "base": "dc8099306d7023b7337328d718149973e7b17978",
       "target": "5640bb69a01e64559207e9f74d15a9ae71a4d0f3",
-      "candidate_sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+      "candidate_sha256": "eb4ed9637b85726149dab490764619f934f795eabd3b0f7e4cd9f76c3127ee4b",
       "upstream_declared_hashes": {
         "aes.h": "9f74a4de3bd11621ff6e8fb9b352b060f699e6c1c67f81a22d104aacad61a23b",
         "helper.c": "f7f78b44654efd3542b6886923dd05194286807ebcfeb078ea05d21fe901ee9e"
@@ -98,9 +98,14 @@
         }
       ],
       "declared_upstream_hashes_checked": true,
-      "request": "requests/H3-tiny-aes.json",
-      "execution_status": "NOT_RUN",
-      "note": "Source and request preparation only; no build, detector, repair or E12 execution performed."
+      "request": "requests/H3-tiny-aes-tools.json",
+      "execution_status": "SUCCEEDED_MEMBER3_AMD64_EVIDENCE_ACCEPTED",
+      "note": "Member3 E12 CLI evidence accepted: fcd36c0082be043c8fece6a61941321833171aa7, five stages passed after adding strace git to original candidate. Original FULL_CHECK_FAILED preserved. Member4 verified 327 manifest files and 299 artifact references without rerunning H3; not E14 four-service acceptance.",
+      "original_teacher_candidate_sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+      "candidate_source": "docs/E13-E14/member3/H3/candidate.tools.Dockerfile",
+      "original_request": "requests/H3-tiny-aes.json",
+      "evidence": "evidence/member3-20261118/acceptance.json",
+      "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0"
     }
   ],
   "B_project": {
