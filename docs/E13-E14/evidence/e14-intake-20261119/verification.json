@@ -1,0 +1,86 @@
+{
+  "project": "b08-e14-c5-241880529-339619",
+  "tasks": {
+    "reject-missing-config": {
+      "status": "FAILED",
+      "job_id": "job-f657f7e3a59844579fc1bbdb436d4919",
+      "trace_id": "trace-a4fc6b24ebf54611b8a16a4bd102964c",
+      "target_commit": "961f40cb8fbb71de304b782ff754522d59d51305",
+      "image_id": "sha256:10b2cf326a7720d2c2e849148d919cf89b124f547fe51d20cccf215b1f1d17d5",
+      "report_sha256": "d840247d34f3758544ef8cb4ca00f535d8260bea05a768333252484c7393a29a",
+      "candidate_sha256": "a339b452269b0232ac051425682e32bbc742c33992aea757a5525cd1a048bc10",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check"
+      ],
+      "operations": [
+        "full",
+        "full",
+        "scan",
+        "scan",
+        "mdfixer"
+      ],
+      "original_source_unchanged": true,
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "patch_applies": true,
+          "build": true,
+          "test": true,
+          "header_change": false,
+          "no_missing": false
+        },
+        "error": null,
+        "source_unchanged": true,
+        "rollback": true
+      },
+      "artifact_count": 207,
+      "http_rejection": {
+        "role": "mdfixer",
+        "http": 422,
+        "error": "{\"status\": \"FAILED\", \"role\": \"mdfixer\", \"error_code\": \"REPAIR_REJECTED\", \"error\": \"Inspect validation/validation.json\"}\n"
+      }
+    },
+    "positive-after-rejection": {
+      "status": "SUCCEEDED",
+      "job_id": "job-bc55294cac034f09a2fa3a700820f317",
+      "trace_id": "trace-9247d5681d054bdfa6f09c2852b0d669",
+      "target_commit": "961f40cb8fbb71de304b782ff754522d59d51305",
+      "image_id": "sha256:b41f5a2b56f68334325f23e2777578b9224f8cf92f8ecb2bd4f82c813068ed17",
+      "report_sha256": "8bff1568a6354fa1e00a753f22925eac4b70ec2412026fc3a6b9c7ca37923448",
+      "candidate_sha256": "4d9e61596043231b12564b623b74a1b974519202ee491492fccb9c1654b89ee6",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "operations": [
+        "full",
+        "full",
+        "scan",
+        "scan",
+        "mdfixer",
+        "full"
+      ],
+      "original_source_unchanged": true,
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "patch_applies": true,
+          "build": true,
+          "test": true,
+          "header_change": true,
+          "no_missing": true
+        },
+        "error": null,
+        "source_unchanged": false,
+        "rollback": false
+      },
+      "artifact_count": 277,
+      "http_rejection": null
+    }
+  }
+}

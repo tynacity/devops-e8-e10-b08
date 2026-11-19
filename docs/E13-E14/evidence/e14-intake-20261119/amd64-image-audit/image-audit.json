@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-19T07:43:25.959586+00:00",
+  "scope": "Docker history commands and configured environment only; no layer filesystem scan",
+  "images": [
+    {
+      "variant": "reject",
+      "image_id": "sha256:10b2cf326a7720d2c2e849148d919cf89b124f547fe51d20cccf215b1f1d17d5",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "reject-history.log",
+          "bytes": 4190,
+          "sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "reject-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    },
+    {
+      "variant": "positive",
+      "image_id": "sha256:b41f5a2b56f68334325f23e2777578b9224f8cf92f8ecb2bd4f82c813068ed17",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "positive-history.log",
+          "bytes": 4190,
+          "sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "positive-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    }
+  ],
+  "all_available_and_passed": true
+}
