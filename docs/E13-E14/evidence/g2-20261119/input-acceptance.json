@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-19",
+  "input_package_sha256": "55cd44e6c3bcb543b51e3662c4eb5fed399f65c577d25af0da7610654ae53a78",
+  "files_manifest_verified": 4,
+  "A_freeze": "G2-A-20261118-0408405-v1",
+  "A_tool_commit_declared": "04084055221c9f59683d648b3766f86ed07bdd73",
+  "producer_source_log_digest_matches_declared_commit": true,
+  "A_tool_checkout_independently_verified": false,
+  "B_runtime_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+  "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+  "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+  "source_job_id": "job-10302c35430f449993b0caa0d7050bb8",
+  "source_trace_id": "trace-ff64eab93d4b4a35b606cc9009db7340",
+  "report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+  "producer_manifest_sha256": "6ccab6bc665dd4838f5dc0d4cb55cf29e371b1b42696b20081eae8ba1eddf029",
+  "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+  "project_snapshots_verified": [
+    {
+      "commit": "88af5173a249ee4f30f3d7da51b20169db47d234",
+      "producer_source_file_hashes_verified": 10
+    },
+    {
+      "commit": "961f40cb8fbb71de304b782ff754522d59d51305",
+      "producer_source_file_hashes_verified": 10
+    }
+  ],
+  "project_source": "Previously accepted exact Git repository; both G2 snapshots independently matched to producer manifest",
+  "derived_inputs_sha256": "b44b19c18fad88a30b699b7d47ce78afddb7b8d16540dc0c0d844511ed327938",
+  "full_A_artifact_tree_received": false,
+  "report_references_verified_against_received_bytes": 1,
+  "note": "Input review package contains report, producer manifest, candidate and README, not every artifact listed by producer. README is valid UTF-8; original input bytes retained unchanged."
+}

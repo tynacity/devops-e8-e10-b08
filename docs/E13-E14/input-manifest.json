@@ -163,5 +163,23 @@
   },
   "intake_branch": "student/241880492/e13-e14-paired-acceptance",
   "validated_program_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
-  "latest_acceptance_date": "2026-11-18"
+  "latest_acceptance_date": "2026-11-19",
+  "A_project_G2": {
+    "name": "A-HeaderFlow",
+    "status": "MEMBER4_C1_C2_C3_PUBLIC_API_PASSED; PEER_REVIEW_AND_BILATERAL_SIGNOFF_PENDING",
+    "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "A_freeze_id": "G2-A-20261118-0408405-v1",
+    "A_tool_commit_declared_by_handoff": "04084055221c9f59683d648b3766f86ed07bdd73",
+    "B_runtime_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+    "report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+    "producer_manifest_sha256": "6ccab6bc665dd4838f5dc0d4cb55cf29e371b1b42696b20081eae8ba1eddf029",
+    "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+    "source_job_id": "job-10302c35430f449993b0caa0d7050bb8",
+    "source_trace_id": "trace-ff64eab93d4b4a35b606cc9009db7340",
+    "execution_image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+    "request": "requests/A-HeaderFlow-G2-e13-b.json",
+    "evidence": "evidence/g2-20261119/api-acceptance.json",
+    "scope": "G2 public API on fixed B commit; prior A_project and runtime entries retain 20261118 historical identities; not E14 four-service acceptance"
+  }
 }
