@@ -1,0 +1,21 @@
+{
+  "status": "UNCOMMITTED_REHEARSAL_OVERLAY",
+  "base_commit": "fcd36c0082be043c8fece6a61941321833171aa7",
+  "overlay_files": {
+    "labs/e13e14/compose.yaml": "9789e94ad7ac7c48dcd034605b8c55d72faeb5a4f4bbf3e5d53240314e26e9d3",
+    "labs/e13e14/orchestrate.py": "14c98c5706bb4837f02a151b576377785c022830b5ced49ce54f217e72d0a736",
+    "labs/e13e14/service.py": "f53de103b6c7975dae41991fa680484b8c5a5c4b19856036769bfd02d0758619",
+    "labs/e13e14/paired_runtime.py": "ec998cdf269824c6ba5dd08f013f55ec92a98fe2165e7b32d2dee1ca322c8e23",
+    "labs/e13e14/tests/test_member3_e14_paired.py": "565a26dc86bf931fb338ba9b7df500a55f1edb4d475846541e220500c9485e6a",
+    "docs/E13-E14/成员3-E14四服务接线.md": "5ed94b2795717e7e5eb9f1d7c989b9bddef6ce6149257a53f966839bc0006054"
+  },
+  "formal_source_commit": null,
+  "formal_ci": null,
+  "ports": {
+    "buildchecker": 18181,
+    "echecker": 18182,
+    "draft": 18183,
+    "mdfixer": 18184
+  },
+  "compose_project": "b08-e14-member1-review"
+}

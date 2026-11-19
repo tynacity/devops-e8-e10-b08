@@ -1,0 +1,19 @@
+{
+    "platform":  "x86_64",
+    "ports":  {
+                  "18181":  "available_at_probe_time",
+                  "18182":  "available_at_probe_time",
+                  "18183":  "available_at_probe_time",
+                  "18184":  "available_at_probe_time"
+              },
+    "expected_image_inspect":  {
+                                   "exit":  0,
+                                   "stdout":  "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829 linux/amd64",
+                                   "stderr":  ""
+                               },
+    "compose_version":  {
+                            "exit":  0,
+                            "stdout":  "Docker Compose version 2.40.3+ds1-0ubuntu1~22.04.1",
+                            "stderr":  ""
+                        }
+}

@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-19",
+  "rehearsal_files_verified": 17,
+  "overlay_files_verified": 6,
+  "source_status": "UNCOMMITTED_REHEARSAL_OVERLAY",
+  "formal_source_commit": null,
+  "member1_files_verified": 34,
+  "arm64_raw_checks": [
+    {
+      "image": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/14baa2448fb1-history.txt",
+      "sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "matched": true
+    },
+    {
+      "image": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/14baa2448fb1-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/2087261c1095-history.txt",
+      "sha256": "5c8a8621a6a4fc98abdbdae69eff0d419eabaa894ef7fac05906e22aa13b8d13",
+      "matched": true
+    },
+    {
+      "image": "sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/2087261c1095-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/2df40148a48e-history.txt",
+      "sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "matched": true
+    },
+    {
+      "image": "sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/2df40148a48e-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/320234e6d545-history.txt",
+      "sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "matched": true
+    },
+    {
+      "image": "sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/320234e6d545-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/40b78e370cca-history.txt",
+      "sha256": "dab7dd0648d7c3b2fee511b80d9a6497260702b236af9c5c06355aef08b20dd9",
+      "matched": true
+    },
+    {
+      "image": "sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/40b78e370cca-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/560e38fb2359-history.txt",
+      "sha256": "dab7dd0648d7c3b2fee511b80d9a6497260702b236af9c5c06355aef08b20dd9",
+      "matched": true
+    },
+    {
+      "image": "sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/560e38fb2359-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:7299123b778a379b8504067e76f66e6b71588dc8a3cae9a21e1ea08d12d0237e",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/7299123b778a-history.txt",
+      "sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "matched": true
+    },
+    {
+      "image": "sha256:7299123b778a379b8504067e76f66e6b71588dc8a3cae9a21e1ea08d12d0237e",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/7299123b778a-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/a5e87920a906-history.txt",
+      "sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "matched": true
+    },
+    {
+      "image": "sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/a5e87920a906-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/b22b48567006-history.txt",
+      "sha256": "bc6793466391a53906d298a1cc0e817e08f0ab27424409c89901561610dd2bcb",
+      "matched": true
+    },
+    {
+      "image": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/b22b48567006-env.txt",
+      "sha256": "9f48a60c8b99a5d4431f623f4ce7e8ca7cd8d369473a0c3a444dba512e64cbdf",
+      "matched": true
+    },
+    {
+      "image": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/c168fb0221e7-history.txt",
+      "sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "matched": true
+    },
+    {
+      "image": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/c168fb0221e7-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    },
+    {
+      "image": "sha256:59207c24c841354463651df3529ee06486e88cd916c4b0bf264211fc4d737b15",
+      "scope": "history",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/59207c24c841-history.txt",
+      "sha256": "5c8a8621a6a4fc98abdbdae69eff0d419eabaa894ef7fac05906e22aa13b8d13",
+      "matched": true
+    },
+    {
+      "image": "sha256:59207c24c841354463651df3529ee06486e88cd916c4b0bf264211fc4d737b15",
+      "scope": "environment",
+      "archive_member": "成员1-部署条件补交-20261118/arm64-history-env/59207c24c841-env.txt",
+      "sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "matched": true
+    }
+  ],
+  "stable_B_branch": "student/241880492/e13-e14-paired-acceptance",
+  "stable_B_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+  "source_code_and_workflows_identical_to_overlay_base": true,
+  "G2_new_report_found": false,
+  "C6_peer_review_scope": "four historical AMD64 images only; H3 and final four-service scope excluded",
+  "probe_limit": "no timestamp/source hash bound in JSON; filename 8b555cab is not a tool commit proof; availability only at probe time",
+  "C6_review_binding_verified": {
+    "original_sha256": "5c37447af3278d5368d9562f222a129fca263fe608ebf5eb77c1cc842089c3ae",
+    "original_bytes": 144601,
+    "four_image_ids_match": true,
+    "tool_sha_matches": true,
+    "received_review_date": "2026-11-19",
+    "missing_linked_supplements": [
+      "成员2_C6复核确认摘要_20261119.json",
+      "成员2_E13_C6复核记录_20261118.md",
+      "成员2_新交付核验脚本_20261118.py"
+    ]
+  },
+  "classification": {
+    "成员2_E13_C6复核确认_20261119.md": "Accept received peer review for original four AMD64 images only",
+    "成员1-部署条件补交-20261118.zip": "Accept 34-file supplement and 22 ARM64 raw texts; local service restart only",
+    "B08-E14-rehearsal-source.zip": "Accept as uncommitted six-file draft; not a frozen source revision",
+    "server-probe-8b555cab.json": "Keep as historical probe only; no timestamp or source identity binding"
+  },
+  "registration_date": "2026-11-19",
+  "closed_items": [
+    "Original four AMD64 C6 peer review received and bound to f09349a",
+    "Previously missing 22 ARM64 history/env raw texts received",
+    "H2 revised candidate hash confirmed by member1"
+  ],
+  "pending_items": [
+    "G2 new input and C1-C3 rerun",
+    "A consumption of B project and two-way signoff",
+    "H3 peer review and final scan scope",
+    "Formal E14 source freeze and runtime acceptance",
+    "PR review/merge and final release gates"
+  ]
+}

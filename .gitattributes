@@ -7,3 +7,4 @@ fixtures/e11e12/tinyexpr-candidate.Dockerfile -text
 # Preserve received H3 evidence and candidate hashes across checkout platforms.
 docs/E13-E14/evidence/member3-20261118/** -text
 docs/E13-E14/member3/H3/candidate.tools.Dockerfile -text
+docs/E13-E14/evidence/intake-20261119/** -text
