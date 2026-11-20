@@ -1,0 +1,166 @@
+{
+  "package_id": "B-to-A-E13E14-G2-receipt",
+  "A_freeze_id": "G2-A-20261118-0408405-v1",
+  "A_source_commit": "04084055221c9f59683d648b3766f86ed07bdd73",
+  "status": "CURRENT_G2_CROSS_TEST_CONFIRMATIONS_COMPLETE",
+  "B_group": "B08",
+  "confirmed_by": null,
+  "confirmed_at_Asia_Shanghai": null,
+  "C1_A_consumption": {
+    "A_project_target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "source_job_id": "job-10302c35430f449993b0caa0d7050bb8",
+    "source_trace_id": "trace-ff64eab93d4b4a35b606cc9009db7340",
+    "source_report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+    "source_producer_result_sha256": "6ccab6bc665dd4838f5dc0d4cb55cf29e371b1b42696b20081eae8ba1eddf029",
+    "B_source_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+    "B_worktree_status": "成员4独立检出；原项目工作区前后干净且字节未变",
+    "B_job_id": "job-a03f4a66897f4015beef672372f89304",
+    "B_trace_id": "trace-303948ece7934569838e048247a9cdf9",
+    "exit_code": "NOT_APPLICABLE_ASYNC_API",
+    "status": "SUCCEEDED",
+    "error_code": null,
+    "accepted": true,
+    "patch_path": "evidence/C1-A/raw/mdfixer/candidate.patch",
+    "patch_sha256": "4d9e61596043231b12564b623b74a1b974519202ee491492fccb9c1654b89ee6",
+    "validation_path": "evidence/C1-A/raw/mdfixer/validation/validation.json",
+    "recheck_path": "evidence/C1-A/raw/recheck.json",
+    "remaining_MD": 0,
+    "remaining_RD": 1,
+    "DRAFT_image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+    "MDFixer_image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+    "source_before_after_path": "evidence/source-before-after.json",
+    "raw_evidence_directory": "evidence/C1-A/raw",
+    "artifact_manifest_path": "evidence/C1-A/raw/result.json"
+  },
+  "C2_old_target": {
+    "expected": "STALE_REPORT or equivalent before DRAFT",
+    "actual": "STALE_REPORT",
+    "job_id": "job-7e1daea91f4342a584c295968a7bed1f",
+    "trace_id": "trace-52aef39215504713b3bbb40153012b2c",
+    "request_path": "evidence/C2/raw/request.json",
+    "result_path": "evidence/C2/raw/result.json",
+    "no_DRAFT_evidence": "stages=[]；原始产物与任务清单无 draft-build 或 mdfixer"
+  },
+  "C3_same_size_tamper": {
+    "expected": "ARTIFACT_HASH_MISMATCH or equivalent before DRAFT",
+    "actual": "ARTIFACT_HASH_MISMATCH",
+    "original_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+    "modified_sha256": "9ce65e3c6383e5ddc29c424545d8083fae51f0fc9a090203bd36d10ee2181b60",
+    "job_id": "job-e4652080c23b430091c663739e9ebb15",
+    "trace_id": "trace-2f29189e35264acf861d55ec7b760d80",
+    "result_path": "evidence/C3/raw/result.json",
+    "no_DRAFT_evidence": "stages=[]；原始产物与任务清单无 draft-build 或 mdfixer",
+    "request_path": "evidence/C3/raw/request.json",
+    "mutation_path": "evidence/runtime/C3-mutation.json"
+  },
+  "TinyExpr_detection_signoff": {
+    "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+    "A_job_id": "job-31a878ced7304461aa991528931aef0d",
+    "A_trace_id": "trace-1bc164c80ba14cc0866b1f6b3d3fd419",
+    "report_sha256": "1dc84eb7393bf4bc904758d4d81fcc758f131b19d0cee26870ecc5a0372dce95",
+    "full_incremental_equal_expected": true,
+    "MD_expected": 2,
+    "RD_expected": 0,
+    "accepted": true,
+    "disagreement_or_limitations": "接受本轮目标全量与增量检测结果；B 核对参考 stdout 字节，未为本回执另跑程序。",
+    "confirmed_by": "滕明杰（241880546，B08 成员3）",
+    "confirmed_at_Asia_Shanghai": "2026-11-19T18:16:09+08:00",
+    "technical_status": "VERIFIED_FULL_INCREMENTAL_MATCH",
+    "evidence_path": "evidence/TinyExpr/technical-review.json",
+    "confirmation_record_path": "evidence/TinyExpr/B签收记录.json"
+  },
+  "B_final_version": {
+    "repository_url": "https://github.com/tynacity/devops-e8-e10-b08",
+    "branch": "student/241880492/e13-e14-paired-acceptance",
+    "full_source_sha": "BLOCKED_PENDING_E14_SOURCE_FREEZE",
+    "worktree_status": "G2独立运行版本与最终E14版本分列",
+    "source_bundle_path_or_original_reference": "source/B-G2-runtime-ac923c5.bundle",
+    "source_bundle_sha256": "7ce5c8073daac947f9d33d2f14e6220ed2b061d6a88116acf73df895fa252369",
+    "role_images": [
+      {
+        "scope": "G2 API carrier linux/amd64",
+        "id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829"
+      },
+      {
+        "scope": "G2 DRAFT/MDFixer linux/amd64",
+        "id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076"
+      }
+    ],
+    "required_CI_jobs": [
+      "e7-b-quality-gate",
+      "e8e10-quality-gate",
+      "e11e12-integration"
+    ],
+    "CI_links": [
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486528647",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486528550",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486528651",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486528546",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486528519",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486519799",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486519955",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486519804",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486519809",
+      "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44486519802"
+    ],
+    "CI_raw_artifacts": "CI/artifact-scope.json：保留五类原始证据片段；完整原附件由成员4保存，链接在CI/job-list.json",
+    "C1_C8_H1_H3_matrix": "reports/交叉测试记录.md",
+    "four_scope_scan_evidence": "reports/扫描范围.md",
+    "E13_gate_path_and_status": "BLOCKED；reports/交叉测试记录.md",
+    "E14_evidence_or_NOT_RUN_reason": "阶段实跑已验收，正式冻结版本未验；reports/四服务阶段证据验收-20261119.md",
+    "candidate_status": "NOT_PUBLISHED",
+    "known_issues": [
+      "PR #14 / Issue #15 待审查闭环",
+      "E14 正式 SHA 及 /v1/jobs 关联待验证"
+    ],
+    "G2_runtime_source_sha": "ac923c516129d863346710ce029d37b12ea8336c",
+    "registration_commit": "4d74450c208ccb956dc31f48e6ac6b794464b520"
+  },
+  "old_HeaderFlow_receipt_signature": {
+    "original_A_source": "f984f64543da103b1fc28fcc8bdaf7ea9d08d6cc",
+    "confirmed_by": null,
+    "confirmed_at_Asia_Shanghai": null,
+    "technical_accepted": true,
+    "evidence": "evidence/history/B旧回执技术验收_历史.json",
+    "signature_status": "PENDING_ACTUAL_SIGNER"
+  },
+  "original_B_ZIP_hashes_confirmed": {
+    "v1": "dc12e15d70c73c2cc90e5747e463aa30abb6d350a55bb61b887ffec1dc44ee21",
+    "v2_C1": "e4687e8bd635695da9a56c60fce320e60f6956e1e4fa65a56b53baea0a04a2de",
+    "confirmed": true
+  },
+  "pending_items_with_owner_reason_due_time": [
+    {
+      "item": "旧版 f984 回执补签（如课程另需）",
+      "owner": "A组及成员3",
+      "status": "NOT_PART_OF_G2",
+      "reason": "保留旧版实际状态，不在本次重签",
+      "due": "待双方约定"
+    },
+    {
+      "item": "最终平台/镜像与新增范围复核",
+      "owner": "成员1、2、4",
+      "status": "BLOCKED",
+      "reason": "阶段扫描通过，新增范围的同伴核对未齐",
+      "due": "待组内冻结"
+    },
+    {
+      "item": "正式 E14 SHA、CI 与 AMD64 / API 补验",
+      "owner": "成员3、1、4",
+      "status": "NOT_RUN",
+      "reason": "阶段证据不是正式冻结版本验收",
+      "due": "待组内冻结"
+    }
+  ],
+  "note": "登记副本：仅合并已收到的 A 方本轮确认。发送原件、旧历史回执及 B 最终门禁状态均未改写；相对证据路径按原 B 发送 ZIP 解析。",
+  "B_human_confirmation_scope": "TinyExpr_detection_signoff only",
+  "bilateral_signoff_status": "CURRENT_G2_CROSS_TEST_CONFIRMATIONS_COMPLETE",
+  "G2_HeaderFlow_A_signoff": {
+    "status": "ACCEPTED_BY_A",
+    "confirmed_by": "钟子睿（241880531，A组组长）",
+    "confirmed_at_Asia_Shanghai": "2026-11-19T23:52:23+08:00",
+    "freeze_id": "G2-A-20261118-0408405-v1",
+    "A_report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+    "C1_C2_C3_verified": true
+  }
+}

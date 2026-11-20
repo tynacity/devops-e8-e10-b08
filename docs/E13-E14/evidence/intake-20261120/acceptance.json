@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-20",
+  "candidate_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+  "wiring_sha": "9ec1f53429116fc3a1da60f4cac0388fe86023bd",
+  "parent_registration_sha": "4d74450c208ccb956dc31f48e6ac6b794464b520",
+  "bundle_complete_history_verified": true,
+  "six_file_identity": [
+    {
+      "path": "labs/e13e14/compose.yaml",
+      "rehearsal_and_9ec1f53_sha256": "9789e94ad7ac7c48dcd034605b8c55d72faeb5a4f4bbf3e5d53240314e26e9d3",
+      "7b7e67b_sha256": "9789e94ad7ac7c48dcd034605b8c55d72faeb5a4f4bbf3e5d53240314e26e9d3",
+      "unchanged_at_API_commit": true
+    },
+    {
+      "path": "labs/e13e14/orchestrate.py",
+      "rehearsal_and_9ec1f53_sha256": "14c98c5706bb4837f02a151b576377785c022830b5ced49ce54f217e72d0a736",
+      "7b7e67b_sha256": "c37701a68a5dc2c61fa31451aba5e704e5390e2c36a0b92a39889036a40fb96b",
+      "unchanged_at_API_commit": false
+    },
+    {
+      "path": "labs/e13e14/service.py",
+      "rehearsal_and_9ec1f53_sha256": "f53de103b6c7975dae41991fa680484b8c5a5c4b19856036769bfd02d0758619",
+      "7b7e67b_sha256": "f53de103b6c7975dae41991fa680484b8c5a5c4b19856036769bfd02d0758619",
+      "unchanged_at_API_commit": true
+    },
+    {
+      "path": "labs/e13e14/paired_runtime.py",
+      "rehearsal_and_9ec1f53_sha256": "ec998cdf269824c6ba5dd08f013f55ec92a98fe2165e7b32d2dee1ca322c8e23",
+      "7b7e67b_sha256": "ec998cdf269824c6ba5dd08f013f55ec92a98fe2165e7b32d2dee1ca322c8e23",
+      "unchanged_at_API_commit": true
+    },
+    {
+      "path": "labs/e13e14/tests/test_member3_e14_paired.py",
+      "rehearsal_and_9ec1f53_sha256": "565a26dc86bf931fb338ba9b7df500a55f1edb4d475846541e220500c9485e6a",
+      "7b7e67b_sha256": "565a26dc86bf931fb338ba9b7df500a55f1edb4d475846541e220500c9485e6a",
+      "unchanged_at_API_commit": true
+    },
+    {
+      "path": "docs/E13-E14/成员3-E14四服务接线.md",
+      "rehearsal_and_9ec1f53_sha256": "5ed94b2795717e7e5eb9f1d7c989b9bddef6ce6149257a53f966839bc0006054",
+      "7b7e67b_sha256": "5ed94b2795717e7e5eb9f1d7c989b9bddef6ce6149257a53f966839bc0006054",
+      "unchanged_at_API_commit": true
+    }
+  ],
+  "API_commit_changed_files": [
+    "docs/E13-E14/成员3-E14任务API.md",
+    "labs/e11e12/server.py",
+    "labs/e13e14/jobs_api.py",
+    "labs/e13e14/orchestrate.py",
+    "labs/e13e14/tests/test_member3_e14_jobs_api.py"
+  ],
+  "prior_component_and_workflow_bytes_unchanged_before_wiring": true,
+  "member2_negative_test_hook_absent": true,
+  "candidate_worktree_clean": true,
+  "G2_peer_review": "Received; runtime SHA/job/trace/archive digest matched local original evidence; no rerun",
+  "G2_bilateral_receipt": "Received member3 forwarded registration copy; scoped confirmations accepted for current G2",
+  "G2_signers": {
+    "A": {
+      "status": "ACCEPTED_BY_A",
+      "confirmed_by": "钟子睿（241880531，A组组长）",
+      "confirmed_at_Asia_Shanghai": "2026-11-19T23:52:23+08:00",
+      "freeze_id": "G2-A-20261118-0408405-v1",
+      "A_report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+      "C1_C2_C3_verified": true
+    },
+    "B": {
+      "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+      "A_job_id": "job-31a878ced7304461aa991528931aef0d",
+      "A_trace_id": "trace-1bc164c80ba14cc0866b1f6b3d3fd419",
+      "report_sha256": "1dc84eb7393bf4bc904758d4d81fcc758f131b19d0cee26870ecc5a0372dce95",
+      "full_incremental_equal_expected": true,
+      "MD_expected": 2,
+      "RD_expected": 0,
+      "accepted": true,
+      "disagreement_or_limitations": "接受本轮目标全量与增量检测结果；B 核对参考 stdout 字节，未为本回执另跑程序。",
+      "confirmed_by": "滕明杰（241880546，B08 成员3）",
+      "confirmed_at_Asia_Shanghai": "2026-11-19T18:16:09+08:00",
+      "technical_status": "VERIFIED_FULL_INCREMENTAL_MATCH",
+      "evidence_path": "evidence/TinyExpr/technical-review.json",
+      "confirmation_record_path": "evidence/TinyExpr/B签收记录.json"
+    }
+  },
+  "G2_top_level_null_confirmation": "Preserved; not a missing current G2 scoped confirmation or approval of final B release",
+  "G2_reference_limit": "A original confirmation JSON, TinyExpr original artifact tree and referenced G2 registration audit were not included in this intake; no independent A-side rerun or remote audit claimed",
+  "H3_candidate_owner_confirmation": "Accepted against existing original/successful candidates and run archive",
+  "H3_manifest_files_verified": 6,
+  "environment_proposal": {
+    "status": "PROPOSED_PENDING_GROUP_FREEZE",
+    "platform_proposal": "linux/amd64",
+    "compose_project": "b08-e14-member1-review",
+    "ports": [
+      18181,
+      18182,
+      18183,
+      18184
+    ],
+    "images": [
+      {
+        "purpose": "service-carrier",
+        "id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+        "availability": "recorded on course server; not a registry pull address",
+        "acquire": "inspect existing image on target server or rebuild pinned source/candidate and register new ID; offline save/load with SHA256 if needed"
+      },
+      {
+        "purpose": "H3-success",
+        "id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+        "availability": "recorded on course server; not a registry pull address",
+        "acquire": "inspect existing image on target server or rebuild pinned source/candidate and register new ID; offline save/load with SHA256 if needed"
+      },
+      {
+        "purpose": "G2-runtime",
+        "id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+        "availability": "recorded on course server; not a registry pull address",
+        "acquire": "inspect existing image on target server or rebuild pinned source/candidate and register new ID; offline save/load with SHA256 if needed"
+      },
+      {
+        "purpose": "E14-HeaderFlow-positive",
+        "id": "sha256:b41f5a2b56f68334325f23e2777578b9224f8cf92f8ecb2bd4f82c813068ed17",
+        "availability": "recorded on course server; not a registry pull address",
+        "acquire": "inspect existing image on target server or rebuild pinned source/candidate and register new ID; offline save/load with SHA256 if needed"
+      }
+    ],
+    "ARM64": "accepted historical reproduction; not proposed as required production target",
+    "remaining": "formal E14 SHA and target-platform TinyExpr/timeout-recovery evidence"
+  },
+  "E14_server_acceptance": "PENDING_MEMBER3_RUN_AT_7b7e67b",
+  "candidate_CI": {
+    "status": "FIVE_WORKFLOWS_PASSED",
+    "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+    "runs": [
+      {
+        "conclusion": "success",
+        "databaseId": 44707231005,
+        "event": "push",
+        "headSha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+        "status": "completed",
+        "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44707231005",
+        "workflowName": "E14 fixed-sample four-service regression"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 44707230651,
+        "event": "push",
+        "headSha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+        "status": "completed",
+        "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44707230651",
+        "workflowName": "E11-E12 integration"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 44707230688,
+        "event": "push",
+        "headSha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+        "status": "completed",
+        "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44707230688",
+        "workflowName": "E7 B quality gate"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 44707230645,
+        "event": "push",
+        "headSha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+        "status": "completed",
+        "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44707230645",
+        "workflowName": "E8-E10 teaching validation"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 44707230786,
+        "event": "push",
+        "headSha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+        "status": "completed",
+        "url": "https://github.com/tynacity/devops-e8-e10-b08/actions/runs/44707230786",
+        "workflowName": "E13-E14 member4 preflight"
+      }
+    ]
+  },
+  "production_code_merged_into_common_branch": false,
+  "overall_gate": "BLOCKED"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "B08-E14-API-交付_241880546_7b7e67b.zip",
+    "bytes": 5293801,
+    "sha256": "18bd3186abc6dc026013f7d105c1592f3a3aa4a981936afe2329eb1a25977f89",
+    "source_matches": true
+  },
+  {
+    "name": "B08-E14接线交付_241880546_9ec1f53.zip",
+    "bytes": 5284874,
+    "sha256": "d93ab5b28679ab95815b5bec5814db619948723b78f533de56be75dd67258443",
+    "source_matches": true
+  },
+  {
+    "name": "G2双向签收_给成员4.md",
+    "bytes": 2567,
+    "sha256": "95478da305f1f221eaec96368696e6884f3dbf9a33dce83271e99278d8e65a47",
+    "source_matches": true
+  },
+  {
+    "name": "B组一次性回执_双向签收登记副本.json",
+    "bytes": 8352,
+    "sha256": "a4dfa32b52dec07a50290b013ef084bed48b844c0c8a0c2984392859261d1af8",
+    "source_matches": true
+  },
+  {
+    "name": "G2复核回执_给成员4.md",
+    "bytes": 1834,
+    "sha256": "f4a522ec81ec1d79194aca3b7d45204f782cf100337021abd7e1c70990563fd8",
+    "source_matches": true
+  },
+  {
+    "name": "成员1-最终环境与H3候选复核-20261119.zip",
+    "bytes": 5575,
+    "sha256": "50090fb8007e114e4de8bb8a64cc53b596a8a73b8337e86df0520d76a2793dc1",
+    "source_matches": true
+  }
+]

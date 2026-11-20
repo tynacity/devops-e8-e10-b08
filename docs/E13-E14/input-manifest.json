@@ -105,7 +105,8 @@
       "candidate_source": "docs/E13-E14/member3/H3/candidate.tools.Dockerfile",
       "original_request": "requests/H3-tiny-aes.json",
       "evidence": "evidence/member3-20261118/acceptance.json",
-      "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0"
+      "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+      "release_candidate_owner_confirmation": "MEMBER1_CONFIRMED_20261119; RECEIVED_20261120; NOT_RC_RELEASE"
     }
   ],
   "B_project": {
@@ -163,10 +164,10 @@
   },
   "intake_branch": "student/241880492/e13-e14-paired-acceptance",
   "validated_program_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
-  "latest_acceptance_date": "2026-11-19",
+  "latest_acceptance_date": "2026-11-20",
   "A_project_G2": {
     "name": "A-HeaderFlow",
-    "status": "MEMBER4_C1_C2_C3_PUBLIC_API_PASSED; PEER_REVIEW_AND_BILATERAL_SIGNOFF_PENDING",
+    "status": "MEMBER4_C1_C2_C3_PASSED; MEMBER3_PEER_REVIEW_AND_FORWARDED_G2_BILATERAL_RECORD_RECEIVED",
     "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
     "target": "961f40cb8fbb71de304b782ff754522d59d51305",
     "A_freeze_id": "G2-A-20261118-0408405-v1",
@@ -180,6 +181,22 @@
     "execution_image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
     "request": "requests/A-HeaderFlow-G2-e13-b.json",
     "evidence": "evidence/g2-20261119/api-acceptance.json",
-    "scope": "G2 public API on fixed B commit; prior A_project and runtime entries retain 20261118 historical identities; not E14 four-service acceptance"
+    "scope": "G2 public API on fixed B commit; prior A_project and runtime entries retain 20261118 historical identities; not E14 four-service acceptance",
+    "review_and_signoff_evidence": "evidence/intake-20261120/acceptance.json"
+  },
+  "E14_candidate": {
+    "source_commit": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+    "prior_wiring_commit": "9ec1f53429116fc3a1da60f4cac0388fe86023bd",
+    "author_branch": "student/241880546/e14-integration",
+    "verification_branch": "student/241880492/e14-candidate-7b7e67b",
+    "source_bundle_sha256": "dbafc6b75b58e59e7edd139f62a9a3e4cf5cf957423b4b94706977c7d827c4fc",
+    "status": "FIXED_SOURCE_AND_FIVE_CI_PASSED; COURSE_SERVER_ACCEPTANCE_PENDING",
+    "proposed_platform": "linux/amd64",
+    "carrier_image_proposed": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "current_compose_project_confirmation": "PENDING_MEMBER1_MEMBER3",
+    "runtime_owner": "member3 241880546",
+    "evidence": "evidence/intake-20261120/acceptance.json",
+    "CI": "evidence/intake-20261120/candidate-ci.json",
+    "common_branch_implementation_merged": false
   }
 }
