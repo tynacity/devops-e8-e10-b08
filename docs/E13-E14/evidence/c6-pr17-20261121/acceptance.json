@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-21",
+  "result": "PASS",
+  "outer_checksum_files": 7,
+  "inner_checksum_files": 24,
+  "image_records_matched": 9,
+  "raw_scan_files_matched": 18,
+  "received_text_scan_files": 32,
+  "received_text_scan_hits": 0,
+  "C6_peer_scope": "H3 + prior E14 AMD64 + G2 + 7b7e67b E14 AMD64; all received scopes accepted",
+  "task_bindings_matched": 4,
+  "new_E14_downloads_peer_reviewed": 1059,
+  "member2_remote_supplements_matched": true,
+  "PR17": {
+    "head": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+    "base": "faf5de26e2c5e5652dae88c04a73fed09630d722",
+    "base_branch": "student/241880492/e13-e14-paired-acceptance",
+    "draft": true,
+    "state": "OPEN",
+    "human_reviews": 0,
+    "CI_successful_runs": 10
+  },
+  "offline_merge_tree": "b4d86a631c3ec34f76259b3a9fe49074cf174d90",
+  "merge_tree_matches_member2": true,
+  "code_tree_identical_to_candidate": true,
+  "merge_performed": false,
+  "RC_published": false
+}

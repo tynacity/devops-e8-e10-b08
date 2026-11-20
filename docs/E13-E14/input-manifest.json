@@ -164,7 +164,7 @@
   },
   "intake_branch": "student/241880492/e13-e14-paired-acceptance",
   "validated_program_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
-  "latest_acceptance_date": "2026-11-20",
+  "latest_acceptance_date": "2026-11-21",
   "A_project_G2": {
     "name": "A-HeaderFlow",
     "status": "MEMBER4_C1_C2_C3_PASSED; MEMBER3_PEER_REVIEW_AND_FORWARDED_G2_BILATERAL_RECORD_RECEIVED",
@@ -190,7 +190,7 @@
     "author_branch": "student/241880546/e14-integration",
     "verification_branch": "student/241880492/e14-candidate-7b7e67b",
     "source_bundle_sha256": "dbafc6b75b58e59e7edd139f62a9a3e4cf5cf957423b4b94706977c7d827c4fc",
-    "status": "FIXED_SOURCE_AND_FIVE_CI_PASSED; AMD64_SERVER_EVIDENCE_VERIFIED; C6_PEER_REVIEW_AND_SOURCE_INTEGRATION_PENDING",
+    "status": "FIXED_SOURCE_AND_SERVER_EVIDENCE_VERIFIED; C6_PEER_REVIEW_ACCEPTED; PR17_DRAFT_OPEN; HUMAN_REVIEW_AND_INTEGRATION_PENDING",
     "proposed_platform": "linux/amd64",
     "carrier_image_proposed": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
     "current_compose_project_confirmation": "THREE_AMD64_DEPLOYMENTS_VERIFIED_20261120",
@@ -300,6 +300,30 @@
         "compose_project": "b08-e14-241880546-828903a7d0",
         "four_role_and_network_removal_logged": true
       }
-    ]
+    ],
+    "source_PR": {
+      "number": 17,
+      "url": "https://github.com/tynacity/devops-e8-e10-b08/pull/17",
+      "target": "student/241880492/e13-e14-paired-acceptance",
+      "head": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+      "state_at_intake": "OPEN_DRAFT",
+      "CI_push_and_PR_passed": 10,
+      "intake": "evidence/c6-pr17-20261121/acceptance.json"
+    }
+  },
+  "C6_incremental_peer_review": {
+    "status": "ALL_RECEIVED_SCOPES_ACCEPTED",
+    "date_received": "2026-11-21",
+    "reviewer": "member2 241880529",
+    "image_records": 9,
+    "raw_scan_files": 18,
+    "scope": [
+      "H3",
+      "prior E14 AMD64",
+      "G2",
+      "7b7e67b E14 AMD64"
+    ],
+    "evidence": "evidence/c6-pr17-20261121/acceptance.json",
+    "future_changed_scope_requires_review": true
   }
 }

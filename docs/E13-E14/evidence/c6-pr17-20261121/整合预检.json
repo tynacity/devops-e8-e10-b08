@@ -1,0 +1,9 @@
+{
+  "member2_pr14_head": "efa63135f51bfed6d7047ae2de916ef80885ac07",
+  "member4_pr16_head": "faf5de26e2c5e5652dae88c04a73fed09630d722",
+  "e14_candidate": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+  "member2_head_is_ancestor_of_both": true,
+  "material_and_e14_merge_tree_conflict_free": true,
+  "merge_tree": "b4d86a631c3ec34f76259b3a9fe49074cf174d90",
+  "scope": "local Git merge-tree only"
+}
