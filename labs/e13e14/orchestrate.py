@@ -92,7 +92,10 @@ def source_state(repo, folder, name):
     return state
 
 
-def execute(request, out):
+def execute(request, out, *, job_id=None, trace_id=None):
+    for value, prefix in ((job_id, 'job'), (trace_id, 'trace')):
+        if value is not None and (not isinstance(value, str) or not re.fullmatch(prefix + r'-[0-9a-f]{32}', value)):
+            raise ValueError(f'Invalid {prefix} identity')
     out = out.resolve()
     if out.exists():
         raise ValueError('Use a new output directory')
@@ -103,8 +106,8 @@ def execute(request, out):
     if not repo.resolve().is_relative_to((ROOT / 'data').resolve()) or not candidate.resolve().is_relative_to((ROOT / 'data').resolve()):
         raise ValueError('Input project and candidate must be in data/')
     out.mkdir(parents=True)
-    job = 'job-' + uuid.uuid4().hex
-    trace = 'trace-' + uuid.uuid4().hex
+    job = job_id or 'job-' + uuid.uuid4().hex
+    trace = trace_id or 'trace-' + uuid.uuid4().hex
     result = {'schema_version': 'e14-compose-1', 'job_id': job, 'trace_id': trace,
               'status': 'RUNNING', 'stages': []}
     save(out / 'request.json', request)
