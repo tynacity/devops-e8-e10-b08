@@ -190,13 +190,116 @@
     "author_branch": "student/241880546/e14-integration",
     "verification_branch": "student/241880492/e14-candidate-7b7e67b",
     "source_bundle_sha256": "dbafc6b75b58e59e7edd139f62a9a3e4cf5cf957423b4b94706977c7d827c4fc",
-    "status": "FIXED_SOURCE_AND_FIVE_CI_PASSED; COURSE_SERVER_ACCEPTANCE_PENDING",
+    "status": "FIXED_SOURCE_AND_FIVE_CI_PASSED; AMD64_SERVER_EVIDENCE_VERIFIED; C6_PEER_REVIEW_AND_SOURCE_INTEGRATION_PENDING",
     "proposed_platform": "linux/amd64",
     "carrier_image_proposed": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
-    "current_compose_project_confirmation": "PENDING_MEMBER1_MEMBER3",
+    "current_compose_project_confirmation": "THREE_AMD64_DEPLOYMENTS_VERIFIED_20261120",
     "runtime_owner": "member3 241880546",
     "evidence": "evidence/intake-20261120/acceptance.json",
     "CI": "evidence/intake-20261120/candidate-ci.json",
-    "common_branch_implementation_merged": false
+    "common_branch_implementation_merged": false,
+    "server_evidence": "evidence/e14-server-20261120/server-evidence-audit.json",
+    "image_audit": "evidence/e14-server-20261120/image-audit/image-audit.json",
+    "server_delivery_sha256": "42157d0f6cf005e939045ae3165b6613866c203b5c09a9e091f925d1447f3a76",
+    "server_tasks": [
+      {
+        "case": "headerflow",
+        "job_id": "job-1aabbad8ccc34838a212ee9108953b2b",
+        "trace_id": "trace-795b2288403a4b10ba0c3566d81222dc",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 277,
+        "download_GET_200_verified": 277,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "execution_image_id": "sha256:231de698ad24a368a1a6ccdf6ede045f6d0db26fb5fa334b6425cfab28357d2a",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "app",
+          "helper.o",
+          "main.o"
+        ],
+        "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+        "output_verified": true
+      },
+      {
+        "case": "tinyexpr",
+        "job_id": "job-130254154b464c9aaf34ce7bc620dfb6",
+        "trace_id": "trace-4ed51f03c162487a808cdd85d15384f5",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 455,
+        "download_GET_200_verified": 455,
+        "source_unchanged": true,
+        "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+        "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+        "execution_image_id": "sha256:929f86d18a011dff1dc551bcf3d7be9b081e5d060fe032bef7c424c34de4b703",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "example",
+          "example.o",
+          "tinyexpr.o"
+        ],
+        "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+        "output_verified": true
+      },
+      {
+        "case": "timeout",
+        "job_id": "job-10b1d3fd0abe4945abb1ec0e45a4d76f",
+        "trace_id": "trace-4d09865ed8ec4c858bd66510328f56a2",
+        "status": "FAILED",
+        "downloaded_artifacts_verified": 50,
+        "download_GET_200_verified": 50,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "error_code": "TIMEOUT",
+        "build_timeout_seconds": 0.01,
+        "scope": "Docker build client budget timeout, no verification container started",
+        "terminal_state_retained_after_recovery": true
+      },
+      {
+        "case": "recovery",
+        "job_id": "job-8f327295c2b44b59900c16c4689b255c",
+        "trace_id": "trace-4c5fca5791bc485a81c4322ab1049ea1",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 277,
+        "download_GET_200_verified": 277,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "execution_image_id": "sha256:ac1a02010573cbdd57802e5b9dbc1befe1a8cc5d9aa97ff31761018ae80146f6",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "app",
+          "helper.o",
+          "main.o"
+        ],
+        "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+        "output_verified": true
+      }
+    ],
+    "actual_deployments": [
+      {
+        "case": "headerflow",
+        "compose_project": "b08-e14-241880546-e623b57c40",
+        "four_role_and_network_removal_logged": true
+      },
+      {
+        "case": "tinyexpr",
+        "compose_project": "b08-e14-241880546-5bc5681b71",
+        "four_role_and_network_removal_logged": true
+      },
+      {
+        "case": "recovery",
+        "compose_project": "b08-e14-241880546-828903a7d0",
+        "four_role_and_network_removal_logged": true
+      }
+    ]
   }
 }

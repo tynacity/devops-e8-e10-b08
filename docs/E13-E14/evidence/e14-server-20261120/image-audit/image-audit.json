@@ -1,0 +1,97 @@
+{
+  "utc": "2026-11-20T09:15:06.455373+00:00",
+  "scope": "Docker history commands and configured environment only; no layer filesystem scan",
+  "images": [
+    {
+      "variant": "headerflow",
+      "image_id": "sha256:231de698ad24a368a1a6ccdf6ede045f6d0db26fb5fa334b6425cfab28357d2a",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "headerflow-history.log",
+          "bytes": 4190,
+          "sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "headerflow-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    },
+    {
+      "variant": "tinyexpr",
+      "image_id": "sha256:929f86d18a011dff1dc551bcf3d7be9b081e5d060fe032bef7c424c34de4b703",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "tinyexpr-history.log",
+          "bytes": 4114,
+          "sha256": "728837e4199bd1b1fcd75255393c24cf7657ccbfbef21d0c55cfe579c3e88741",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "tinyexpr-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    },
+    {
+      "variant": "recovery",
+      "image_id": "sha256:ac1a02010573cbdd57802e5b9dbc1befe1a8cc5d9aa97ff31761018ae80146f6",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "recovery-history.log",
+          "bytes": 4190,
+          "sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "recovery-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    }
+  ],
+  "all_available_and_passed": true,
+  "compose_current_checks": [
+    {
+      "project": "b08-e14-241880546-e623b57c40",
+      "containers": [],
+      "networks": []
+    },
+    {
+      "project": "b08-e14-241880546-5bc5681b71",
+      "containers": [],
+      "networks": []
+    },
+    {
+      "project": "b08-e14-241880546-828903a7d0",
+      "containers": [],
+      "networks": []
+    }
+  ],
+  "timeout_tag_current_ids": []
+}
