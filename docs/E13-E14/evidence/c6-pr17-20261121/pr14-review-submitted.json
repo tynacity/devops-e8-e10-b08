@@ -1,0 +1,42 @@
+{
+  "id": 5996808027,
+  "node_id": "PRR_kwDOVg0-Gc8AAAABZXAHWw",
+  "user": {
+    "login": "tynacity",
+    "id": 115152868,
+    "node_id": "U_kgDOBt0X5A",
+    "avatar_url": "https://avatars.githubusercontent.com/u/115152868?u=3433238d0bcdb0967d56e710341c7eb07d8d76a4&v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tynacity",
+    "html_url": "https://github.com/tynacity",
+    "followers_url": "https://api.github.com/users/tynacity/followers",
+    "following_url": "https://api.github.com/users/tynacity/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tynacity/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tynacity/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tynacity/subscriptions",
+    "organizations_url": "https://api.github.com/users/tynacity/orgs",
+    "repos_url": "https://api.github.com/users/tynacity/repos",
+    "events_url": "https://api.github.com/users/tynacity/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tynacity/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "body": "已按固定 head `efa63135f51bfed6d7047ae2de916ef80885ac07` 完成成员4代码与证据复核，未发现需要先修复的阻断问题。\n\n复核覆盖报告SHA和生产者身份校验、目标提交绑定、独立副本修复/动态重检、失败回滚与原输入保护，以及H2候选只补git/strace和C5注入边界。与已通过的固定7b7e67b预检逐文件比对，相关组件/用例/候选内容一致；复用其中15项成员2测试及既有H2/C5服务器原件，不重复实跑。当前#14的三类必需检查通过。\n\n本批准仅对应上述固定head的代码与证据；不代替main合入后的实际检查或最终RC批准。合入main后请核对Issue #15实际关闭状态。若新增提交，应重新核对变更范围。",
+  "state": "APPROVED",
+  "html_url": "https://github.com/tynacity/devops-e8-e10-b08/pull/14#pullrequestreview-5996808027",
+  "pull_request_url": "https://api.github.com/repos/tynacity/devops-e8-e10-b08/pulls/14",
+  "author_association": "OWNER",
+  "is_copilot_code_review": false,
+  "copilot_code_review_effort": null,
+  "_links": {
+    "html": {
+      "href": "https://github.com/tynacity/devops-e8-e10-b08/pull/14#pullrequestreview-5996808027"
+    },
+    "pull_request": {
+      "href": "https://api.github.com/repos/tynacity/devops-e8-e10-b08/pulls/14"
+    }
+  },
+  "submitted_at": "2026-11-20T17:30:32Z",
+  "commit_id": "efa63135f51bfed6d7047ae2de916ef80885ac07"
+}

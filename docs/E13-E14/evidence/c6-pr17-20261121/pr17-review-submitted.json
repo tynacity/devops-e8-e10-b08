@@ -1,0 +1,42 @@
+{
+  "id": 5996808308,
+  "node_id": "PRR_kwDOVg0-Gc8AAAABZXAIdA",
+  "user": {
+    "login": "tynacity",
+    "id": 115152868,
+    "node_id": "U_kgDOBt0X5A",
+    "avatar_url": "https://avatars.githubusercontent.com/u/115152868?u=3433238d0bcdb0967d56e710341c7eb07d8d76a4&v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tynacity",
+    "html_url": "https://github.com/tynacity",
+    "followers_url": "https://api.github.com/users/tynacity/followers",
+    "following_url": "https://api.github.com/users/tynacity/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tynacity/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tynacity/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tynacity/subscriptions",
+    "organizations_url": "https://api.github.com/users/tynacity/orgs",
+    "repos_url": "https://api.github.com/users/tynacity/repos",
+    "events_url": "https://api.github.com/users/tynacity/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tynacity/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "body": "已按固定 head `7b7e67b6c005bdf27ca7645790d75623230c00fe` 完成成员4代码与证据复核，当前范围未发现需要先修复的阻断问题。目标保持为#16的 `student/241880492/e13-e14-paired-acceptance`，可由作者转Ready进入正式审批。\n\n复核覆盖外层API输入/状态/幂等边界、声明产物下载及哈希校验、四角色job/trace一致性、DRAFT实际镜像绑定、报告消费与修复副本重检。固定源码33项预检通过（含8项成员3回环HTTP/模拟Docker测试）；另有AMD64四任务1059项下载及角色/镜像原件验收，C6增量同伴复核已收到。超时范围为构建客户端预算超时及恢复；没有将其外推为全部容器运行超时测试。\n\n#14当前head已在双方历史中。相对最新共同分支登记提交dde29bf的离线合并无冲突，合并树运行代码与7b7e67b一致。建议#14审查合main后，将经批准的#17合入#16分支，再核对整合CI及#16审查。若#14新增提交，应在最终CI前同步。当前仍为Draft，本次提交审查意见，不将其记为APPROVE或合并批准，也不改变PR状态。",
+  "state": "COMMENTED",
+  "html_url": "https://github.com/tynacity/devops-e8-e10-b08/pull/17#pullrequestreview-5996808308",
+  "pull_request_url": "https://api.github.com/repos/tynacity/devops-e8-e10-b08/pulls/17",
+  "author_association": "OWNER",
+  "is_copilot_code_review": false,
+  "copilot_code_review_effort": null,
+  "_links": {
+    "html": {
+      "href": "https://github.com/tynacity/devops-e8-e10-b08/pull/17#pullrequestreview-5996808308"
+    },
+    "pull_request": {
+      "href": "https://api.github.com/repos/tynacity/devops-e8-e10-b08/pulls/17"
+    }
+  },
+  "submitted_at": "2026-11-20T17:30:33Z",
+  "commit_id": "7b7e67b6c005bdf27ca7645790d75623230c00fe"
+}

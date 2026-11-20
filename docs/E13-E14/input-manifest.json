@@ -190,7 +190,7 @@
     "author_branch": "student/241880546/e14-integration",
     "verification_branch": "student/241880492/e14-candidate-7b7e67b",
     "source_bundle_sha256": "dbafc6b75b58e59e7edd139f62a9a3e4cf5cf957423b4b94706977c7d827c4fc",
-    "status": "FIXED_SOURCE_AND_SERVER_EVIDENCE_VERIFIED; C6_PEER_REVIEW_ACCEPTED; PR17_DRAFT_OPEN; HUMAN_REVIEW_AND_INTEGRATION_PENDING",
+    "status": "SOURCE_SERVER_EVIDENCE_C6_VERIFIED; PR17_COMMENTED_DRAFT; PR14_APPROVED; INTEGRATION_PENDING",
     "proposed_platform": "linux/amd64",
     "carrier_image_proposed": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
     "current_compose_project_confirmation": "THREE_AMD64_DEPLOYMENTS_VERIFIED_20261120",
@@ -308,7 +308,8 @@
       "head": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
       "state_at_intake": "OPEN_DRAFT",
       "CI_push_and_PR_passed": 10,
-      "intake": "evidence/c6-pr17-20261121/acceptance.json"
+      "intake": "evidence/c6-pr17-20261121/acceptance.json",
+      "member4_review": "COMMENTED_ON_7b7e67b; NOT_APPROVED"
     }
   },
   "C6_incremental_peer_review": {
@@ -325,5 +326,11 @@
     ],
     "evidence": "evidence/c6-pr17-20261121/acceptance.json",
     "future_changed_scope_requires_review": true
+  },
+  "member4_PR_reviews": {
+    "evidence": "evidence/c6-pr17-20261121/review-publication.json",
+    "PR14": "APPROVED_ON_efa6313",
+    "PR17": "COMMENTED_ON_7b7e67b; DRAFT",
+    "merge_performed": false
   }
 }
