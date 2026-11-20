@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-17",
+  "scope": "5.1 component handoff",
+  "source_commit": "82296b27bbadddc413246433383f2e3e6f6fca32",
+  "repository": "https://github.com/tynacity/devops-e8-e10-b08",
+  "branch": "student/241880529/e13-e14",
+  "baseline": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+  "source_sha256": {
+    "labs/e13e14/mdfixer.py": "088393f75734d427c2db701d337ec45699d6dccf2e7d6d092ad37d13ff842443",
+    "labs/e13e14/tests/test_member2_mdfixer.py": "3103bda408c0a633484c42bb3a5a91668fbf0e1068fde93aec5024ef9463f6c0"
+  },
+  "tests": {
+    "new": 9,
+    "existing_contracts": 24,
+    "regression": 22
+  },
+  "independent_runs": {
+    "H2-inih": "SUCCEEDED",
+    "TinyExpr": "SUCCEEDED"
+  },
+  "runtime": "WSL Ubuntu 22.04, Python 3.10.12, native process; no DRAFT image in this run",
+  "evidence_zip_sha256": "5911f73b94a893ae4412fa75c526878fadf9baa1aa1b4e8d0576b39af344a1c5",
+  "pending": [
+    "member 3 HTTP role integration",
+    "member 4 acceptance of H2 and paired C5 evidence",
+    "C2/C3 formal matrix confirmation with member 4",
+    "5.3 four-service verification"
+  ],
+  "5.2_cloud": {
+    "run_tool_commit": "06cfb71dffc23d73c46b2b77561fad2e8b2ed677",
+    "H2_five_stages": "SUCCEEDED",
+    "C5_in_DRAFT_image": "SUCCEEDED",
+    "H2_current_report_consumption": "SUCCEEDED",
+    "job_id": "job-cfa2dc6672b841d2a8e0c85ad492756c",
+    "issue": "https://github.com/tynacity/devops-e8-e10-b08/issues/15",
+    "evidence": "evidence/member2-H2-C5-cloud-final-20261117.zip"
+  },
+  "5.2_paired_C5": {
+    "date": "2026-11-18",
+    "tool_commit": "5aad22a5cc5a2516ecbcf505aaf73b1c1d68aafd",
+    "project_target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "status": "SUCCEEDED",
+    "evidence": "evidence/member2-A-HeaderFlow-C5-20261118.zip",
+    "review": "awaiting member 4"
+  }
+}
