@@ -8,21 +8,28 @@ import traceback
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
-sys.path[:0] = ['/course/labs/e8e10', '/course/labs/e11e12/vendor', '/app']
+ROOT = Path(__file__).resolve().parents[2]
+sys.path[:0] = [str(ROOT / 'labs/e8e10'), str(ROOT / 'labs/e11e12'), str(ROOT / 'labs/e11e12/vendor'),
+                '/app', str(ROOT / 'labs/e11e12/environment/services/buildchecker')]
 from lab import scan, patch, validate
 from draft.autobuild import auto_build
 from buildchecker.fullcheck import full_check
+from paired_runtime import PROFILES, RuntimeSessions, build_budget, paired_role
 
-ROOT = Path('/course').resolve()
-ROLE = os.environ['E14_ROLE']
+ROLE = os.environ.get('E14_ROLE')
+RUNTIME = RuntimeSessions(ROOT)
 
 
 def local(value, area='work'):
     path = Path(value).resolve()
     allowed = ROOT / area
-    if not path.is_relative_to(allowed):
+    if path == allowed or not path.is_relative_to(allowed):
         raise ValueError(f'Path must be inside {allowed}')
     return path
+
+
+def wire(path):
+    return '/course/' + path.resolve().relative_to(ROOT).as_posix()
 
 
 def sha(path):
@@ -39,13 +46,22 @@ def run(data):
     out = local(data['out'])
     if out.exists():
         raise ValueError('Output already exists')
+    profile = data.get('profile')
+    if profile is not None and profile not in PROFILES:
+        raise ValueError('Unknown paired-project profile')
     if ROLE == 'draft':
         candidate = local(data['candidate'], 'data')
+        timeout = build_budget(data.get('build_timeout', 600))
         result = auto_build(project, candidate, out, data.get('expected_output', '1'),
-                            timeout=float(data.get('build_timeout', 600)))
+                            timeout=timeout)
         if result['status'] != 'SUCCEEDED':
             raise ValueError('DRAFT_' + result['status'] + ': ' + str(result.get('error')))
-        return {'status': 'SUCCEEDED', 'result': result, 'artifact': str(out / 'result.json')}
+        response = {'status': 'SUCCEEDED', 'result': result, 'artifact': str(out / 'result.json')}
+        if profile is not None:
+            response['execution_image_id'] = RUNTIME.register(data, project, out, result)
+        return response
+    if profile is not None:
+        return paired_role(ROLE, data, out, project, local, wire)
     if ROLE == 'buildchecker':
         result = full_check(project, out)
         if result['status'] != 'SUCCEEDED':
@@ -119,7 +135,8 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(404, {'error': 'NOT_FOUND'})
 
     def do_POST(self):
-        if self.path != '/v1/run':
+        runtime = self.path == '/v1/runtime' and ROLE == 'draft'
+        if self.path != '/v1/run' and not runtime:
             self.reply(404, {'error': 'NOT_FOUND'})
             return
         start = time.monotonic()
@@ -129,14 +146,18 @@ class Handler(BaseHTTPRequestHandler):
             if length < 1 or length > 100000:
                 raise ValueError('Invalid request size')
             data = json.loads(self.rfile.read(length))
-            result = run(data)
+            if not isinstance(data, dict):
+                data = {}
+                raise ValueError('Expected a JSON object')
+            result = RUNTIME.execute(data) if runtime else run(data)
             print(json.dumps({'role': ROLE, 'job_id': data.get('job_id'),
                               'trace_id': data.get('trace_id'), 'status': 'SUCCEEDED',
+                              'runtime_slot': data.get('slot') if runtime else None,
                               'elapsed_ms': round((time.monotonic()-start)*1000)}), flush=True)
             self.reply(200, result)
         except Exception as exc:
             traceback.print_exc()
-            code = 'TIMEOUT' if 'TIMED_OUT' in str(exc) else type(exc).__name__.upper()
+            code = getattr(exc, 'code', 'TIMEOUT' if 'TIMED_OUT' in str(exc) else type(exc).__name__.upper())
             print(json.dumps({'role': ROLE, 'job_id': data.get('job_id'),
                               'trace_id': data.get('trace_id'), 'status': 'FAILED',
                               'error_code': code, 'elapsed_ms': round((time.monotonic()-start)*1000)}), flush=True)
