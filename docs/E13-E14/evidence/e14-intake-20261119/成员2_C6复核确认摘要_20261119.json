@@ -1,0 +1,123 @@
+{
+  "review_date": "2026-11-18",
+  "method": "offline evidence review and local scanner replay; no server rerun",
+  "tool_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+  "packages": [
+    {
+      "name": "DevOps_E13_E14_成员4门禁与发布准备_20261118.zip",
+      "sha256": "66cd701f8e256f5ba5fe7186bb52fedb157a770d4d881628398dc913ee4a2839",
+      "verified_files": 5002
+    },
+    {
+      "name": "DevOps_E13_E14_成员4跨组验收交付_20261118.zip",
+      "sha256": "48dd7e0bb740549df9eb644dd27c9e65fd2ad6b63ebf94d2030115e5fee0eb15",
+      "verified_files": 86
+    }
+  ],
+  "c6": {
+    "conclusion": "PASS within original scope; final release scan pending",
+    "fake_replay_hit_exit": 1,
+    "fake_replay_clean_exit": 0,
+    "redacted": true,
+    "images_verified": [
+      {
+        "scope": "environment",
+        "image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+        "platform": "linux/amd64",
+        "history_sha256": "b59104e52e5d949997d958dd60d2eb652b5fc940d9c9ecc72c8f37b3dc8c98a8",
+        "environment_sha256": "d16c09038610f541c40636fc32f2c5e06b677ac65a638e3e68d83841020d1299",
+        "scan_exit_code": 0
+      },
+      {
+        "scope": "member4-A-API",
+        "image_id": "sha256:bc8364992123a94617f091d909cf3abb57b5af38688fcb224e3f0c7549d244df",
+        "platform": "linux/amd64",
+        "history_sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+        "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+        "scan_exit_code": 0
+      },
+      {
+        "scope": "member2-A-C5",
+        "image_id": "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+        "platform": "linux/amd64",
+        "history_sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+        "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+        "scan_exit_code": 0
+      },
+      {
+        "scope": "member2-H2",
+        "image_id": "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb",
+        "platform": "linux/amd64",
+        "history_sha256": "23373d166f50f0d5e62a6cbf7f3e272d4c37d7b26dc79ce33b51cf9204e5c8f5",
+        "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+        "scan_exit_code": 0
+      }
+    ],
+    "archived_runtime_text_files_reviewed": 332,
+    "archived_runtime_hits": 0,
+    "original_runtime_log": "runtime log scan: text_files=329 hits=0 errors=0",
+    "limitations": [
+      "Original source/history scan reviewed as logged evidence, not re-executed.",
+      "Docker history/config env only; no exhaustive filesystem layer scan.",
+      "Does not include H3 new execution images, later service images/logs, or ARM64."
+    ]
+  },
+  "h3": [
+    {
+      "variant": "original",
+      "sha256": "b9b7938e466b44bffaea49293b0e8b1cdd63ca95b49121cb8277faa2a9fd84c9",
+      "files_verified": 96,
+      "artifact_and_stage_checks": 77,
+      "status": "FAILED",
+      "original_source_unchanged": true,
+      "image_id": "sha256:871a0229d8b93969fd600c89beed49c5c16b428993b236f26ed416515c50011f",
+      "job_id": "job-8695210b601d4a4aa6db8799c12c5856"
+    },
+    {
+      "variant": "tools",
+      "sha256": "a9ffdccc255d265fee334fa75dbc4753033c6f42908387abef7856664b0cceb0",
+      "files_verified": 231,
+      "artifact_and_stage_checks": 211,
+      "status": "SUCCEEDED",
+      "original_source_unchanged": true,
+      "image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+      "job_id": "job-6d3420d1ee214c20a155b59e964a977e"
+    }
+  ],
+  "rechecked_date": "2026-11-19",
+  "new_supplements_review": {
+    "deployment_supplement": {
+      "files_verified": 34,
+      "arm64_history_env_texts_reviewed": 22,
+      "hits": 0,
+      "method": "offline text rescan only; no Docker inspect rerun"
+    },
+    "integration_source": {
+      "files_verified": 17,
+      "base_commit": "fcd36c0082be043c8fece6a61941321833171aa7",
+      "status": "UNCOMMITTED_REHEARSAL_OVERLAY",
+      "formal_source_commit": null,
+      "server_execution_verified": false
+    },
+    "probe": {
+      "platform": "x86_64",
+      "ports": {
+        "18181": "available_at_probe_time",
+        "18182": "available_at_probe_time",
+        "18183": "available_at_probe_time",
+        "18184": "available_at_probe_time"
+      },
+      "expected_image_inspect": {
+        "exit": 0,
+        "stdout": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829 linux/amd64",
+        "stderr": ""
+      },
+      "compose_version": {
+        "exit": 0,
+        "stdout": "Docker Compose version 2.40.3+ds1-0ubuntu1~22.04.1",
+        "stderr": ""
+      }
+    },
+    "confirmation_date": "2026-11-19"
+  }
+}

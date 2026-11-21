@@ -1,0 +1,71 @@
+name: E14 fixed-sample four-service regression
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  compose:
+    name: e14-compose-fixed-sample
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      E14_ROOT: ${{ github.workspace }}
+      E14_IMAGE: course-e11e12:999999999
+      COMPOSE_PROJECT_NAME: e14-ci-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build and prepare fixed sample
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/e14-ci
+          git rev-parse HEAD > work/e14-ci/source-commit.txt
+          git config --local user.name 999999999
+          git config --local user.email ci@example.invalid
+          docker build --build-arg BASE_IMAGE=python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 -f labs/e11e12/environment/services/buildchecker/Dockerfile -t "$E14_IMAGE" labs/e11e12/environment 2>&1 | tee work/e14-ci/environment-build.log
+          docker image inspect "$E14_IMAGE" > work/e14-ci/environment-image.json
+          python3 run_e11e12.py prepare 2>&1 | tee work/e14-ci/prepare.log
+          cp data/integration-sample/dataset.json work/e14-ci/dataset.json
+      - name: Start four roles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          # Host snapshots and service Git operations must have the same owner.
+          roles = {role: {'user': f'{os.getuid()}:{os.getgid()}', 'environment': {'HOME': '/tmp'}}
+                   for role in ('buildchecker', 'echecker', 'draft', 'mdfixer')}
+          roles['draft']['group_add'] = [str(Path('/var/run/docker.sock').stat().st_gid)]
+          Path('work/e14-ci/compose-user.json').write_text(json.dumps({'services': roles}, indent=2) + '\n')
+          PY
+          docker compose -f labs/e13e14/compose.yaml -f work/e14-ci/compose-user.json config > work/e14-ci/compose.yaml
+          docker compose -f labs/e13e14/compose.yaml -f work/e14-ci/compose-user.json up -d --wait --wait-timeout 120
+          docker compose -f labs/e13e14/compose.yaml ps --format json > work/e14-ci/services.json
+          docker compose -f labs/e13e14/compose.yaml exec -T echecker id > work/e14-ci/service-user.txt
+      - name: Verify success, timeout and recovery
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/run_e14_ci.py 2>&1 | tee work/e14-ci/verification.log
+      - name: Collect role logs and scan runtime evidence
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/e14-ci
+          docker compose -f labs/e13e14/compose.yaml logs --no-color --no-log-prefix > work/e14-ci/compose.log 2>&1
+          python3 labs/e13e14/scan_runtime_logs.py work/e14-ci > work/e14-runtime-scan.log 2>&1
+      - name: Stop only this CI Compose project
+        if: always()
+        run: docker compose -f labs/e13e14/compose.yaml down
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e14-fixed-sample-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            work/e14-ci/
+            work/e14-runtime-scan.log
+          include-hidden-files: true
+          retention-days: 14

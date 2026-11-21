@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-18",
+  "scope": "Member4 offline evidence acceptance; no H3 rerun or E14 acceptance",
+  "H3": [
+    {
+      "variant": "original",
+      "archive_sha256": "b9b7938e466b44bffaea49293b0e8b1cdd63ca95b49121cb8277faa2a9fd84c9",
+      "manifest_files_verified": 96,
+      "artifact_references_verified": 78,
+      "tool_sha": "fcd36c0082be043c8fece6a61941321833171aa7",
+      "job_id": "job-8695210b601d4a4aa6db8799c12c5856",
+      "trace_id": "trace-40ed59fa2e364c518324f44273877c8a",
+      "status": "FAILED",
+      "stages": [
+        "draft"
+      ],
+      "error": {
+        "code": "FULL_CHECK_FAILED",
+        "message": "[Errno 2] No such file or directory: 'strace'"
+      },
+      "candidate_sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+      "execution_image_id": "sha256:871a0229d8b93969fd600c89beed49c5c16b428993b236f26ed416515c50011f",
+      "runtime_operations": 1,
+      "original_11_source_files_unchanged": true
+    },
+    {
+      "variant": "tools",
+      "archive_sha256": "a9ffdccc255d265fee334fa75dbc4753033c6f42908387abef7856664b0cceb0",
+      "manifest_files_verified": 231,
+      "artifact_references_verified": 221,
+      "tool_sha": "fcd36c0082be043c8fece6a61941321833171aa7",
+      "job_id": "job-6d3420d1ee214c20a155b59e964a977e",
+      "trace_id": "trace-f3feb3aa342c4ab28cd12017c374b2fa",
+      "status": "SUCCEEDED",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "error": null,
+      "candidate_sha256": "eb4ed9637b85726149dab490764619f934f795eabd3b0f7e4cd9f76c3127ee4b",
+      "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+      "runtime_operations": 7,
+      "original_11_source_files_unchanged": true
+    }
+  ],
+  "candidate_change": "Only add strace git to package installation list",
+  "request_change": "candidate path only",
+  "C2_C3_C7_C8": {
+    "peer": "member3 241880546",
+    "method": "Returned offline evidence review, no rerun",
+    "runtime_sha": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+    "original_archive_hash_verified": true
+  },
+  "H3_accepted": true,
+  "global_gate": "BLOCKED"
+}

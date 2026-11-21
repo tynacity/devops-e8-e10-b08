@@ -1,0 +1,35 @@
+{
+  "evidence_verified": true,
+  "run_id": "1f2b2accc3c7",
+  "source_sha": "fcd36c0082be043c8fece6a61941321833171aa7",
+  "project_base": "dc8099306d7023b7337328d718149973e7b17978",
+  "project_target": "5640bb69a01e64559207e9f74d15a9ae71a4d0f3",
+  "archive_sha256": "a9ffdccc255d265fee334fa75dbc4753033c6f42908387abef7856664b0cceb0",
+  "archive_files": 231,
+  "original_candidate_only": false,
+  "candidate_variant": "tools",
+  "candidate_sha256": "eb4ed9637b85726149dab490764619f934f795eabd3b0f7e4cd9f76c3127ee4b",
+  "runner_exit_code": 0,
+  "pipeline_exit_code": 0,
+  "status": "SUCCEEDED",
+  "stages": [
+    "draft",
+    "full-check",
+    "incremental-check",
+    "repair",
+    "recheck"
+  ],
+  "original_source_unchanged": true,
+  "h3_tools_passed": true,
+  "job_id": "job-6d3420d1ee214c20a155b59e964a977e",
+  "trace_id": "trace-f3feb3aa342c4ab28cd12017c374b2fa",
+  "error": null,
+  "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+  "first_run": {
+    "run_id": "fb854ee628b7",
+    "archive_sha256": "b9b7938e466b44bffaea49293b0e8b1cdd63ca95b49121cb8277faa2a9fd84c9",
+    "job_id": "job-8695210b601d4a4aa6db8799c12c5856",
+    "trace_id": "trace-40ed59fa2e364c518324f44273877c8a",
+    "error": "FULL_CHECK_FAILED: strace missing"
+  }
+}

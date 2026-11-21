@@ -32,7 +32,8 @@ class DraftRuntime:
         except ValueError as exc:
             raise RuntimeFailure('Stage path is outside the mounted repository') from exc
 
-    def run(self, action, project, *, evidence=None, cache=None, report=None, patch=None, report_sha256=None):
+    def run(self, action, project, *, evidence=None, cache=None, report=None, patch=None, report_sha256=None,
+            component_request=None):
         record_dir = self.out / 'runtime' / ('%02d-%s' % (len(self.records) + 1, action))
         record_dir.mkdir(parents=True, exist_ok=False)
         payload = record_dir / 'payload.json'
@@ -43,7 +44,8 @@ class DraftRuntime:
                 '-v', self.host_root + ':/course', '-w', '/course', '--entrypoint', 'python3',
                 self.image_id, 'labs/e11e12/runtime_worker.py', '--action', action,
                 '--project', self.mapped(project), '--result', self.mapped(payload)]
-        for flag, path in [('evidence', evidence), ('cache', cache), ('report', report), ('patch', patch)]:
+        for flag, path in [('evidence', evidence), ('cache', cache), ('report', report), ('patch', patch),
+                           ('component-request', component_request)]:
             if path is not None:
                 argv += ['--' + flag, self.mapped(path)]
         if self.detector is not None:

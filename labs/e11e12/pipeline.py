@@ -99,6 +99,9 @@ def tracked_hashes(repo):
     return {name: hashlib.sha256((repo / name).read_bytes()).hexdigest() for name in names if name}
 
 def execute(request, out, job_id=None):
+    if request.get('mode') == 'e13-b':
+        from live_handoff import execute_handoff
+        return execute_handoff(request, out, job_id)
     job_id = job_id or 'job-'+uuid.uuid4().hex
     trace_id = 'trace-'+uuid.uuid4().hex
     if out.exists() and any(out.iterdir()):

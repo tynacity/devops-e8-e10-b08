@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-18T12:53:53.871311+00:00",
+  "scope": "Docker history commands and configured environment only; no layer filesystem scan",
+  "images": [
+    {
+      "variant": "original",
+      "image_id": "sha256:871a0229d8b93969fd600c89beed49c5c16b428993b236f26ed416515c50011f",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "original-history.log",
+          "bytes": 4068,
+          "sha256": "43be6074e9b61c04802a5b2bfb03389900fd6bd74654e53b0f7522bf4ab56775",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "original-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    },
+    {
+      "variant": "tools",
+      "image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "tools-history.log",
+          "bytes": 4079,
+          "sha256": "e189f147e1bfb76665a700bee68ade9fa465d95f717ed8433fcb4839a6b5eec3",
+          "hits": 0,
+          "exit_code": 0
+        },
+        {
+          "scope": "env",
+          "file": "tools-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0,
+          "exit_code": 0
+        }
+      ],
+      "available": true,
+      "platform": "linux/amd64"
+    }
+  ],
+  "all_available_and_passed": true
+}

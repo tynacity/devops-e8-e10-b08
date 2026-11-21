@@ -1,0 +1,26 @@
+[
+  {
+    "file": "成员2_E13_C6复核确认_20261119.md",
+    "bytes": 5994,
+    "sha256": "c6910198f6c232135a57d78669f000715e3788adcbdc50b6a37d11ea56337e83",
+    "archive_copy_matches": true
+  },
+  {
+    "file": "B08-E14-rehearsal-source.zip",
+    "bytes": 3773145,
+    "sha256": "24f62182b4871ffeab42f7c9559bd6710d42bec2ce23ddb5fccd6e617ead2364",
+    "archive_copy_matches": true
+  },
+  {
+    "file": "server-probe-8b555cab.json",
+    "bytes": 824,
+    "sha256": "60136b50f4153ac89856f8fa046a6842c28279b421ecdb1c5c394a6106022f34",
+    "archive_copy_matches": true
+  },
+  {
+    "file": "成员1-部署条件补交-20261118.zip",
+    "bytes": 37510,
+    "sha256": "55436d01aa95be06d42fc3881f76ca81b8bf45cb1ec972a0b0c943fd1fdf8ab0",
+    "archive_copy_matches": true
+  }
+]

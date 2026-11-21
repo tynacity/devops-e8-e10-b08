@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-17",
+  "source_package": "学生发放包_20261116.zip",
+  "imported": [
+    {
+      "source": "DevOps_E13_E14_学生材料/实验包/scan_runtime_logs.py",
+      "destination": "labs/e13e14/scan_runtime_logs.py",
+      "sha256": "1304657c1e51f1b4c2772fa7e104e04102e84a8be3d4277af708b8f519c45c34",
+      "modified": false
+    }
+  ],
+  "scope": "Only the runtime log scanner is imported. Service, compose, orchestration and handoff integration remain with the assigned component owners."
+}

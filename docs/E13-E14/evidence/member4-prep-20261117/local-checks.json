@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-17",
+  "scope": "Preparation only: archived E12 A-report consumer boundary and C6 runtime text scanner. Not paired-project C2/C3 acceptance, full C6 coverage, Docker E2E, or remote CI.",
+  "linux": {
+    "python": "3.12.3",
+    "command": [
+      "wsl",
+      "--exec",
+      "bash",
+      "-lc",
+      "cd /mnt/f/codes/devops_labs/e13-e14-member4-20261117 && python3 -m unittest discover -s labs/e13e14/tests -p test_member4_preflight.py -v"
+    ],
+    "exit_code": 0,
+    "tests_run": 6,
+    "result": "passed",
+    "log": "linux-preflight.log"
+  },
+  "windows": {
+    "python": "3.14",
+    "command": "python -m unittest discover -s labs/e13e14/tests -p test_member4_preflight.py -v",
+    "exit_code": 0,
+    "tests_run": 6,
+    "result": "passed",
+    "evidence": "Observed in preparation session before Linux portability run"
+  },
+  "evidence_log_scan": {
+    "exit_code": 0,
+    "log": "evidence-log-scan.log"
+  },
+  "code_sha256": {
+    "labs/e13e14/scan_runtime_logs.py": "1304657c1e51f1b4c2772fa7e104e04102e84a8be3d4277af708b8f519c45c34",
+    "labs/e13e14/tests/test_member4_preflight.py": "b8fea1e74a558d17f45dab22ad0677a7d0fc42ae455e612bfceaa99c68929c7d",
+    "labs/e11e12/tinyexpr_repair.py": "bf9371a95cc9d75e47704e363189e86bfaa62b0fee9158dd10b119ced22616ee",
+    "labs/e11e12/pipeline.py": "2c8a1fdfce2a14ca6f189d03379fecf1d7e07dce3cfc30c6d001bfd507b56fdb",
+    ".github/workflows/e13e14-preflight.yml": "522ec536a665e4a8d07d3eac878506481ea19d3ce5e1d4bf247b9418873d6907"
+  },
+  "remote_e13_ci": "NOT_RUN",
+  "paired_project_tests": "NOT_RUN",
+  "H1_H2_H3_execution": "NOT_RUN",
+  "log_capture": "stdout/stderr captured as text; Windows CRLF storage normalized to LF without changing log lines",
+  "source_history_scan": {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "scripts/secret_scan.py",
+      ".",
+      "--history"
+    ],
+    "git_config_override": "core.quotePath=false (per invocation)",
+    "exit_code": 0,
+    "findings": 0,
+    "log": "source-history-scan.log",
+    "scope": "Tracked working tree including staged preparation and existing local Git history; scanner rules/size limits apply. No Docker images.",
+    "first_attempt": "Windows default GBK decoding failed; preserved source-history-scan-windows-encoding.log; rerun in UTF-8 mode without modifying scanner."
+  }
+}

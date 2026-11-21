@@ -1,0 +1,197 @@
+{
+  "date": "2026-11-19",
+  "method": "Offline original-evidence verification; no task reruns",
+  "manifests": [
+    {
+      "package": "member1",
+      "files_verified": 1498
+    },
+    {
+      "package": "member2",
+      "files_verified": 39
+    },
+    {
+      "package": "member2-c5",
+      "files_verified": 501
+    }
+  ],
+  "historical_packages": [
+    {
+      "path": "docs/students/241880529/e13-e14/evidence/c5-native-20261117.zip",
+      "sha256": "11e98a93f259250ca5a3d15ba2b6238cc079f1a53d96e8bda4da6579b51e2a16",
+      "matches_accepted_component_commit": true
+    },
+    {
+      "path": "docs/students/241880529/e13-e14/evidence/component-5.1.zip",
+      "sha256": "5911f73b94a893ae4412fa75c526878fadf9baa1aa1b4e8d0576b39af344a1c5",
+      "matches_accepted_component_commit": true
+    },
+    {
+      "path": "docs/students/241880529/e13-e14/evidence/member2-A-HeaderFlow-C5-20261118.zip",
+      "sha256": "e18b8611e9b1b9a4873d4db80dbe993d030605cc453758292b04002ff9c309c3",
+      "matches_accepted_component_commit": true
+    },
+    {
+      "path": "docs/students/241880529/e13-e14/evidence/member2-H2-C5-cloud-final-20261117.zip",
+      "sha256": "17f73b3d430b33fa56a5bdc00ea0792d9b31ca39690772fc3ef40411f43f798e",
+      "matches_accepted_component_commit": true
+    }
+  ],
+  "source_identity": {
+    "status": "UNCOMMITTED_REHEARSAL_OVERLAY",
+    "base_commit": "fcd36c0082be043c8fece6a61941321833171aa7",
+    "overlay_files": {
+      "labs/e13e14/compose.yaml": "9789e94ad7ac7c48dcd034605b8c55d72faeb5a4f4bbf3e5d53240314e26e9d3",
+      "labs/e13e14/orchestrate.py": "14c98c5706bb4837f02a151b576377785c022830b5ced49ce54f217e72d0a736",
+      "labs/e13e14/service.py": "f53de103b6c7975dae41991fa680484b8c5a5c4b19856036769bfd02d0758619",
+      "labs/e13e14/paired_runtime.py": "ec998cdf269824c6ba5dd08f013f55ec92a98fe2165e7b32d2dee1ca322c8e23",
+      "labs/e13e14/tests/test_member3_e14_paired.py": "565a26dc86bf931fb338ba9b7df500a55f1edb4d475846541e220500c9485e6a",
+      "docs/E13-E14/成员3-E14四服务接线.md": "5ed94b2795717e7e5eb9f1d7c989b9bddef6ce6149257a53f966839bc0006054"
+    },
+    "formal_source_commit": null,
+    "formal_ci": null,
+    "ports": {
+      "buildchecker": 18181,
+      "echecker": 18182,
+      "draft": 18183,
+      "mdfixer": 18184
+    },
+    "compose_project": "b08-e14-member1-review"
+  },
+  "test_instrumentation": {
+    "path": "labs/e13e14/mdfixer.py",
+    "before_sha256": "088393f75734d427c2db701d337ec45699d6dccf2e7d6d092ad37d13ff842443",
+    "tested_sha256": "b566a45e65bff237871cf9e40737fdd49c5cfdbd435ca09eb69fccfbb855a9e3",
+    "job_output": "work/reject-missing-config",
+    "change": "Remove only config.h from generated main.o prerequisites before validation."
+  },
+  "tasks": [
+    {
+      "task": "headerflow-01",
+      "platform": "arm64",
+      "job_id": "job-39c9bc7490d04747a9ae89d64df3b9e7",
+      "trace_id": "trace-f5236257ee6f47fdb40f8133df19f768",
+      "status": "SUCCEEDED",
+      "image": "sha256:48b732ac303d05fc361f8e46cf3344562ffb60e30722d9a3a97f6346bdbd5fd8",
+      "artifacts_checked": 277,
+      "stages_checked": 5,
+      "operations": 6,
+      "source_unchanged": true,
+      "accepted": true,
+      "rollback": false,
+      "report_binding_verified": true
+    },
+    {
+      "task": "tinyexpr-01",
+      "platform": "arm64",
+      "job_id": "job-e5a1720399db4f67b8080bb51498e98d",
+      "trace_id": "trace-af6816acafeb45969ccd0018d42cbab4",
+      "status": "SUCCEEDED",
+      "image": "sha256:05035ffa4b852ff8636deb316636f4703ef1a8706953adc429aab0b130ba47d4",
+      "artifacts_checked": 455,
+      "stages_checked": 5,
+      "operations": 6,
+      "source_unchanged": true,
+      "accepted": true,
+      "rollback": false,
+      "report_binding_verified": true
+    },
+    {
+      "task": "headerflow-restored-01",
+      "platform": "arm64",
+      "job_id": "job-9a510981eafe4e2a982eeb0f7b1eaee6",
+      "trace_id": "trace-70e00f8669a04479a612a6e01679000f",
+      "status": "SUCCEEDED",
+      "image": "sha256:5a2170ff7fcb4533c3272dc7cb4d9181f018b8b4b3dfce7e153f5a3d6ac7d682",
+      "artifacts_checked": 277,
+      "stages_checked": 5,
+      "operations": 6,
+      "source_unchanged": true,
+      "accepted": true,
+      "rollback": false,
+      "report_binding_verified": true
+    },
+    {
+      "task": "reject-missing-config",
+      "platform": "amd64",
+      "job_id": "job-f657f7e3a59844579fc1bbdb436d4919",
+      "trace_id": "trace-a4fc6b24ebf54611b8a16a4bd102964c",
+      "status": "FAILED",
+      "image": "sha256:10b2cf326a7720d2c2e849148d919cf89b124f547fe51d20cccf215b1f1d17d5",
+      "artifacts_checked": 207,
+      "stages_checked": 3,
+      "operations": 5,
+      "source_unchanged": true,
+      "accepted": false,
+      "rollback": true,
+      "report_binding_verified": true
+    },
+    {
+      "task": "positive-after-rejection",
+      "platform": "amd64",
+      "job_id": "job-bc55294cac034f09a2fa3a700820f317",
+      "trace_id": "trace-9247d5681d054bdfa6f09c2852b0d669",
+      "status": "SUCCEEDED",
+      "image": "sha256:b41f5a2b56f68334325f23e2777578b9224f8cf92f8ecb2bd4f82c813068ed17",
+      "artifacts_checked": 277,
+      "stages_checked": 5,
+      "operations": 6,
+      "source_unchanged": true,
+      "accepted": true,
+      "rollback": false,
+      "report_binding_verified": true
+    }
+  ],
+  "successful_and_rejection_artifacts": 1493,
+  "stage_references": 23,
+  "timeout": {
+    "job_id": "job-8efd99a63a2644b7b0d33183bf67f1ac",
+    "status": "FAILED",
+    "inner_status": "TIMED_OUT",
+    "observed_running": true,
+    "after_empty": true,
+    "artifacts_checked": 53
+  },
+  "member2_cleanup": {
+    "project": "b08-e14-c5-241880529-339619",
+    "remaining": {
+      "container": [],
+      "network": []
+    }
+  },
+  "ARM64_images": [
+    {
+      "id": "sha256:05035ffa4b852ff8636deb316636f4703ef1a8706953adc429aab0b130ba47d4",
+      "platform": "linux/arm64",
+      "history_sha256": "5c8a8621a6a4fc98abdbdae69eff0d419eabaa894ef7fac05906e22aa13b8d13",
+      "env_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee"
+    },
+    {
+      "id": "sha256:48b732ac303d05fc361f8e46cf3344562ffb60e30722d9a3a97f6346bdbd5fd8",
+      "platform": "linux/arm64",
+      "history_sha256": "79d59b7dd8a0cecf85fd8cfcbf55b81eec6d705820668b5077799c93f81f5b4a",
+      "env_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee"
+    },
+    {
+      "id": "sha256:5a2170ff7fcb4533c3272dc7cb4d9181f018b8b4b3dfce7e153f5a3d6ac7d682",
+      "platform": "linux/arm64",
+      "history_sha256": "79d59b7dd8a0cecf85fd8cfcbf55b81eec6d705820668b5077799c93f81f5b4a",
+      "env_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee"
+    },
+    {
+      "id": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+      "platform": "linux/arm64",
+      "history_sha256": "bc6793466391a53906d298a1cc0e817e08f0ab27424409c89901561610dd2bcb",
+      "env_sha256": "9f48a60c8b99a5d4431f623f4ce7e8ca7cd8d369473a0c3a444dba512e64cbdf"
+    }
+  ],
+  "C6_process_attachments_received": [
+    "成员2_C6复核确认摘要_20261119.json",
+    "成员2_E13_C6复核记录_20261118.md",
+    "成员2_新交付核验脚本_20261118.py"
+  ],
+  "G2_new_input_received": false,
+  "formal_source_commit_received": false,
+  "outer_jobs_four_service_acceptance": false,
+  "overall_gate": "BLOCKED"
+}

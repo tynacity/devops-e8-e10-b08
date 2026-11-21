@@ -1,0 +1,33 @@
+name: E13-E14 member4 preflight
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    name: e13-member4-preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install component test dependencies
+        run: sudo apt-get update && sudo apt-get install -y gcc make git strace
+      - name: Record source and run preparation checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/e13-member4-preflight
+          git rev-parse HEAD > work/e13-member4-preflight/source-commit.txt
+          python3 --version > work/e13-member4-preflight/python-version.txt
+          git -c core.quotePath=false log -1 --format=fuller > work/e13-member4-preflight/commit.txt
+          python3 scripts/secret_scan.py . --history 2>&1 | tee work/e13-member4-preflight/source-history-scan.log
+          python3 -m unittest discover -s labs/e13e14/tests -p 'test_member*.py' -v 2>&1 | tee work/e13-member4-preflight/tests.log
+          python3 labs/e13e14/scan_runtime_logs.py work/e13-member4-preflight 2>&1 | tee work/e13-member4-runtime-scan.log
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e13-member4-preflight-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/
+          retention-days: 14

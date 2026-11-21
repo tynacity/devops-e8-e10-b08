@@ -4,3 +4,14 @@ docs/students/241880528/e11-e12/evidence/** -text
 labs/e11e12/** text eol=lf
 run_e11e12.py text eol=lf
 fixtures/e11e12/tinyexpr-candidate.Dockerfile -text
+# Preserve received H3 evidence and candidate hashes across checkout platforms.
+docs/E13-E14/evidence/member3-20261118/** -text
+docs/E13-E14/member3/H3/candidate.tools.Dockerfile -text
+docs/E13-E14/evidence/intake-20261119/** -text
+docs/E13-E14/evidence/e14-intake-20261119/** -text
+docs/E13-E14/evidence/g2-20261119/** -text
+docs/E13-E14/evidence/intake-20261120/** -text
+docs/E13-E14/evidence/e14-server-20261120/** -text
+docs/E13-E14/evidence/c6-pr17-20261121/** -text
+docs/E13-E14/evidence/pr17-integration-20261121/** -text
+docs/E13-E14/evidence/pr16-release-config-20261121/** -text

@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-11-19T08:15:41.659243+00:00",
+  "tool_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+  "images": [
+    {
+      "scope": "environment",
+      "image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "platform": "linux/amd64",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "environment-history.log",
+          "bytes": 5343,
+          "sha256": "b59104e52e5d949997d958dd60d2eb652b5fc940d9c9ecc72c8f37b3dc8c98a8",
+          "hits": 0
+        },
+        {
+          "scope": "env",
+          "file": "environment-env.log",
+          "bytes": 300,
+          "sha256": "d16c09038610f541c40636fc32f2c5e06b677ac65a638e3e68d83841020d1299",
+          "hits": 0
+        }
+      ]
+    },
+    {
+      "scope": "execution",
+      "image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+      "platform": "linux/amd64",
+      "checks": [
+        {
+          "scope": "history",
+          "file": "execution-history.log",
+          "bytes": 4190,
+          "sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+          "hits": 0
+        },
+        {
+          "scope": "env",
+          "file": "execution-env.log",
+          "bytes": 233,
+          "sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+          "hits": 0
+        }
+      ]
+    }
+  ],
+  "runtime_exit": 0,
+  "scope": "Current G2 runtime logs and actual image history/config env; source and fake-value regression reused at unchanged fixed source; no layer filesystem scan",
+  "old_services_http_200": true,
+  "dedicated_api_stopped": true
+}

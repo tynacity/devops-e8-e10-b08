@@ -1,0 +1,16 @@
+--- fcd36c0/mdfixer.py
++++ test-instrumented/mdfixer.py
+@@ -65,6 +65,13 @@
+         else:
+             diff, plan = patch_tinyexpr(project, data)
+         require(bool(diff), 'NO_MISSING_DEPENDENCY', 'No missing dependency produced an edit')
++
++        if out == Path(__file__).resolve().parents[2] / 'work/reject-missing-config/repair-work/component':
++            good_line = '+main.o: main.c unused.h config.h extra.h\n'
++            bad_line = '+main.o: main.c unused.h extra.h\n'
++            require(diff.count(good_line) == 1, 'TEST_INJECTION_MISMATCH', 'Expected one HeaderFlow config.h addition')
++            (out / 'generated-candidate.patch').write_text(diff, encoding='utf-8')
++            diff = diff.replace(good_line, bad_line, 1)
+         candidate = out / 'candidate.patch'
+         candidate.write_text(diff, encoding='utf-8')
+         save(out / 'repair-plan.json', plan)

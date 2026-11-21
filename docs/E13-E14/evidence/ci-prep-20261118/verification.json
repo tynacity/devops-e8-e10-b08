@@ -1,0 +1,29 @@
+{
+  "scope": "fixed teaching sample only; paired projects and release gate remain separate",
+  "tasks": [
+    {
+      "job_id": "job-f7493de484f14238a72578e08e77a784",
+      "trace_id": "trace-b6d0e4d2fefc489caa87461abab61634",
+      "status": "SUCCEEDED",
+      "artifacts_checked": 162
+    },
+    {
+      "job_id": "job-df1d2dffb2884d4eb3a80dffb7f4d5c3",
+      "trace_id": "trace-205c0a9f2f35424c91192aa5df8d9408",
+      "status": "FAILED",
+      "artifacts_checked": 36
+    },
+    {
+      "job_id": "job-3438d48f0a7f4fbda8331fbfb48caa17",
+      "trace_id": "trace-53097bf997ef4605a503ec07fa9a17dc",
+      "status": "SUCCEEDED",
+      "artifacts_checked": 162
+    }
+  ],
+  "role_logs_verified": 4,
+  "scanned_images": [
+    "course-e11e12:241880492",
+    "sha256:368ed14727f17848d01f9b7479cd5f500db3bb9e816e3f8219487a8558fe401a",
+    "sha256:c8eb0280e80f93e0d4204df0e60778db2a1d63598d8012816a9b81b63131c956"
+  ]
+}

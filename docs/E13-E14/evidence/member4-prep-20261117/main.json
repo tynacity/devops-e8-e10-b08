@@ -1,0 +1,16 @@
+{
+  "checked_date": "2026-11-17",
+  "command": [
+    "gh",
+    "api",
+    "repos/tynacity/devops-e8-e10-b08/branches/main",
+    "--jq",
+    "{sha: .commit.sha, protected: .protected}"
+  ],
+  "exit_code": 0,
+  "response": {
+    "protected": true,
+    "sha": "e7d83cbfd39de356349e874d815a01f3c549d04a"
+  },
+  "stderr": ""
+}

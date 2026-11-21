@@ -1,0 +1,17 @@
+{
+  "PR14": {
+    "state": "APPROVED",
+    "commit": "efa63135f51bfed6d7047ae2de916ef80885ac07",
+    "url": "https://github.com/tynacity/devops-e8-e10-b08/pull/14#pullrequestreview-5996808027",
+    "review_id": 5996808027
+  },
+  "PR17": {
+    "state": "COMMENTED",
+    "commit": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+    "url": "https://github.com/tynacity/devops-e8-e10-b08/pull/17#pullrequestreview-5996808308",
+    "review_id": 5996808308
+  },
+  "merge_performed": false,
+  "PR_state_changed": false,
+  "RC_published": false
+}

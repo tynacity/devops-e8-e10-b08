@@ -1,0 +1,38 @@
+{
+  "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+  "platform": "linux/amd64",
+  "status": "MEMBER1_CONFIRMED_FOR_RELEASE_REVIEW_PENDING_FINAL_MERGE",
+  "carrier": {
+    "purpose": "four role service carrier",
+    "id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "platform": "linux/amd64"
+  },
+  "roles": {
+    "buildchecker": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "echecker": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "draft": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "mdfixer": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829"
+  },
+  "execution_images": [
+    {
+      "purpose": "tinyexpr-evidence-db335fc0e868.tar.gz",
+      "id": "sha256:929f86d18a011dff1dc551bcf3d7be9b081e5d060fe032bef7c424c34de4b703",
+      "platform": "linux/amd64",
+      "evidence_archive_sha256": "3845452681d8cfddc8eeab785f477230acf801a556c451af09ecc66dc3dd7759"
+    },
+    {
+      "purpose": "recovery-evidence-da5bad490022.tar.gz",
+      "id": "sha256:ac1a02010573cbdd57802e5b9dbc1befe1a8cc5d9aa97ff31761018ae80146f6",
+      "platform": "linux/amd64",
+      "evidence_archive_sha256": "17c47ad2a8f74ee3fe54eb6d0c7fdb6ef1fb40e7c98f8199ead69e90a84c0ff5"
+    },
+    {
+      "purpose": "headerflow-evidence.tar.gz",
+      "id": "sha256:231de698ad24a368a1a6ccdf6ede045f6d0db26fb5fa334b6425cfab28357d2a",
+      "platform": "linux/amd64",
+      "evidence_archive_sha256": "c9af7f9f1a99aceffb3da8fda5d46f79d1c1ee40e7df556c53646e8db0cd385d"
+    }
+  ],
+  "registry_pull_address": null,
+  "notes": "Carrier shared across roles; task images rebuilt from pinned candidates; IDs are server-local content IDs, not registry addresses. ARM64 historical evidence excluded from proposed release platform."
+}

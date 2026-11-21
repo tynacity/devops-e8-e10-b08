@@ -1,0 +1,336 @@
+{
+  "date": "2026-11-17",
+  "owner_role": "成员4",
+  "owner_student_id": "241880492",
+  "tool_repository": "https://github.com/tynacity/devops-e8-e10-b08",
+  "baseline_commit": "e7d83cbfd39de356349e874d815a01f3c549d04a",
+  "preparation_branch": "student/241880492/e13-e14-prep",
+  "teacher_project_archive": {
+    "name": "e13-upstream-student.zip",
+    "sha256": "d9818c5f34d6ff5b6016222dabd7f56daca09ceaa5f525be214e146e3d485435",
+    "member_files": 242,
+    "storage": "original teacher archive; unpacked locally under ignored data/"
+  },
+  "projects": [
+    {
+      "case": "H1-jsmn",
+      "assigned_role": "成员1",
+      "upstream_url": "https://github.com/zserge/jsmn",
+      "upstream_commit": "25647e692c7906b96ffd2b05ca54c097948e879c",
+      "base": "66a6dafcc20cea76bf017923d3db725d78407845",
+      "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+      "candidate_sha256": "e55bb15d3fb464ca0f037131d9d4bee03e78af47aaed19899ac9278b036892ab",
+      "upstream_declared_hashes": {
+        "jsmn.h": "c04533e9181e1e33baceb0f55ac449b05145bb936e8c68cc77dfe0d8277514fb"
+      },
+      "upstream_file_mapping": [
+        {
+          "declared_name": "jsmn.h",
+          "upstream_original": "jsmn.h",
+          "sha256": "c04533e9181e1e33baceb0f55ac449b05145bb936e8c68cc77dfe0d8277514fb",
+          "matched": true
+        }
+      ],
+      "declared_upstream_hashes_checked": true,
+      "request": "requests/H1-jsmn.json",
+      "execution_status": "SUCCEEDED_MEMBER1_ARM64_AND_MEMBER4_AMD64",
+      "note": "H1 five-stage evidence verified; member4 independently rebuilt and ran on amd64 at validated_program_commit. This is a teacher project, not the A paired project.",
+      "original_teacher_candidate_sha256": "2ac5ae7cd7e296cb30e78e6f740642b76d8c4286356a2a5ad1dba5d4ebc7a6e7",
+      "candidate_source": "docs/E13-E14/member1/H1-jsmn/candidate.member1.Dockerfile"
+    },
+    {
+      "case": "H2-inih",
+      "assigned_role": "成员2",
+      "upstream_url": "https://github.com/benhoyt/inih",
+      "upstream_commit": "611ab51f8dd7ec583543815b0de693495045fbf8",
+      "base": "aafc740a2cac05a74541abede93b7d59ed23b87f",
+      "target": "3aadb81763c79651e4dfa99b725ba921ee2b8a39",
+      "candidate_sha256": "f1e25df27f06b421ba29f62e346c0493d410c72e4410bca2b85e045398c45a7b",
+      "upstream_declared_hashes": {
+        "helper.c": "49635826cc1ae71209ba88cdad0640d7d1a079779ee24c521efd1e06f4a60633",
+        "ini.h": "db3995229183d50d42cb675bf048f04525aed857fe3e4e39a54a1d7dd2f0f2e9"
+      },
+      "upstream_file_mapping": [
+        {
+          "declared_name": "helper.c",
+          "upstream_original": "ini.c",
+          "sha256": "49635826cc1ae71209ba88cdad0640d7d1a079779ee24c521efd1e06f4a60633",
+          "matched": true
+        },
+        {
+          "declared_name": "ini.h",
+          "upstream_original": "ini.h",
+          "sha256": "db3995229183d50d42cb675bf048f04525aed857fe3e4e39a54a1d7dd2f0f2e9",
+          "matched": true
+        }
+      ],
+      "declared_upstream_hashes_checked": true,
+      "request": "requests/H2-inih.json",
+      "execution_status": "SUCCEEDED_MEMBER2_AMD64_EVIDENCE_ACCEPTED",
+      "note": "Full H2 five stages, C5 and same-run report consumption verified from member2 archive; not rerun by member4. Runtime source 06cfb71dffc23d73c46b2b77561fad2e8b2ed677.",
+      "original_teacher_candidate_sha256": "7bf4b0b9861137354132a2a7676b567ec2de1f0ee71161034a27e8a7b06f4e90",
+      "candidate_source": "fixtures/e13e14/H2-inih-tools.Dockerfile"
+    },
+    {
+      "case": "H3-tiny-aes",
+      "assigned_role": "成员3",
+      "upstream_url": "https://github.com/kokke/tiny-AES-c",
+      "upstream_commit": "23856752fbd139da0b8ca6e471a13d5bcc99a08d",
+      "base": "dc8099306d7023b7337328d718149973e7b17978",
+      "target": "5640bb69a01e64559207e9f74d15a9ae71a4d0f3",
+      "candidate_sha256": "eb4ed9637b85726149dab490764619f934f795eabd3b0f7e4cd9f76c3127ee4b",
+      "upstream_declared_hashes": {
+        "aes.h": "9f74a4de3bd11621ff6e8fb9b352b060f699e6c1c67f81a22d104aacad61a23b",
+        "helper.c": "f7f78b44654efd3542b6886923dd05194286807ebcfeb078ea05d21fe901ee9e"
+      },
+      "upstream_file_mapping": [
+        {
+          "declared_name": "aes.h",
+          "upstream_original": "aes.h",
+          "sha256": "9f74a4de3bd11621ff6e8fb9b352b060f699e6c1c67f81a22d104aacad61a23b",
+          "matched": true
+        },
+        {
+          "declared_name": "helper.c",
+          "upstream_original": "aes.c",
+          "sha256": "f7f78b44654efd3542b6886923dd05194286807ebcfeb078ea05d21fe901ee9e",
+          "matched": true
+        }
+      ],
+      "declared_upstream_hashes_checked": true,
+      "request": "requests/H3-tiny-aes-tools.json",
+      "execution_status": "SUCCEEDED_MEMBER3_AMD64_EVIDENCE_ACCEPTED",
+      "note": "Member3 E12 CLI evidence accepted: fcd36c0082be043c8fece6a61941321833171aa7, five stages passed after adding strace git to original candidate. Original FULL_CHECK_FAILED preserved. Member4 verified 327 manifest files and 299 artifact references without rerunning H3; not E14 four-service acceptance.",
+      "original_teacher_candidate_sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+      "candidate_source": "docs/E13-E14/member3/H3/candidate.tools.Dockerfile",
+      "original_request": "requests/H3-tiny-aes.json",
+      "evidence": "evidence/member3-20261118/acceptance.json",
+      "execution_image_id": "sha256:a84229df03ec31c467d00d0ca2fa8fa5dd49a2d7bf6325f1a74ea6fb14beafd0",
+      "release_candidate_owner_confirmation": "MEMBER1_CONFIRMED_20261119; RECEIVED_20261120; NOT_RC_RELEASE"
+    }
+  ],
+  "B_project": {
+    "name": "TinyExpr",
+    "repository": "https://github.com/tynacity/tinyexpr",
+    "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+    "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+    "status": "Member1 supplemental TinyExpr five-stage rerun verified; current A-side consumption/sign-off not received",
+    "verification_20261117": {
+      "repository_role": "actual project under test; separate from tool repository",
+      "remote_branch": "course/e11-e12",
+      "remote_head": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+      "base_and_target_available_on_github": true,
+      "base_is_ancestor_of_target": true,
+      "local_head_matches_remote": true,
+      "local_worktree_clean": true,
+      "server_head_matches_remote": true,
+      "server_tracked_files_clean": true,
+      "github_open_prs": 0,
+      "github_actions_runs_observed": 0,
+      "independent_gitlab_mirror": "NOT_CONFIRMED"
+    }
+  },
+  "A_project": {
+    "name": "A-HeaderFlow",
+    "status": "B_CLI_EVIDENCE_ACCEPTED_AND_MEMBER4_PUBLIC_API_VERIFIED; A_SIGNOFF_PENDING",
+    "repository": null,
+    "repository_source": "Offline Git repository from member2 inputs.zip, cross-checked against member1 A package",
+    "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+    "report_sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c",
+    "producer_manifest_sha256": "875d5b6e3c9636acde7910944488750ba55b832273c387bf38750dcab4711b95",
+    "A_freeze_id": "G0-A-20261117-f984f64-v1",
+    "A_tool_commit_declared_by_handoff": "f984f64543da103b1fc28fcc8bdaf7ea9d08d6cc",
+    "source_job_id": "job-6e7f20bbfc9c49adb76d8432ce08f542",
+    "source_trace_id": "trace-027e97ba3b724c3bb84a2026e4dc6ac8",
+    "request": "requests/A-HeaderFlow-e13-b.json",
+    "evidence": "evidence/paired-20261118/api-acceptance.json"
+  },
+  "fixed_fixture": {
+    "status": "Use existing prepare and record generated commits; not generated in this preparation"
+  },
+  "runtime": {
+    "status": "PAIRED_A_PROJECT_PUBLIC_API_AMD64_VERIFIED; E14_FOUR_ROLE_RUNTIME_PENDING",
+    "platform": "linux/amd64",
+    "service_image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "execution_images": [
+      "sha256:bc8364992123a94617f091d909cf3abb57b5af38688fcb224e3f0c7549d244df",
+      "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+      "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb"
+    ],
+    "evidence": "evidence/paired-20261118/c6-acceptance.json",
+    "member1_arm64_scope": "11 image summaries received; 10 of 22 raw history/env checks cannot be independently matched; not in current amd64 acceptance scope"
+  },
+  "intake_branch": "student/241880492/e13-e14-paired-acceptance",
+  "validated_program_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+  "latest_acceptance_date": "2026-11-21",
+  "A_project_G2": {
+    "name": "A-HeaderFlow",
+    "status": "MEMBER4_C1_C2_C3_PASSED; MEMBER3_PEER_REVIEW_AND_FORWARDED_G2_BILATERAL_RECORD_RECEIVED",
+    "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "A_freeze_id": "G2-A-20261118-0408405-v1",
+    "A_tool_commit_declared_by_handoff": "04084055221c9f59683d648b3766f86ed07bdd73",
+    "B_runtime_commit": "ac923c516129d863346710ce029d37b12ea8336c",
+    "report_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+    "producer_manifest_sha256": "6ccab6bc665dd4838f5dc0d4cb55cf29e371b1b42696b20081eae8ba1eddf029",
+    "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+    "source_job_id": "job-10302c35430f449993b0caa0d7050bb8",
+    "source_trace_id": "trace-ff64eab93d4b4a35b606cc9009db7340",
+    "execution_image_id": "sha256:32d982ca82133c78fb3f8975f94b5ac788e372efa746b4684ab032e747cef076",
+    "request": "requests/A-HeaderFlow-G2-e13-b.json",
+    "evidence": "evidence/g2-20261119/api-acceptance.json",
+    "scope": "G2 public API on fixed B commit; prior A_project and runtime entries retain 20261118 historical identities; not E14 four-service acceptance",
+    "review_and_signoff_evidence": "evidence/intake-20261120/acceptance.json"
+  },
+  "E14_candidate": {
+    "source_commit": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+    "prior_wiring_commit": "9ec1f53429116fc3a1da60f4cac0388fe86023bd",
+    "author_branch": "student/241880546/e14-integration",
+    "verification_branch": "student/241880492/e14-candidate-7b7e67b",
+    "source_bundle_sha256": "dbafc6b75b58e59e7edd139f62a9a3e4cf5cf957423b4b94706977c7d827c4fc",
+    "status": "SOURCE_SERVER_EVIDENCE_C6_VERIFIED; PR17_COMMENTED_DRAFT; PR14_APPROVED; INTEGRATION_PENDING",
+    "proposed_platform": "linux/amd64",
+    "carrier_image_proposed": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "current_compose_project_confirmation": "THREE_AMD64_DEPLOYMENTS_VERIFIED_20261120",
+    "runtime_owner": "member3 241880546",
+    "evidence": "evidence/intake-20261120/acceptance.json",
+    "CI": "evidence/intake-20261120/candidate-ci.json",
+    "common_branch_implementation_merged": false,
+    "server_evidence": "evidence/e14-server-20261120/server-evidence-audit.json",
+    "image_audit": "evidence/e14-server-20261120/image-audit/image-audit.json",
+    "server_delivery_sha256": "42157d0f6cf005e939045ae3165b6613866c203b5c09a9e091f925d1447f3a76",
+    "server_tasks": [
+      {
+        "case": "headerflow",
+        "job_id": "job-1aabbad8ccc34838a212ee9108953b2b",
+        "trace_id": "trace-795b2288403a4b10ba0c3566d81222dc",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 277,
+        "download_GET_200_verified": 277,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "execution_image_id": "sha256:231de698ad24a368a1a6ccdf6ede045f6d0db26fb5fa334b6425cfab28357d2a",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "app",
+          "helper.o",
+          "main.o"
+        ],
+        "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+        "output_verified": true
+      },
+      {
+        "case": "tinyexpr",
+        "job_id": "job-130254154b464c9aaf34ce7bc620dfb6",
+        "trace_id": "trace-4ed51f03c162487a808cdd85d15384f5",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 455,
+        "download_GET_200_verified": 455,
+        "source_unchanged": true,
+        "base": "fed53f8bd0f76ea069fb6333d8e65b5326694837",
+        "target": "db16775c83f90ead79255cc124d2a5f62f58a3b3",
+        "execution_image_id": "sha256:929f86d18a011dff1dc551bcf3d7be9b081e5d060fe032bef7c424c34de4b703",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "example",
+          "example.o",
+          "tinyexpr.o"
+        ],
+        "candidate_sha256": "3beee82b336e419c91ef3f256fc5636542f627438f072bf9c13d371831e7d89d",
+        "output_verified": true
+      },
+      {
+        "case": "timeout",
+        "job_id": "job-10b1d3fd0abe4945abb1ec0e45a4d76f",
+        "trace_id": "trace-4d09865ed8ec4c858bd66510328f56a2",
+        "status": "FAILED",
+        "downloaded_artifacts_verified": 50,
+        "download_GET_200_verified": 50,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "error_code": "TIMEOUT",
+        "build_timeout_seconds": 0.01,
+        "scope": "Docker build client budget timeout, no verification container started",
+        "terminal_state_retained_after_recovery": true
+      },
+      {
+        "case": "recovery",
+        "job_id": "job-8f327295c2b44b59900c16c4689b255c",
+        "trace_id": "trace-4c5fca5791bc485a81c4322ab1049ea1",
+        "status": "SUCCEEDED",
+        "downloaded_artifacts_verified": 277,
+        "download_GET_200_verified": 277,
+        "source_unchanged": true,
+        "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+        "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+        "execution_image_id": "sha256:ac1a02010573cbdd57802e5b9dbc1befe1a8cc5d9aa97ff31761018ae80146f6",
+        "stages_verified": 5,
+        "runtime_operations_verified": 6,
+        "missing_after_repair": 0,
+        "recheck_observed_targets": [
+          "app",
+          "helper.o",
+          "main.o"
+        ],
+        "candidate_sha256": "3836baf65c06a241b58505606714f4d443067ae894390471335ff212db1437dd",
+        "output_verified": true
+      }
+    ],
+    "actual_deployments": [
+      {
+        "case": "headerflow",
+        "compose_project": "b08-e14-241880546-e623b57c40",
+        "four_role_and_network_removal_logged": true
+      },
+      {
+        "case": "tinyexpr",
+        "compose_project": "b08-e14-241880546-5bc5681b71",
+        "four_role_and_network_removal_logged": true
+      },
+      {
+        "case": "recovery",
+        "compose_project": "b08-e14-241880546-828903a7d0",
+        "four_role_and_network_removal_logged": true
+      }
+    ],
+    "source_PR": {
+      "number": 17,
+      "url": "https://github.com/tynacity/devops-e8-e10-b08/pull/17",
+      "target": "student/241880492/e13-e14-paired-acceptance",
+      "head": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+      "state_at_intake": "OPEN_DRAFT",
+      "CI_push_and_PR_passed": 10,
+      "intake": "evidence/c6-pr17-20261121/acceptance.json",
+      "member4_review": "COMMENTED_ON_7b7e67b; NOT_APPROVED"
+    }
+  },
+  "C6_incremental_peer_review": {
+    "status": "ALL_RECEIVED_SCOPES_ACCEPTED",
+    "date_received": "2026-11-21",
+    "reviewer": "member2 241880529",
+    "image_records": 9,
+    "raw_scan_files": 18,
+    "scope": [
+      "H3",
+      "prior E14 AMD64",
+      "G2",
+      "7b7e67b E14 AMD64"
+    ],
+    "evidence": "evidence/c6-pr17-20261121/acceptance.json",
+    "future_changed_scope_requires_review": true
+  },
+  "member4_PR_reviews": {
+    "evidence": "evidence/c6-pr17-20261121/review-publication.json",
+    "PR14": "APPROVED_ON_efa6313",
+    "PR17": "COMMENTED_ON_7b7e67b; DRAFT",
+    "merge_performed": false
+  }
+}

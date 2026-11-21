@@ -12,26 +12,39 @@ from urllib.parse import unquote
 from pipeline import ROOT,execute,save
 
 class Store:
+    schema_version = 'e11e12-1'
+    service_id = None
+    declared_only = False
+
     def __init__(self, root):
         self.root=root;root.mkdir(parents=True,exist_ok=True)
         self.lock=threading.Lock();self.pool=ThreadPoolExecutor(max_workers=1)
         self.jobs={};self.keys={}
         for p in root.glob('job-*/state.json'):
-            state=json.loads(p.read_text())
+            state=json.loads(p.read_text(encoding='utf-8'))
             if state['status'] in ('QUEUED','RUNNING'):
                 state.update(status='FAILED',error={'code':'SERVER_RESTARTED','message':'Resubmit with a new key'})
                 save(p,state)
             self.jobs[state['job_id']]=state
             self.keys[state['idempotency_key']]=(state['request_hash'],state['job_id'])
-    def submit(self, request, key):
-        if not isinstance(request,dict):raise ValueError('input must be a JSON object')
-        if not isinstance(key,str) or not key or len(key)>128:raise ValueError('idempotency_key required, max 128 characters')
-        if request.get('mode') not in ('e11-a','e11-b','e12'):raise ValueError('Unknown mode')
+    def validate_input(self, request):
+        if request.get('mode') not in ('e11-a','e11-b','e12','e13-b'):raise ValueError('Unknown mode')
+        if request['mode'] == 'e13-b':
+            from live_handoff import validate_request
+            validate_request(request)
         for field in ('repo','candidate','fixed_report'):
             if field in request:
                 path=Path(request[field]).resolve()
                 if not path.is_relative_to((ROOT/'data').resolve()):raise ValueError(field+' must be under /course/data')
         if not all(request.get(k) for k in ('repo','base','target')):raise ValueError('repo/base/target required')
+
+    def run_pipeline(self, request, out, job_id):
+        return execute(request, out, job_id)
+
+    def submit(self, request, key):
+        if not isinstance(request,dict):raise ValueError('input must be a JSON object')
+        if not isinstance(key,str) or not key or len(key)>128:raise ValueError('idempotency_key required, max 128 characters')
+        self.validate_input(request)
         digest=hashlib.sha256(json.dumps(request,sort_keys=True).encode()).hexdigest()
         with self.lock:
             if key in self.keys:
@@ -39,14 +52,14 @@ class Store:
                 if old!=digest:raise ValueError('IDEMPOTENCY_CONFLICT')
                 return dict(self.jobs[jid])
             jid='job-'+uuid.uuid4().hex
-            state={'schema_version':'e11e12-1','job_id':jid,'status':'QUEUED','idempotency_key':key,'request_hash':digest}
+            state={'schema_version':self.schema_version,'job_id':jid,'status':'QUEUED','idempotency_key':key,'request_hash':digest}
             self.jobs[jid]=state;self.keys[key]=(digest,jid);save(self.root/jid/'state.json',state)
             self.pool.submit(self.work,jid,request)
             return dict(state)
     def work(self,jid,request):
         state=self.jobs[jid]
         with self.lock:state['status']='RUNNING';save(self.root/jid/'state.json',state)
-        try:r=execute(request,self.root/jid/'evidence',jid)
+        try:r=self.run_pipeline(request,self.root/jid/'evidence',jid)
         except Exception as ex:r={'status':'FAILED','error':{'code':'WORKER_FAILED','message':str(ex)}}
         with self.lock:
             state.update({k:r[k] for k in ('status','trace_id','error') if k in r});save(self.root/jid/'state.json',state)
@@ -63,18 +76,39 @@ def create_server(store,host='127.0.0.1',port=8080):
                 body=json.loads(self.rfile.read(size));state=store.submit(body['input'],body['idempotency_key']);self.reply(202,state)
             except (ValueError,KeyError,TypeError) as ex:self.reply(409 if str(ex)=='IDEMPOTENCY_CONFLICT' else 400,{'error':str(ex)})
         def do_GET(self):
-            if self.path=='/health':return self.reply(200,{'status':'ok','schema_version':'e11e12-1','service_id':os.environ.get('E11_SERVICE_ID','course-e11e12')})
+            if self.path=='/health':return self.reply(200,{'status':'ok','schema_version':store.schema_version,'service_id':store.service_id or os.environ.get('E11_SERVICE_ID','course-e11e12')})
             parts=self.path.split('?')[0].strip('/').split('/')
             if len(parts)<3 or parts[:2]!=['v1','jobs'] or parts[2] not in store.jobs:return self.reply(404,{'error':'NOT_FOUND'})
             jid=parts[2];out=store.root/jid/'evidence'
-            if len(parts)==3:return self.reply(200,dict(store.jobs[jid]))
-            if parts[3:]==['artifacts']:
-                if not (out/'result.json').exists():return self.reply(409,{'error':'RESULT_NOT_READY'})
-                return self.reply(200,json.loads((out/'result.json').read_text()))
-            if len(parts)>=5 and parts[3]=='files':
-                name=unquote('/'.join(parts[4:]));path=(out/name).resolve()
+            state=dict(store.jobs[jid]);result=out/'result.json'
+            if len(parts)==3:return self.reply(200,state)
+            artifacts=parts[3:]==['artifacts']
+            download=len(parts)>=5 and parts[3]=='files'
+            manifest=None
+            if store.declared_only and (artifacts or download):
+                if state['status'] in ('QUEUED','RUNNING'):
+                    return self.reply(409,{'error':'RESULT_NOT_READY'})
+                if not result.is_file():
+                    return self.reply(409 if artifacts else 404,{'error':'RESULT_NOT_READY' if artifacts else 'NOT_FOUND'})
+                manifest=json.loads(result.read_text(encoding='utf-8'))
+                if any(manifest.get(field)!=state.get(field) for field in ('job_id','trace_id','status')):
+                    return self.reply(409,{'error':'RESULT_STATE_MISMATCH'})
+            if artifacts:
+                if manifest is not None:return self.reply(200,manifest)
+                if not result.exists():return self.reply(409,{'error':'RESULT_NOT_READY'})
+                return self.reply(200,json.loads(result.read_text(encoding='utf-8')))
+            if download:
+                name=unquote('/'.join(parts[4:]))
+                listed=None
+                if manifest is not None:
+                    listed=next((item for item in manifest['artifacts'] if item['uri']==f'artifact://{jid}/{name}'),None)
+                    if listed is None:return self.reply(404,{'error':'NOT_FOUND'})
+                path=(out/name).resolve()
                 if not path.is_relative_to(out.resolve()) or '.git' in path.parts or not path.is_file():return self.reply(404,{'error':'NOT_FOUND'})
-                data=path.read_bytes();self.send_response(200);self.send_header('Content-Type','application/octet-stream');self.send_header('X-Content-SHA256',hashlib.sha256(data).hexdigest());self.end_headers();self.wfile.write(data);return
+                data=path.read_bytes();digest=hashlib.sha256(data).hexdigest()
+                if listed is not None and (listed['bytes']!=len(data) or listed['sha256']!=digest):
+                    return self.reply(409,{'error':'ARTIFACT_HASH_MISMATCH'})
+                self.send_response(200);self.send_header('Content-Type','application/octet-stream');self.send_header('X-Content-SHA256',digest);self.end_headers();self.wfile.write(data);return
             self.reply(404,{'error':'NOT_FOUND'})
     return ThreadingHTTPServer((host,port),Handler)
 

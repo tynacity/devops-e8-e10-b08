@@ -1,0 +1,446 @@
+{
+  "file_manifests": [
+    {
+      "manifest": "expanded/member2-A-HeaderFlow-C5-20261118/SHA256SUMS.txt",
+      "files_checked": 380,
+      "passed": true
+    },
+    {
+      "manifest": "expanded/member2-H2-C5-cloud-final-20261117/SHA256SUMS.txt",
+      "files_checked": 1048,
+      "passed": true
+    },
+    {
+      "manifest": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/SHA256SUMS.txt",
+      "files_checked": 429,
+      "passed": true
+    },
+    {
+      "manifest": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/SHA256SUMS.txt",
+      "files_checked": 1108,
+      "passed": true
+    },
+    {
+      "manifest": "expanded/B-to-A-E13-20261117-v2-C1/B-to-A-E13-20261117-v2-C1/FILES.json",
+      "files_checked": 153,
+      "passed": true
+    }
+  ],
+  "total_manifest_files": 3118,
+  "result_checks": [
+    {
+      "result": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-HeaderFlow-normal-01/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": "sha256:ebf803f0c60d10bbc3bf56b04ac5a8a4cfaa3867220fa57c19e681cb5b70698e",
+      "artifact_checks": 204,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-HeaderFlow-C4-01/result.json",
+      "status": "FAILED",
+      "error": {
+        "code": "DRAFT_FAILED",
+        "message": "Docker client command exceeded 12s"
+      },
+      "image": null,
+      "artifact_checks": 44,
+      "stages": []
+    },
+    {
+      "result": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-after-C4-normal-01/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": "sha256:92ea23c9fd189f68d8c8b1342ad4a1ca31c96bae7d90d481d2488e97c6897bbf",
+      "artifact_checks": 204,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-four-service-template-01/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": null,
+      "artifact_checks": 181,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-original-report-consume-01/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": null,
+      "artifact_checks": 0,
+      "stages": []
+    },
+    {
+      "result": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/e13-tinyexpr-detector-restored-01/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": "sha256:59207c24c841354463651df3529ee06486e88cd916c4b0bf264211fc4d737b15",
+      "artifact_checks": 359,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/member2-H2-C5-cloud-final-20261117/work/member2-revised-cloud/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb",
+      "artifact_checks": 211,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/B-to-A-E13-20261117-v2-C1/B-to-A-E13-20261117-v2-C1/evidence/raw/accept/result.json",
+      "status": "SUCCEEDED",
+      "error": null,
+      "image": "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+      "artifact_checks": 135,
+      "stages": [
+        "consume-a",
+        "draft",
+        "repair",
+        "recheck"
+      ]
+    },
+    {
+      "result": "expanded/B-to-A-E13-20261117-v2-C1/B-to-A-E13-20261117-v2-C1/evidence/raw/stale/result.json",
+      "status": "FAILED",
+      "error": {
+        "code": "STALE_REPORT",
+        "message": "Producer target differs"
+      },
+      "image": null,
+      "artifact_checks": 4,
+      "stages": []
+    },
+    {
+      "result": "expanded/B-to-A-E13-20261117-v2-C1/B-to-A-E13-20261117-v2-C1/evidence/raw/tampered/result.json",
+      "status": "FAILED",
+      "error": {
+        "code": "ARTIFACT_HASH_MISMATCH",
+        "message": "Artifact content changed during transfer"
+      },
+      "image": null,
+      "artifact_checks": 4,
+      "stages": []
+    }
+  ],
+  "report_bindings": [
+    {
+      "path": "expanded/member2-A-HeaderFlow-C5-20261118/run",
+      "report_and_producer_match": true,
+      "source_unchanged": true
+    },
+    {
+      "path": "expanded/成员1-A项目推进交付-20261117/成员1-A项目推进交付-20261117/work/A-original-report-consume-01",
+      "report_and_producer_match": true,
+      "source_unchanged": true
+    },
+    {
+      "path": "expanded/B-to-A-E13-20261117-v2-C1/B-to-A-E13-20261117-v2-C1/evidence/raw/accept/mdfixer",
+      "report_and_producer_match": true,
+      "source_unchanged": true
+    }
+  ],
+  "C5": [
+    {
+      "scope": "expanded/member2-A-HeaderFlow-C5-20261118/run",
+      "positive": true,
+      "rejected_and_rolled_back": [
+        "missing-config",
+        "compile-error"
+      ]
+    },
+    {
+      "scope": "expanded/member2-H2-C5-cloud-final-20261117/work/member2-c5-cloud",
+      "positive": true,
+      "rejected_and_rolled_back": [
+        "missing-config",
+        "compile-error"
+      ]
+    }
+  ],
+  "member1_C4_process_proof": {
+    "marker": "AC4_ea217e45144e4744a7ea543d8d43cbc8",
+    "observed_running": [
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ],
+      [
+        {
+          "pid": "12386",
+          "cmd": "python3\u0000-c\u0000import time; time.sleep(120)\u0000AC4_ea217e45144e4744a7ea543d8d43cbc8\u0000"
+        }
+      ]
+    ],
+    "after": [],
+    "host_exit": 1,
+    "outer_status": "FAILED",
+    "outer_error": {
+      "code": "DRAFT_FAILED",
+      "message": "Docker client command exceeded 12s"
+    },
+    "inner_status": "TIMED_OUT",
+    "candidate_sha256": "daa63ba76d0fd529f896a85df5dd9cf04a00b93ad553bb151e398abb56806b7c",
+    "injection": "added RUN sleep before original make; original candidate preserved",
+    "console": "exit= 1\n"
+  },
+  "arm64_image_scopes_listed": 11,
+  "arm64_raw_scan_checks": [
+    {
+      "image": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+      "scope": "history",
+      "declared_sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0",
+      "scope": "history",
+      "declared_sha256": "5c8a8621a6a4fc98abdbdae69eff0d419eabaa894ef7fac05906e22aa13b8d13",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-history.txt"
+    },
+    {
+      "image": "sha256:2087261c1095846839aa2ecd15256abb766ac70723d090886fa4305d0455b5c0",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c",
+      "scope": "history",
+      "declared_sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:2df40148a48eea46beb6fa56e19625805a14221eb0a62c9d2c4f0982cdda226c",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7",
+      "scope": "history",
+      "declared_sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:320234e6d545b0fa34c723ea060de89d3190d407c4f9d681d7ae832da65906d7",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf",
+      "scope": "history",
+      "declared_sha256": "dab7dd0648d7c3b2fee511b80d9a6497260702b236af9c5c06355aef08b20dd9",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:40b78e370cca48ff16f4fa3839922023935583c72e8b5daaf5e870a437e3f2cf",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab",
+      "scope": "history",
+      "declared_sha256": "dab7dd0648d7c3b2fee511b80d9a6497260702b236af9c5c06355aef08b20dd9",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:560e38fb235902f627bf0f8b5e3d632159421a7dfd8a68e60adeb867d88a09ab",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:7299123b778a379b8504067e76f66e6b71588dc8a3cae9a21e1ea08d12d0237e",
+      "scope": "history",
+      "declared_sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:7299123b778a379b8504067e76f66e6b71588dc8a3cae9a21e1ea08d12d0237e",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a",
+      "scope": "history",
+      "declared_sha256": "290e2cfa5b93b648f5a3b8e1c609713aa51dfad3f17820089d8b374c325bca6f",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:a5e87920a90601d280456d8ff57c17f8637440f5abee67ad322cf8c7b94b781a",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+      "scope": "history",
+      "declared_sha256": "bc6793466391a53906d298a1cc0e817e08f0ab27424409c89901561610dd2bcb",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:b22b48567006ec507b35ef8c85ad03c876cfb553adff2b82ec738de4172e9925",
+      "scope": "environment",
+      "declared_sha256": "9f48a60c8b99a5d4431f623f4ce7e8ca7cd8d369473a0c3a444dba512e64cbdf",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+      "scope": "history",
+      "declared_sha256": "1536a7b5ce1e8b3fadc9b9f60303b678a935cd078cf31706a75c3ade93398a67",
+      "raw_file": null
+    },
+    {
+      "image": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    },
+    {
+      "image": "sha256:59207c24c841354463651df3529ee06486e88cd916c4b0bf264211fc4d737b15",
+      "scope": "history",
+      "declared_sha256": "5c8a8621a6a4fc98abdbdae69eff0d419eabaa894ef7fac05906e22aa13b8d13",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-history.txt"
+    },
+    {
+      "image": "sha256:59207c24c841354463651df3529ee06486e88cd916c4b0bf264211fc4d737b15",
+      "scope": "environment",
+      "declared_sha256": "0914d31202f827d48b9f6ee616a17724c940f56adca23d0b43025f0df6ae33ee",
+      "raw_file": "expanded/成员1-回执后补齐交付-20261117/成员1-回执后补齐交付-20261117/arm64-image-scan/tinyexpr-environment.txt"
+    }
+  ],
+  "arm64_scope_note": "11 image scan summaries received; missing raw checks remain unverified. Only history commands and configured env are in scope.",
+  "A_project": {
+    "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+    "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+    "report_sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c",
+    "producer_sha256": "875d5b6e3c9636acde7910944488750ba55b832273c387bf38750dcab4711b95"
+  },
+  "scope": "Evidence review, independent member4 execution recorded separately"
+}

@@ -1,0 +1,7 @@
+{
+  "existing_raw_compose_artifacts_verified": 176,
+  "altered_patch_rejected": true,
+  "source_history_scan_exit": 0,
+  "workflow_parse": "GitHub successfully parsed and executed both workflows",
+  "scope": "Direct verifier check using preserved member1 raw evidence; new fixed-sample runtime separately verified on server and CI"
+}

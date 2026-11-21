@@ -1,0 +1,13 @@
+{
+  "mode": "e13-b",
+  "profile": "explicit",
+  "repo": "/course/data/headerflow/project/repo",
+  "base": "88af5173a249ee4f30f3d7da51b20169db47d234",
+  "target": "961f40cb8fbb71de304b782ff754522d59d51305",
+  "candidate": "/course/data/headerflow/candidate.Dockerfile",
+  "expected_output": "1",
+  "build_timeout": 600,
+  "report": "/course/data/headerflow/a-report/incremental-check.json",
+  "producer_manifest": "/course/data/headerflow/a-report/result.json",
+  "report_sha256": "c86c2db4b14c84df6f736044e6fcc3993f0a0a04cff7076355996d45ec0d323c"
+}

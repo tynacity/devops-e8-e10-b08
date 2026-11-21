@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-11-18T07:57:46.314855+00:00",
+  "tool_commit": "f09349a1f464ddfd0428a1e824f82867e98d89f8",
+  "fake_key": {
+    "hit_exit": 1,
+    "clean_exit": 0,
+    "output_redacted": true,
+    "injected_file_sha256": "6ede4b88c23bbb708d60ebfa8dd1ca18e3e2f3db10acbe336bb25b8dc17d3826",
+    "cleaned_file_sha256": "37c337fd23c9122e1cc4cc2dffe6466e6875f7512fd692e92e2b6c5422b2add6"
+  },
+  "source_history_exit": 0,
+  "images": [
+    {
+      "scope": "environment",
+      "image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "platform": "linux/amd64",
+      "history_sha256": "b59104e52e5d949997d958dd60d2eb652b5fc940d9c9ecc72c8f37b3dc8c98a8",
+      "environment_sha256": "d16c09038610f541c40636fc32f2c5e06b677ac65a638e3e68d83841020d1299",
+      "scan_exit_code": 0
+    },
+    {
+      "scope": "member4-A-API",
+      "image_id": "sha256:bc8364992123a94617f091d909cf3abb57b5af38688fcb224e3f0c7549d244df",
+      "platform": "linux/amd64",
+      "history_sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+      "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+      "scan_exit_code": 0
+    },
+    {
+      "scope": "member2-A-C5",
+      "image_id": "sha256:596aa607c88a4c98d17ae5e808b08540a9d23d820a24c62c9969576655b18163",
+      "platform": "linux/amd64",
+      "history_sha256": "a3b197d8a625471b7bd82f329c02d5b421df59118397b7d0d45e3dbb7b65f627",
+      "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+      "scan_exit_code": 0
+    },
+    {
+      "scope": "member2-H2",
+      "image_id": "sha256:ebc7b90e3dc292a927237a7cb866344eb35399e3d7cf3e1aa409c6418047d0fb",
+      "platform": "linux/amd64",
+      "history_sha256": "23373d166f50f0d5e62a6cbf7f3e272d4c37d7b26dc79ce33b51cf9204e5c8f5",
+      "environment_sha256": "596db768a5dbb01cbca80c23bc2c0cb71658a4885e4fd0040af91f387b114ef6",
+      "scan_exit_code": 0
+    }
+  ],
+  "runtime_exit": 0,
+  "scope": "PASS for selected amd64 source/history, four actual images (Docker history/config env), and current task logs. No exhaustive layer-file scan or ARM64 attestation.",
+  "old_services_http_200": true,
+  "dedicated_api_stopped": true
+}

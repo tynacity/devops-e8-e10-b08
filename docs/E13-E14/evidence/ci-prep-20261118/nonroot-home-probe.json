@@ -1,0 +1,12 @@
+[
+  {
+    "case": "default-home",
+    "exit": 1,
+    "tail": "ERROR: mkdir /.docker: permission denied\n"
+  },
+  {
+    "case": "writable-home",
+    "exit": 0,
+    "tail": "#0 building with \"default\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 82B done\n#1 DONE 0.0s\n\n#2 [internal] load .dockerignore\n#2 transferring context: 2B done\n#2 DONE 0.0s\n\n#3 exporting to image\n#3 exporting layers done\n#3 exporting manifest sha256:ad1948b3ec6b5fc765a86be1c53ebea841bbc16fdb83645c4ef9f930036bb2d0 done\n#3 exporting config sha256:40049b90428bd62b3ebc1e16d7ff686e9b1b5db3145ad7d9dfb242d4285f1c94 done\n#3 naming to docker.io/library/e14-member4-user-probe:20261118 done\n#3 DONE 0.0s\n"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "evidence_verified": true,
+  "run_id": "fb854ee628b7",
+  "source_sha": "fcd36c0082be043c8fece6a61941321833171aa7",
+  "project_base": "dc8099306d7023b7337328d718149973e7b17978",
+  "project_target": "5640bb69a01e64559207e9f74d15a9ae71a4d0f3",
+  "archive_sha256": "b9b7938e466b44bffaea49293b0e8b1cdd63ca95b49121cb8277faa2a9fd84c9",
+  "archive_files": 96,
+  "original_candidate_only": true,
+  "candidate_variant": "original",
+  "candidate_sha256": "08305c26b934d66ed96bd0ea149a597fcbe0be23d363511ab75037c51476eee9",
+  "runner_exit_code": 1,
+  "pipeline_exit_code": 1,
+  "status": "FAILED",
+  "stages": [
+    "draft"
+  ],
+  "original_source_unchanged": true,
+  "h3_original_passed": false,
+  "job_id": "job-8695210b601d4a4aa6db8799c12c5856",
+  "trace_id": "trace-40ed59fa2e364c518324f44273877c8a",
+  "error": {
+    "code": "FULL_CHECK_FAILED",
+    "message": "[Errno 2] No such file or directory: 'strace'"
+  },
+  "execution_image_id": "sha256:871a0229d8b93969fd600c89beed49c5c16b428993b236f26ed416515c50011f"
+}

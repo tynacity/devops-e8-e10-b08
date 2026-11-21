@@ -1,0 +1,107 @@
+{
+  "outer_checksums": "10/10 match",
+  "member1_result_audits": [
+    {
+      "path": "成员1-队友成果联验增量证据-展开/成员4基线联验/work/member4-baseline-H1-01/result.json",
+      "status": "SUCCEEDED",
+      "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+      "execution_image_id": "sha256:7299123b778a379b8504067e76f66e6b71588dc8a3cae9a21e1ea08d12d0237e",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "artifacts_checked": 211,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-队友成果联验增量证据-展开/成员1工作仓库/work/member2-H1-real-report-01/result.json",
+      "status": "SUCCEEDED",
+      "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+      "execution_image_id": null,
+      "stages": [],
+      "artifacts_checked": 0,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-E13-E14证据与输入-补齐版-展开/work/e13-c4-01/result.json",
+      "status": "FAILED",
+      "target": "37f24d44b48a826eb2d84fcd70e389e0305a8417",
+      "execution_image_id": null,
+      "stages": [],
+      "artifacts_checked": 35,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-E13-E14证据与输入-补齐版-展开/work/e13-H1-jsmn-06/result.json",
+      "status": "SUCCEEDED",
+      "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+      "execution_image_id": "sha256:14baa2448fb1c7ffb7d9927219573a0fad8fbc5aad76a8d141c75422928528a4",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "artifacts_checked": 211,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-E13-E14证据与输入-补齐版-展开/work/e14-after-mid-fault-01/result.json",
+      "status": "SUCCEEDED",
+      "target": "37f24d44b48a826eb2d84fcd70e389e0305a8417",
+      "execution_image_id": null,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "artifacts_checked": 167,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-E13-E14证据与输入-补齐版-展开/work/e14-fixed-01/result.json",
+      "status": "SUCCEEDED",
+      "target": "37f24d44b48a826eb2d84fcd70e389e0305a8417",
+      "execution_image_id": null,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "artifacts_checked": 167,
+      "mismatches": []
+    },
+    {
+      "path": "成员1-E13-E14证据与输入-补齐版-展开/work/offline-restored-H1/result.json",
+      "status": "SUCCEEDED",
+      "target": "948a1d30cd758d32d45a50f788e5a95fb1d89c69",
+      "execution_image_id": "sha256:c168fb0221e76f9ff45863226b8c7dff2f83128973cb2af3d8054a6d7006f671",
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "artifacts_checked": 211,
+      "mismatches": []
+    }
+  ],
+  "member2_H1_original_binding": {
+    "report": true,
+    "producer": true,
+    "original_source_unchanged": true,
+    "source_hashes_equal": true,
+    "recheck_no_missing": true
+  },
+  "missing_arm64_image_archive": true,
+  "arm64_scope_manifest_count": 9
+}

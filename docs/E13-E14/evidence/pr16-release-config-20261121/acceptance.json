@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-21",
+  "incoming_checksums_verified": [
+    "00_成员1发布环境确认.md",
+    "AMD64证据核验.json",
+    "compose-config-validation.yaml",
+    "compose.yaml",
+    "deploy.sh",
+    "release.env.example",
+    "stop.sh",
+    "发布镜像清单.json"
+  ],
+  "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+  "reviewed_integration_sha": "8b695fbded6be1ca8da660ac52ea436a614668b0",
+  "runtime_paths_equal": true,
+  "compose_matches_pinned_git_blob": true,
+  "four_tasks_match_prior_verified_evidence": true,
+  "three_archive_hashes_match_original_zip": true,
+  "execution_images_match_existing_C6_scope": true,
+  "carrier_live": {
+    "id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "platform": "linux/amd64"
+  },
+  "ports_free_at_check": [
+    18181,
+    18182,
+    18183,
+    18184,
+    18594
+  ],
+  "existing_E12_listeners_preserved": [
+    18546,
+    18547
+  ],
+  "compose_config_validation": "PASS",
+  "bash_syntax_deploy_stop": "PASS",
+  "new_deployment_started": false,
+  "review_state": "COMMENTED_NOT_APPROVED",
+  "remaining": [
+    "Member2 confirms port correction and submits formal review",
+    "Bind deployment expected SHA to final merged source after equivalence check; received script deliberately pins 7b7e67b",
+    "New release wrapper startup/stop has not been run; only syntax/config checked",
+    "Image tar or registry is not delivered; existing course-server image acquisition confirmed"
+  ]
+}

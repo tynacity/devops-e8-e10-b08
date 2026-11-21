@@ -34,14 +34,24 @@ def run_tinyexpr(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--action', choices=['full', 'scan', 'patch', 'validate'], required=True)
+    parser.add_argument('--action', choices=['full', 'scan', 'patch', 'validate', 'mdfixer'], required=True)
     for name in ('project', 'result', 'evidence', 'cache', 'report', 'patch'):
         parser.add_argument('--' + name, type=Path, required=name in ('project', 'result'))
     parser.add_argument('--tinyexpr-detector', type=Path)
     parser.add_argument('--report-sha256')
+    parser.add_argument('--component-request', type=Path)
     args = parser.parse_args()
     try:
-        if args.tinyexpr_detector:
+        if args.action == 'mdfixer':
+            if not args.component_request or not args.evidence or args.tinyexpr_detector:
+                raise ValueError('mdfixer needs the prepared component request and output directory')
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'e13e14'))
+            from mdfixer import repair
+            request = json.loads(args.component_request.read_bytes())
+            if Path(request['repo']).resolve() != args.project.resolve():
+                raise ValueError('MDFixer project differs from the mounted job input')
+            data = repair(request, args.evidence)
+        elif args.tinyexpr_detector:
             data = run_tinyexpr(args)
         elif args.action == 'full':
             data = full_check(args.project, args.evidence)

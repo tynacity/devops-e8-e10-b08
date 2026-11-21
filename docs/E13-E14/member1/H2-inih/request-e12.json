@@ -1,0 +1,9 @@
+{
+  "mode": "e12",
+  "repo": "/course/data/e13-upstream-student/H2-inih/repo",
+  "base": "aafc740a2cac05a74541abede93b7d59ed23b87f",
+  "target": "3aadb81763c79651e4dfa99b725ba921ee2b8a39",
+  "candidate": "/course/data/e13-upstream-student/H2-inih/candidate.Dockerfile",
+  "expected_output": "1",
+  "build_timeout": 600
+}

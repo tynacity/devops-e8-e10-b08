@@ -1,0 +1,278 @@
+{
+  "name": "b08-e14-member1-release",
+  "networks": {
+    "default": {
+      "name": "b08-e14-member1-release_default",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "buildchecker": {
+      "cap_add": [
+        "SYS_PTRACE"
+      ],
+      "cpus": 1,
+      "command": [
+        "python3",
+        "labs/e13e14/service.py"
+      ],
+      "entrypoint": null,
+      "environment": {
+        "E11_HOST_ROOT": "/root/b08/e14-7b7e67b",
+        "E14_ROLE": "buildchecker",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 6
+      },
+      "image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "mem_limit": "805306368",
+      "networks": {
+        "default": null
+      },
+      "pids_limit": 128,
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8080,
+          "published": "18181",
+          "protocol": "tcp"
+        }
+      ],
+      "pull_policy": "never",
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "user": "0:0",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "/root/b08/e14-7b7e67b",
+          "target": "/course",
+          "bind": {
+            "create_host_path": true
+          }
+        }
+      ],
+      "working_dir": "/course"
+    },
+    "draft": {
+      "cpus": 1,
+      "command": [
+        "python3",
+        "labs/e13e14/service.py"
+      ],
+      "entrypoint": null,
+      "environment": {
+        "E11_HOST_ROOT": "/root/b08/e14-7b7e67b",
+        "E14_ROLE": "draft",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 6
+      },
+      "image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "mem_limit": "805306368",
+      "networks": {
+        "default": null
+      },
+      "pids_limit": 128,
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8080,
+          "published": "18183",
+          "protocol": "tcp"
+        }
+      ],
+      "pull_policy": "never",
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "user": "0:0",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "/root/b08/e14-7b7e67b",
+          "target": "/course",
+          "bind": {
+            "create_host_path": true
+          }
+        },
+        {
+          "type": "bind",
+          "source": "/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "bind": {
+            "create_host_path": true
+          }
+        }
+      ],
+      "working_dir": "/course"
+    },
+    "echecker": {
+      "cpus": 1,
+      "command": [
+        "python3",
+        "labs/e13e14/service.py"
+      ],
+      "entrypoint": null,
+      "environment": {
+        "E11_HOST_ROOT": "/root/b08/e14-7b7e67b",
+        "E14_ROLE": "echecker",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 6
+      },
+      "image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "mem_limit": "805306368",
+      "networks": {
+        "default": null
+      },
+      "pids_limit": 128,
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8080,
+          "published": "18182",
+          "protocol": "tcp"
+        }
+      ],
+      "pull_policy": "never",
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "user": "0:0",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "/root/b08/e14-7b7e67b",
+          "target": "/course",
+          "bind": {
+            "create_host_path": true
+          }
+        }
+      ],
+      "working_dir": "/course"
+    },
+    "mdfixer": {
+      "cpus": 1,
+      "command": [
+        "python3",
+        "labs/e13e14/service.py"
+      ],
+      "entrypoint": null,
+      "environment": {
+        "E11_HOST_ROOT": "/root/b08/e14-7b7e67b",
+        "E14_ROLE": "mdfixer",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 6
+      },
+      "image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "mem_limit": "805306368",
+      "networks": {
+        "default": null
+      },
+      "pids_limit": 128,
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8080,
+          "published": "18184",
+          "protocol": "tcp"
+        }
+      ],
+      "pull_policy": "never",
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "user": "0:0",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "/root/b08/e14-7b7e67b",
+          "target": "/course",
+          "bind": {
+            "create_host_path": true
+          }
+        }
+      ],
+      "working_dir": "/course"
+    }
+  },
+  "x-common": {
+    "cpus": 1,
+    "environment": {
+      "E11_HOST_ROOT": "/root/b08/e14-7b7e67b",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "/course/labs/e8e10:/course/labs/e11e12/vendor:/app"
+    },
+    "healthcheck": {
+      "interval": "5s",
+      "retries": 6,
+      "test": [
+        "CMD",
+        "python3",
+        "-c",
+        "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"
+      ],
+      "timeout": "3s"
+    },
+    "image": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+    "mem_limit": "768m",
+    "pids_limit": 128,
+    "pull_policy": "never",
+    "restart": "unless-stopped",
+    "security_opt": [
+      "no-new-privileges:true"
+    ],
+    "user": "0:0",
+    "volumes": [
+      "/root/b08/e14-7b7e67b:/course"
+    ],
+    "working_dir": "/course"
+  }
+}

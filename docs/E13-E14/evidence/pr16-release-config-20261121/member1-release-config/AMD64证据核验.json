@@ -1,0 +1,103 @@
+{
+  "verified_downloads": 1059,
+  "archives": [
+    {
+      "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+      "tinyexpr_api_passed": true,
+      "input_verified": true,
+      "detector_sha": "8355af8e45623855c3397442598bd07e27f1ec1a",
+      "job_id": "job-130254154b464c9aaf34ce7bc620dfb6",
+      "trace_id": "trace-4ed51f03c162487a808cdd85d15384f5",
+      "execution_image_id": "sha256:929f86d18a011dff1dc551bcf3d7be9b081e5d060fe032bef7c424c34de4b703",
+      "downloaded_artifacts": 455,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "observed_targets": [
+        "example",
+        "example.o",
+        "tinyexpr.o"
+      ],
+      "stdout_verified": true,
+      "compose_project": "b08-e14-241880546-5bc5681b71",
+      "carrier_image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "compose_stopped": true,
+      "roles": [
+        "buildchecker",
+        "draft",
+        "echecker",
+        "mdfixer"
+      ]
+    },
+    {
+      "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+      "recovery_api_passed": true,
+      "input_verified": true,
+      "job_id": "job-8f327295c2b44b59900c16c4689b255c",
+      "trace_id": "trace-4c5fca5791bc485a81c4322ab1049ea1",
+      "execution_image_id": "sha256:ac1a02010573cbdd57802e5b9dbc1befe1a8cc5d9aa97ff31761018ae80146f6",
+      "downloaded_artifacts": 277,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "timeout": {
+        "job_id": "job-10b1d3fd0abe4945abb1ec0e45a4d76f",
+        "trace_id": "trace-4d09865ed8ec4c858bd66510328f56a2",
+        "status": "FAILED",
+        "error_code": "TIMEOUT",
+        "build_timeout_seconds": 0.01,
+        "downloaded_artifacts": 50,
+        "checked_build_tags": [
+          "e6-draft-replay:def0727e3a5e499a88bc49859040da20-1"
+        ],
+        "draft_build_process_gone": true,
+        "build_tags_absent": true,
+        "verification_container_started": false,
+        "role_event_verified": true
+      },
+      "compose_project": "b08-e14-241880546-828903a7d0",
+      "carrier_image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "compose_stopped": true,
+      "roles": [
+        "buildchecker",
+        "draft",
+        "echecker",
+        "mdfixer"
+      ]
+    },
+    {
+      "source_sha": "7b7e67b6c005bdf27ca7645790d75623230c00fe",
+      "headerflow_api_passed": true,
+      "input_verified": true,
+      "job_id": "job-1aabbad8ccc34838a212ee9108953b2b",
+      "trace_id": "trace-795b2288403a4b10ba0c3566d81222dc",
+      "execution_image_id": "sha256:231de698ad24a368a1a6ccdf6ede045f6d0db26fb5fa334b6425cfab28357d2a",
+      "downloaded_artifacts": 277,
+      "stages": [
+        "draft",
+        "full-check",
+        "incremental-check",
+        "repair",
+        "recheck"
+      ],
+      "compose_project": "b08-e14-241880546-e623b57c40",
+      "carrier_image_id": "sha256:1fa773b9ed7fdf35281eda86ec53ebf61048f271a70a43f9ccfd0e2d7a759829",
+      "compose_stopped": true,
+      "roles": [
+        "buildchecker",
+        "draft",
+        "echecker",
+        "mdfixer"
+      ]
+    }
+  ],
+  "verification": "offline original byte hash checks; no server reexecution"
+}

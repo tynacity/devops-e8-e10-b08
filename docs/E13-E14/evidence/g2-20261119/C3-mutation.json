@@ -1,0 +1,9 @@
+{
+  "bytes": 2610,
+  "changed_byte_count": 1,
+  "json_semantically_equal": true,
+  "original_sha256": "45a1067267c489716c441b3edadf1be0132ff74378b81902c7c957beadb4e838",
+  "mutated_sha256": "9ce65e3c6383e5ddc29c424545d8083fae51f0fc9a090203bd36d10ee2181b60",
+  "declared_sha256_unchanged": true,
+  "producer_manifest_unchanged": true
+}
